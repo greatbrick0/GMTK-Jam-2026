@@ -1,22 +1,48 @@
 [gd_scene format=4 uid="uid://jxtytymp3m0c"]
 
 [ext_resource type="PackedScene" uid="uid://bfwl5fi230vcx" path="res://Scenes/player.tscn" id="1_5ms4e"]
-[ext_resource type="TileSet" uid="uid://chenq3yi1t48n" path="res://TestTileSet.tres" id="1_shgkq"]
+[ext_resource type="Texture2D" uid="uid://cg8y80qyqiwse" path="res://Art/iso_tileset.png" id="1_shgkq"]
+[ext_resource type="TileSet" uid="uid://chenq3yi1t48n" path="res://TestTileSet.tres" id="2_shgkq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujyaq"]
+texture = ExtResource("1_shgkq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -8)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -8)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -8)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, -8)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, -8)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, -8)
+
+[sub_resource type="TileSet" id="TileSet_oy2kj"]
+tile_shape = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_ujyaq")
 
 [node name="TestLevel" type="Node2D" unique_id=1131854116]
 texture_filter = 1
 
-[node name="Map" type="Node2D" parent="." unique_id=187333481]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=2063257103]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2063257103]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAD//wMAAAACAAAAAAD//wIAAAACAAAAAAD+/wEAAAACAAAAAAD/////AAACAAAAAAD//wEAAAACAAAAAAD//wAAAAACAAAAAAAAAAAAAAACAAAAAAAAAP7/AAACAAAAAAAAAP//AAACAAAAAAABAAAAAAACAAAAAAD+/wMAAAACAAAAAAD+/wIAAAACAAAAAAD//wQAAAACAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wUAAAAAAAAAAAA=")
-tile_set = ExtResource("1_shgkq")
+tile_set = SubResource("TileSet_oy2kj")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="Map" unique_id=1070887196]
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1070887196]
+z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -16)
-tile_map_data = PackedByteArray("AAAAAP7/AAAEAAAAAAABAP7/AAAEAAAAAAABAP//AAAEAAAAAAACAAAAAAAEAAAAAAD//wIAAAADAAAAAAA=")
-tile_set = ExtResource("1_shgkq")
+tile_map_data = PackedByteArray("AAD//wAAAAADAAAAAAAAAPz/AAAEAAAAAAABAPz/AAAEAAAAAAABAP3/AAAEAAAAAAACAP7/AAAEAAAAAAA=")
+tile_set = ExtResource("2_shgkq")
 
-[node name="Player" parent="." unique_id=706144404 instance=ExtResource("1_5ms4e")]
+[node name="Player" parent="TileMapLayer2" unique_id=706144404 instance=ExtResource("1_5ms4e")]
+position = Vector2(26, 0)
+speed = 45.0
+
+[editable path="TileMapLayer2/Player"]
