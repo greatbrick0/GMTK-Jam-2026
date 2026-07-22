@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://bmvmlr4sf4gnx"]
 
+[ext_resource type="Script" uid="uid://c7c0x72yrl1i2" path="res://Scripts/main_menu.gd" id="1_28flt"]
+
 [node name="MainMenu" type="Node2D" unique_id=62942237]
+script = ExtResource("1_28flt")
+
+[node name="StartButton" type="Button" parent="." unique_id=1878233138]
+offset_left = 730.0
+offset_top = 416.0
+offset_right = 1106.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
