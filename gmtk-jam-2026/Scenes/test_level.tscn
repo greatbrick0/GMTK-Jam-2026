@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://jxtytymp3m0c"]
 
-[ext_resource type="PackedScene" uid="uid://bfwl5fi230vcx" path="res://Scenes/player.tscn" id="1_5ms4e"]
-[ext_resource type="Texture2D" uid="uid://cg8y80qyqiwse" path="res://Art/iso_tileset.png" id="1_shgkq"]
-[ext_resource type="TileSet" uid="uid://chenq3yi1t48n" path="res://TestTileSet.tres" id="2_shgkq"]
+[ext_resource type="Texture2D" uid="uid://cg8y80qyqiwse" path="res://Art/iso_tileset.png" id="1_eglq2"]
+[ext_resource type="TileSet" uid="uid://chenq3yi1t48n" path="res://TestTileSet.tres" id="2_rsyfn"]
+[ext_resource type="PackedScene" uid="uid://bfwl5fi230vcx" path="res://Scenes/player.tscn" id="3_7w7ni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujyaq"]
-texture = ExtResource("1_shgkq")
+texture = ExtResource("1_eglq2")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
@@ -39,7 +39,6 @@ tile_set = SubResource("TileSet_oy2kj")
 z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD//wAAAAADAAAAAAAAAPz/AAAEAAAAAAABAPz/AAAEAAAAAAABAP3/AAAEAAAAAAACAP7/AAAEAAAAAAA=")
-tile_set = ExtResource("2_shgkq")
+tile_set = ExtResource("2_rsyfn")
 
-[node name="Player" parent="TileMapLayer2" unique_id=706144404 instance=ExtResource("1_5ms4e")]
-speed = 45.0
+[node name="Player" parent="TileMapLayer2" unique_id=706144404 instance=ExtResource("3_7w7ni")]
