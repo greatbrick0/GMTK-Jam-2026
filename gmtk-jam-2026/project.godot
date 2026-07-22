@@ -19,12 +19,16 @@ config/icon="res://Art/icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
 
 [file_customization]
 
 folder_colors={
 "res://Art/": "purple",
-"res://Scenes/": "blue"
+"res://Scenes/": "blue",
+"res://Scripts/": "green"
 }
 
 [physics]

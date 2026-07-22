@@ -1,0 +1,22 @@
+[gd_scene format=4 uid="uid://jxtytymp3m0c"]
+
+[ext_resource type="PackedScene" uid="uid://bfwl5fi230vcx" path="res://Scenes/player.tscn" id="1_5ms4e"]
+[ext_resource type="TileSet" uid="uid://chenq3yi1t48n" path="res://TestTileSet.tres" id="1_shgkq"]
+
+[node name="TestLevel" type="Node2D" unique_id=1131854116]
+texture_filter = 1
+
+[node name="Map" type="Node2D" parent="." unique_id=187333481]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=2063257103]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAD//wMAAAACAAAAAAD//wIAAAACAAAAAAD+/wEAAAACAAAAAAD/////AAACAAAAAAD//wEAAAACAAAAAAD//wAAAAACAAAAAAAAAAAAAAACAAAAAAAAAP7/AAACAAAAAAAAAP//AAACAAAAAAABAAAAAAACAAAAAAD+/wMAAAACAAAAAAD+/wIAAAACAAAAAAD//wQAAAACAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wUAAAAAAAAAAAA=")
+tile_set = ExtResource("1_shgkq")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Map" unique_id=1070887196]
+y_sort_enabled = true
+position = Vector2(0, -16)
+tile_map_data = PackedByteArray("AAAAAP7/AAAEAAAAAAABAP7/AAAEAAAAAAABAP//AAAEAAAAAAACAAAAAAAEAAAAAAD//wIAAAADAAAAAAA=")
+tile_set = ExtResource("1_shgkq")
+
+[node name="Player" parent="." unique_id=706144404 instance=ExtResource("1_5ms4e")]
