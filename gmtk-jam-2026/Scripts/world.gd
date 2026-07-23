@@ -22,3 +22,6 @@ func SpawnPlayer() -> void:
 	if(not playerRef):
 		playerRef = playerObj.instantiate()
 	levelRef.playerLayer.add_child(playerRef)
+
+func _on_hud_player_wake_up():
+	playerRef.SetCanMove(true)

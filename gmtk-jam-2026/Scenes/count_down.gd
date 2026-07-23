@@ -9,3 +9,7 @@ func DrainSteps(amount: float) -> void:
 	$ProgressBar.value = stepsRemaining
 	if(stepsRemaining <= 0):
 		outOfSteps.emit()
+
+func SetSteps(newSteps: float) -> void:
+	stepsRemaining = newSteps
+	$ProgressBar.value = stepsRemaining
