@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bk40prxj8a3r7"]
+
+[ext_resource type="Script" uid="uid://dtusiiaqjyn8t" path="res://sounds/Music Manager/music_manager.gd" id="1_abjkx"]
+[ext_resource type="AudioStream" uid="uid://643308y87jmq" path="res://sounds/Music Manager/error1.wav" id="1_l6w6c"]
+[ext_resource type="AudioStream" uid="uid://d0v76jx3jejjh" path="res://sounds/Music Manager/Thermal Hauling.wav" id="2_l7oxi"]
+[ext_resource type="AudioStream" uid="uid://c5u6e827mi0jk" path="res://sounds/Music Manager/sound1.wav" id="3_abjkx"]
+[ext_resource type="AudioStream" uid="uid://jf6aykq8qgbf" path="res://sounds/Music Manager/CreepyCrickets.mp3" id="3_vb3jy"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_a0g8o"]
+mix_rate_mode = 0
+mix_rate = 20.0
+buffer_length = 1.0
+
+[node name="MusicManager" type="Node" unique_id=1803391772]
+script = ExtResource("1_abjkx")
+trackTransitionTime = 5.0
+trackSilentVolume = -40.0
+
+[node name="Track0" type="AudioStreamPlayer" parent="." unique_id=678358553]
+stream = SubResource("AudioStreamGenerator_a0g8o")
+autoplay = true
+
+[node name="Track1" type="AudioStreamPlayer" parent="." unique_id=892526426]
+stream = ExtResource("2_l7oxi")
+volume_db = -18.0
+
+[node name="Track2" type="AudioStreamPlayer" parent="." unique_id=138040814]
+stream = ExtResource("3_vb3jy")
+volume_db = -5.0
+
+[node name="GeneralEffects" type="Node" parent="." unique_id=2094348216]
+
+[node name="MenuBlip1" type="AudioStreamPlayer" parent="GeneralEffects" unique_id=1024235537]
+stream = ExtResource("1_l6w6c")
+volume_db = -10.0
+
+[node name="MenuBlip2" type="AudioStreamPlayer" parent="GeneralEffects" unique_id=1620700751]
+stream = ExtResource("3_abjkx")
+volume_db = -10.0

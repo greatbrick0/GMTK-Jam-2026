@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0v76jx3jejjh"
+path="res://.godot/imported/Thermal Hauling.wav-18d7a258e311e005773e88e92f923100.sample"
+
+[deps]
+
+source_file="res://sounds/Music Manager/Thermal Hauling.wav"
+dest_files=["res://.godot/imported/Thermal Hauling.wav-18d7a258e311e005773e88e92f923100.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
