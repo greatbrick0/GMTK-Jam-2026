@@ -36,6 +36,10 @@ folder_colors={
 "res://sounds/": "pink"
 }
 
+[global_group]
+
+Countdown=""
+
 [input]
 
 move_left={

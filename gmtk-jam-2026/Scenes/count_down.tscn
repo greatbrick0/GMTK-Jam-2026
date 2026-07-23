@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cy7l38hxypd6g"]
 
 [ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="1_2nt72"]
+[ext_resource type="Script" uid="uid://cmvsxolsfmixr" path="res://scenes/count_down.gd" id="1_34mrw"]
 
-[node name="CountDown" type="Node2D" unique_id=1305994455]
+[node name="CountDown" type="Node2D" unique_id=1305994455 groups=["Countdown"]]
+script = ExtResource("1_34mrw")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1001120597]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1001120597]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -16,6 +18,7 @@ offset_right = 100.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
+step = 0.1
 value = 33.0
 fill_mode = 4
 nine_patch_stretch = true
