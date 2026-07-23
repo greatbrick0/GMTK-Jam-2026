@@ -1,15 +1,96 @@
 [gd_scene format=3 uid="uid://bharihypl8jm"]
 
 [ext_resource type="Script" uid="uid://c5lsmjhgqk00o" path="res://scripts/world.gd" id="1_r6w70"]
-[ext_resource type="PackedScene" uid="uid://bc8vlfoxxw4nc" path="res://scenes/open_level.tscn" id="2_rpd1k"]
 [ext_resource type="PackedScene" uid="uid://cy7l38hxypd6g" path="res://scenes/count_down.tscn" id="3_rpd1k"]
+
+[sub_resource type="Animation" id="Animation_r6w70"]
+resource_name = "Awaken"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountDown:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(980, 540), Vector2(180, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountDown:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rpd1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountDown:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(180, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountDown:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mxv6"]
+_data = {
+&"Awaken": SubResource("Animation_r6w70"),
+&"RESET": SubResource("Animation_rpd1k")
+}
 
 [node name="Space World" type="Node2D" unique_id=700890815]
 script = ExtResource("1_r6w70")
 
 [node name="Level" type="Node2D" parent="." unique_id=1015432694]
-
-[node name="OpenLevel" parent="Level" unique_id=1131854116 instance=ExtResource("2_rpd1k")]
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=379411649]
 
@@ -23,3 +104,6 @@ color = Color(0, 0, 0, 0)
 
 [node name="CountDown" parent="Hud" unique_id=1305994455 instance=ExtResource("3_rpd1k")]
 position = Vector2(180, 180)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hud" unique_id=267932384]
+libraries/ = SubResource("AnimationLibrary_7mxv6")

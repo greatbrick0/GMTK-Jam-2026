@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://FloorMetalTiles.tres" id="1_ijny6"]
 [ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://scripts/level.gd" id="1_xn2qg"]
 [ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://WallMetalTiles.tres" id="2_fuync"]
-[ext_resource type="PackedScene" uid="uid://bfwl5fi230vcx" path="res://scenes/player.tscn" id="3_pfnis"]
 
 [node name="OpenLevel" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
@@ -21,7 +20,3 @@ z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAPv/AAADAAEAAAABAPz/AAADAAEAAAABAP3/AAADAAEAAAACAP7/AAADAAEAAAD///v/AAABAAAAAAAAAPr/AAAAAAAAAAD///z/AAAAAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD9////AAADAAAAAAA=")
 tile_set = ExtResource("2_fuync")
-
-[node name="Player" parent="TileMapLayer2" unique_id=706144404 instance=ExtResource("3_pfnis")]
-position = Vector2(-1, 18)
-canMove = true
