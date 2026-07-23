@@ -10,9 +10,12 @@ var changingTracks: bool = false
 var trackFullVolumes: Array[float] = []
 
 func _ready() -> void:
-	for ii in get_children():
-		if(ii is AudioStreamPlayer):
-			trackFullVolumes.append(ii.volume_db)
+	for ii in range(len(get_children())):
+		var musicPlayer: AudioStreamPlayer = get_child(ii) as AudioStreamPlayer
+		if(musicPlayer):
+			trackFullVolumes.append(musicPlayer.volume_db)
+			musicPlayer.finished.connect(OnTrackFinished.bind(ii))
+	ChangeTrack(0)
 
 func _process(delta):
 	if(changingTracks):

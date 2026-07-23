@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://d0v76jx3jejjh" path="res://sounds/Music Manager/Thermal Hauling.wav" id="2_l7oxi"]
 [ext_resource type="AudioStream" uid="uid://c5u6e827mi0jk" path="res://sounds/Music Manager/sound1.wav" id="3_abjkx"]
 [ext_resource type="AudioStream" uid="uid://jf6aykq8qgbf" path="res://sounds/Music Manager/CreepyCrickets.mp3" id="3_vb3jy"]
+[ext_resource type="AudioStream" uid="uid://b0ydnij7dmqnk" path="res://sounds/Music Manager/SacrificeSongCombat.wav" id="4_crwkv"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_a0g8o"]
 mix_rate_mode = 0
@@ -26,6 +27,10 @@ volume_db = -18.0
 
 [node name="Track2" type="AudioStreamPlayer" parent="." unique_id=138040814]
 stream = ExtResource("3_vb3jy")
+volume_db = -5.0
+
+[node name="Track3" type="AudioStreamPlayer" parent="." unique_id=33935172]
+stream = ExtResource("4_crwkv")
 volume_db = -5.0
 
 [node name="GeneralEffects" type="Node" parent="." unique_id=2094348216]
