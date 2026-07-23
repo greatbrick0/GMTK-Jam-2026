@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cy7l38hxypd6g"]
+
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="1_2nt72"]
+
+[node name="CountDown" type="Node2D" unique_id=1305994455]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1001120597]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 33.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("1_2nt72")
+texture_progress = ExtResource("1_2nt72")
+tint_under = Color(0.19921875, 0.19921875, 0.19921875, 1)
+tint_progress = Color(0.91796875, 0.8767319, 0.2581787, 1)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bharihypl8jm"]
+
+[ext_resource type="Script" uid="uid://c5lsmjhgqk00o" path="res://scripts/world.gd" id="1_r6w70"]
+[ext_resource type="PackedScene" uid="uid://bc8vlfoxxw4nc" path="res://scenes/open_level.tscn" id="2_rpd1k"]
+[ext_resource type="PackedScene" uid="uid://cy7l38hxypd6g" path="res://scenes/count_down.tscn" id="3_rpd1k"]
+
+[node name="Space World" type="Node2D" unique_id=700890815]
+script = ExtResource("1_r6w70")
+
+[node name="Level" type="Node2D" parent="." unique_id=1015432694]
+
+[node name="OpenLevel" parent="Level" unique_id=1131854116 instance=ExtResource("2_rpd1k")]
+
+[node name="Hud" type="CanvasLayer" parent="." unique_id=379411649]
+
+[node name="CountDown" parent="Hud" unique_id=1305994455 instance=ExtResource("3_rpd1k")]
+position = Vector2(180, 180)

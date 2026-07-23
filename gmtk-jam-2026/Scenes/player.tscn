@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfwl5fi230vcx"]
 
-[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://ba6taw5odlloa" path="res://Art/BasicTiles/BasicCube.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://art/Units/StaticCharacter.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=706144404]
 motion_mode = 1
@@ -9,11 +9,11 @@ script = ExtResource("1_cvnsp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1231828637]
 position = Vector2(0, 16)
-polygon = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
+polygon = PackedVector2Array(0, -8, 13, -1.5, 13, 1.5, 0, 8, -13, 1.5, -13, -1.5)
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1884018846]
 texture_filter = 1
-position = Vector2(0, 8)
+position = Vector2(0, 3)
 texture = ExtResource("2_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1876150761]

@@ -13,7 +13,7 @@ config_version=5
 config/name="gmtk-jam-2026"
 run/main_scene="uid://bmvmlr4sf4gnx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://Art/icon.svg"
+config/icon="res://art/icon.svg"
 
 [autoload]
 
@@ -30,9 +30,9 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
-"res://Art/": "purple",
-"res://Scenes/": "blue",
-"res://Scripts/": "green",
+"res://art/": "purple",
+"res://scenes/": "blue",
+"res://scripts/": "green",
 "res://sounds/": "pink"
 }
 
