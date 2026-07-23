@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfwl5fi230vcx"]
 
 [ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://cg8y80qyqiwse" path="res://Art/iso_tileset.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://ba6taw5odlloa" path="res://Art/BasicTiles/BasicCube.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=706144404]
 motion_mode = 1
@@ -15,8 +15,6 @@ polygon = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 texture_filter = 1
 position = Vector2(0, 8)
 texture = ExtResource("2_cvnsp")
-region_enabled = true
-region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1876150761]
 zoom = Vector2(4, 4)

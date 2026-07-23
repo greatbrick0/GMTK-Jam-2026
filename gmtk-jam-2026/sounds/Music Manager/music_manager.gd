@@ -13,8 +13,6 @@ func _ready() -> void:
 	for ii in get_children():
 		if(ii is AudioStreamPlayer):
 			trackFullVolumes.append(ii.volume_db)
-	await get_tree().create_timer(2.0).timeout
-	ChangeTrack(2)
 
 func _process(delta):
 	if(changingTracks):
