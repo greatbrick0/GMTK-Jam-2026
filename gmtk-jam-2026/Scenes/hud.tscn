@@ -79,10 +79,10 @@ tracks/0/path = NodePath("CountDown:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(980, 540)]
+"values": [Vector2(180, 180), Vector2(980, 540)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -91,10 +91,10 @@ tracks/1/path = NodePath("CountDown:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
 "update": 0,
-"values": [Vector2(2, 2)]
+"values": [Vector2(1, 1), Vector2(2, 2)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -117,10 +117,10 @@ tracks/3/path = NodePath("ColorRect:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
