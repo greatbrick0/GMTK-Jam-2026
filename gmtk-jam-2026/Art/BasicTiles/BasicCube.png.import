@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba6taw5odlloa"
-path="res://.godot/imported/BasicCube.png-c455010e495c72132be4cd25b9014fd0.ctex"
+path="res://.godot/imported/BasicCube.png-31b3c4519518336ba3dd64643fd90f61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/BasicTiles/BasicCube.png"
-dest_files=["res://.godot/imported/BasicCube.png-c455010e495c72132be4cd25b9014fd0.ctex"]
+source_file="res://Art/BasicTiles/BasicCube.png"
+dest_files=["res://.godot/imported/BasicCube.png-31b3c4519518336ba3dd64643fd90f61.ctex"]
 
 [params]
 
