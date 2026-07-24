@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://j7c60o2hityu" path="res://scripts/portal.gd" id="1_1ffj6"]
 [ext_resource type="Texture2D" uid="uid://btell3r4tt5ix" path="res://art/BasicTiles/Interactables/Lever.png" id="2_d4jfq"]
-[ext_resource type="PackedScene" uid="uid://d1koq8w2q0ixn" path="res://scenes/empty_basement.tscn" id="2_jr6l0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8di2w"]
 atlas = ExtResource("2_d4jfq")
@@ -79,7 +78,6 @@ animations = [{
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_1ffj6")
-packedLevel = ExtResource("2_jr6l0")
 metadata/_custom_type_script = "uid://nuwk10yagma3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=744382552]

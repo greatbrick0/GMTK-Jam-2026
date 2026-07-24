@@ -1,6 +1,8 @@
 extends Node2D
 class_name Level
 
+@export var levelId: String
+@export var levelOffset: Vector2 = Vector2.ZERO 
 @export var floorLayer: TileMapLayer
 @export var playerLayer: TileMapLayer
 

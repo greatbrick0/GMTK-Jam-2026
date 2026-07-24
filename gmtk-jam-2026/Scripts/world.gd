@@ -1,37 +1,54 @@
 extends Node2D
 class_name World
 
+@export var levelStack: Array[Level] = []
 @export var playerObj: PackedScene = preload("res://scenes/player.tscn")
 var playerRef: Player
 var levelRef: Level
 
 func _ready() -> void:
-	SpawnLevelFromPath("res://scenes/open_level.tscn")
+	SpawnLevelFromPath("res://scenes/open_level.tscn", false)
 
-func SpawnLevelFromPacked(newLevel: PackedScene) -> void:
-	InitializeLevel(newLevel.instantiate())
+func SpawnLevelFromPacked(newLevel: PackedScene, appended: bool) -> void:
+	InitializeLevel(newLevel.instantiate(), appended)
 
-func SpawnLevelFromPath(newLevel: String) -> void:
-	InitializeLevel(load(newLevel).instantiate())
+func SpawnLevelFromPath(newLevel: String, appended: bool) -> void:
+	InitializeLevel(load(newLevel).instantiate(), appended)
 
-func InitializeLevel(newLevel: Level) -> void:
-	if($Level.get_child_count() > 0):
+func InitializeLevel(newLevel: Level, appended: bool) -> void:
+	if(levelRef != null):
 		levelRef.RemovePlayer(playerRef)
-		levelRef.queue_free()
-	$Level.add_child(newLevel)
+		if(appended):
+			levelStack.append(levelRef)
+		else:
+			levelRef.queue_free()
+			ClearLevelStack()
+	$Level.add_child(newLevel, true)
 	levelRef = newLevel
-	SpawnPlayer()
+	levelRef.global_position = levelRef.levelOffset
+	SpawnPlayer(!appended)
 
-func SpawnPlayer() -> void:
+func ReturnUpLevelStack() -> void:
+	levelRef.RemovePlayer(playerRef)
+	levelRef.queue_free()
+	levelRef = levelStack.pop_back()
+	SpawnPlayer(false)
+
+func SpawnPlayer(resetPos: bool) -> void:
 	if(not playerRef):
 		playerRef = playerObj.instantiate()
 	levelRef.playerLayer.add_child(playerRef)
+	if(resetPos):
+		playerRef.global_position = Vector2.ZERO
 
 func ResetWorld() -> void:
-	playerRef.global_position = Vector2.ZERO
-	SpawnLevelFromPath("res://scenes/open_level.tscn")
+	SpawnLevelFromPath("res://scenes/open_level.tscn", false)
 	for ii in get_tree().get_nodes_in_group("Resetable"):
 		ii.Reset()
+
+func ClearLevelStack() -> void:
+	for ii in range(len(levelStack)):
+		levelStack.pop_back().queue_free()
 
 func _on_hud_player_wake_up():
 	playerRef.SetCanMove(true)

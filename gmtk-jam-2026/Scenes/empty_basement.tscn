@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://scripts/level.gd" id="1_3mi56"]
 [ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://FloorMetalTiles.tres" id="2_va6pe"]
 [ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://WallMetalTiles.tres" id="3_rfjyt"]
+[ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/portal.tscn" id="4_jroow"]
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
 script = ExtResource("1_3mi56")
+levelOffset = Vector2(0, 640)
 floorLayer = NodePath("TileMapLayer")
 playerLayer = NodePath("TileMapLayer2")
 
@@ -32,3 +34,8 @@ z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD///v/AAABAAAAAAAAAPr/AAAAAAAAAAD///z/AAAAAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD9////AAADAAAAAAAAAPn/AAADAAAAAAABAPr/AAACAAAAAAABAPv/AAACAAAAAAACAPz/AAADAAEAAAACAP3/AAAAAAAAAAD9/wAAAAACAAAAAAADAP7/AAADAAAAAAADAP//AAADAAEAAAAAAPT/AAAAAAAAAAAEAPj/AAAAAAAAAAAFAAcAAAAAAAAAAAD+/w0AAAAAAAAAAAD8/wYAAAAAAAAAAAA=")
 tile_set = ExtResource("3_rfjyt")
+
+[node name="portal" parent="TileMapLayer2" unique_id=1997146595 instance=ExtResource("4_jroow")]
+position = Vector2(-16, 18)
+returnUp = true
+exitPosition = Vector2(272, -14)
