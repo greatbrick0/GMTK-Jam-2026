@@ -6,7 +6,7 @@ signal outOfSteps
 
 func _process(_delta):
 	if(Input.is_action_just_pressed("reset")):
-		print(stepsRemaining)
+		print(str(round(stepsRemaining)) + " countdown remaining")
 
 func DrainSteps(amount: float) -> void:
 	stepsRemaining -= amount

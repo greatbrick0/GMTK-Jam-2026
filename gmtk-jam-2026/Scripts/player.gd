@@ -19,13 +19,13 @@ func _ready():
 	countDownRef.outOfSteps.connect(SetCanMove.bind(false))
 
 func _process(delta):
-	if(Input.is_action_pressed("reset")):
+	if(Input.is_action_pressed("reset") and canMove):
 		resetting += 1.0 * delta
 		if(resetting >= 0.5):
 			Hud.instance.EndLoop()
-	elif(Input.is_action_just_released("reset")):
+	else:
 		resetting = 0.0
-	if(Input.is_action_just_pressed("interact")):
+	if(Input.is_action_just_pressed("interact") and canMove):
 		if(len(interactList) > 0):
 			GetClosestInteractable().Interact()
 
