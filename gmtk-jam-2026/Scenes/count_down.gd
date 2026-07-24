@@ -1,10 +1,14 @@
 extends Node2D
 class_name CountDown
 
+var editable: bool = false
+
 var stepsRemaining: float = 100.0
 signal outOfSteps
 
 func _process(_delta):
+	if(editable or Input.is_action_pressed("ui_accept")):
+		print(global_position.angle_to_point(get_viewport().get_mouse_position()))
 	if(Input.is_action_just_pressed("reset")):
 		print(str(round(stepsRemaining)) + " countdown remaining")
 
