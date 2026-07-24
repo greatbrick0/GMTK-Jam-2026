@@ -40,3 +40,8 @@ func GetCountDownAmountsForFallAsleep() -> void:
 
 func ScreenBlackenedOut() -> void:
 	playerFullyAsleep.emit()
+
+func Transition() -> void:
+	$TransitionPlayer.play("FadeBlackIn")
+	await $TransitionPlayer.animation_finished
+	$TransitionPlayer.play("FadeBlackOut")
