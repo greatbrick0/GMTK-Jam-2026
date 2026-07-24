@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpe64xsbf4ho2"
-path="res://.godot/imported/crackedCube2.png-607e4d870a0335632ba9b0598a2d2a38.ctex"
+uid="uid://hi2637c30oea"
+path="res://.godot/imported/StaticCharacterAllAngles.png-8c294ed2a04fce30c68eb8b46eba68fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BasicTiles/Interactables/crackedCube2.png"
-dest_files=["res://.godot/imported/crackedCube2.png-607e4d870a0335632ba9b0598a2d2a38.ctex"]
+source_file="res://Art/Units/StaticCharacterAllAngles.png"
+dest_files=["res://.godot/imported/StaticCharacterAllAngles.png-8c294ed2a04fce30c68eb8b46eba68fe.ctex"]
 
 [params]
 
