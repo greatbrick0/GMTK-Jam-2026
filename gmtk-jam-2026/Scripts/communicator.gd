@@ -8,9 +8,11 @@ enum InputRequirement {ALL, ANY}
 @export var outputs: Array[Node]
 
 @export var state: bool = false
+@export var reset: bool = true
 
 func _ready():
-	add_to_group("Resetable")
+	if(reset):
+		add_to_group("Resetable")
 	for ii in inputs:
 		if ii.has_signal("changed"):
 			ii.changed.connect(InputsChanged)

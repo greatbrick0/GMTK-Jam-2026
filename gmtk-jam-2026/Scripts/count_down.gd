@@ -7,8 +7,8 @@ var stepsRemaining: float = 100.0
 signal outOfSteps
 
 func _process(_delta):
-	if(editable or Input.is_action_pressed("ui_accept")):
-		print(global_position.angle_to_point(get_viewport().get_mouse_position()))
+	if(editable or Input.is_action_just_pressed("ui_accept")):
+		print(str(global_position.angle_to_point(get_viewport().get_mouse_position()) / PI) + " angle")
 	if(Input.is_action_just_pressed("reset")):
 		print(str(round(stepsRemaining)) + " countdown remaining")
 

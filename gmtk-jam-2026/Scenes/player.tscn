@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://art/Units/StaticCharacter.png" id="2_cvnsp"]
 
-[node name="Player" type="CharacterBody2D" unique_id=706144404]
+[node name="Player" type="CharacterBody2D" unique_id=706144404 groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 drainSpeed = 2.0
@@ -12,7 +12,7 @@ drainSpeed = 2.0
 position = Vector2(0, 16)
 polygon = PackedVector2Array(0, -8, 13, -1.5, 13, 1.5, 0, 8, -13, 1.5, -13, -1.5)
 
-[node name="InteractArea" type="Area2D" parent="." unique_id=1888901094 groups=["Player"]]
+[node name="InteractArea" type="Area2D" parent="." unique_id=1888901094]
 collision_layer = 2
 collision_mask = 4
 

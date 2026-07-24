@@ -75,7 +75,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="portal" type="Area2D" unique_id=1997146595 groups=["Resetable"]]
+[node name="portal" type="Area2D" unique_id=1997146595]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_1ffj6")
