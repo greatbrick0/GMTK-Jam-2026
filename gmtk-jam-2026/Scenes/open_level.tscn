@@ -24,3 +24,4 @@ tile_set = ExtResource("2_fuync")
 
 [node name="Lever" parent="TileMapLayer2" unique_id=1997146595 instance=ExtResource("4_xn2qg")]
 position = Vector2(64, 10)
+oneway = true

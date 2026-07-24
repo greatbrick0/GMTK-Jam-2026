@@ -10,4 +10,5 @@ script = ExtResource("1_r6w70")
 
 [node name="Hud" parent="." unique_id=1270990202 instance=ExtResource("2_r6w70")]
 
+[connection signal="playerFullyAsleep" from="Hud" to="." method="_on_hud_player_fully_asleep"]
 [connection signal="playerWakeUp" from="Hud" to="." method="_on_hud_player_wake_up"]

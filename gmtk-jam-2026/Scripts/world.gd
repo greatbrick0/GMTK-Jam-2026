@@ -23,5 +23,13 @@ func SpawnPlayer() -> void:
 		playerRef = playerObj.instantiate()
 	levelRef.playerLayer.add_child(playerRef)
 
+func ResetWorld() -> void:
+	playerRef.global_position = Vector2.ZERO
+	for ii in get_tree().get_nodes_in_group("Resetable"):
+		ii.Reset()
+
 func _on_hud_player_wake_up():
 	playerRef.SetCanMove(true)
+
+func _on_hud_player_fully_asleep():
+	ResetWorld()

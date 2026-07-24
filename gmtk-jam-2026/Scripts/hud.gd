@@ -2,6 +2,7 @@ extends CanvasLayer
 class_name Hud
 
 signal playerWakeUp
+signal playerFullyAsleep
 
 var countdownStartAmount: float = 0.0
 var countdownEndAmount: float = 100.0
@@ -29,3 +30,6 @@ func _on_count_down_out_of_steps():
 func SetCountDownAmountsForFallAsleep() -> void:
 	countdownStartAmount = $CountDown.stepsRemaining
 	countdownEndAmount = 100.0
+
+func ScreenBlackenedOut() -> void:
+	playerFullyAsleep.emit()
