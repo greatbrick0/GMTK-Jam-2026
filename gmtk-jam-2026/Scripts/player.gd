@@ -45,7 +45,10 @@ func GetClosestInteractable() -> Interactable:
 	var closestDistance: float = global_position.distance_squared_to(interactList[0].global_position)
 	var closestInteractable: Interactable = interactList[0]
 	for ii in interactList:
-		if(global_position.distance_squared_to(ii.global_position) < closestDistance):
-			closestDistance = global_position.distance_squared_to(ii.global_position)
+		if(GetIsoDistanceMetric(global_position, ii.global_position) < closestDistance):
+			closestDistance = GetIsoDistanceMetric(global_position, ii.global_position)
 			closestInteractable = ii
 	return closestInteractable
+
+func GetIsoDistanceMetric(vec1: Vector2, vec2: Vector2) -> float:
+	return (pow(vec1.x - vec2.x, 2) * distortion.x) + (pow(vec1.y - vec2.y, 2) * distortion.y)
