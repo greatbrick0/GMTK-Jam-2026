@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dhb8ef8j0j3qh"]
+
+[node name="Node2D" type="Node2D" unique_id=978458351]
+top_level = true
+light_mask = 2
+visibility_layer = 2
+
+[node name="LightingSprite" type="Sprite2D" parent="." unique_id=12679892]
+top_level = true
+light_mask = 2
+visibility_layer = 2

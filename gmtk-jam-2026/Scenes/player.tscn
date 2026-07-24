@@ -1,7 +1,29 @@
 [gd_scene format=3 uid="uid://bfwl5fi230vcx"]
 
-[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://art/Units/StaticCharacter.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://Art/Units/StaticCharacter.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://sgruy0h7ltl3" path="res://Scripts/light_viewport.gd" id="4_vgqql"]
+[ext_resource type="Script" uid="uid://ds5fpuv7uuwom" path="res://Scripts/track_position.gd" id="5_fkybt"]
+[ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://Art/Shaders/ViewportMasking.gdshader" id="5_x3wgy"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
+viewport_path = NodePath("MainViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x3wgy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3smsa"]
+viewport_path = NodePath("MainViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3smsa"]
+resource_local_to_scene = true
+shader = ExtResource("5_x3wgy")
+shader_parameter/lightMask = SubResource("ViewportTexture_x3wgy")
+shader_parameter/unlitVisuals = SubResource("ViewportTexture_3smsa")
+shader_parameter/threshold = 0.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8erm5"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Player" type="CharacterBody2D" unique_id=706144404 groups=["Player"]]
 motion_mode = 1
@@ -20,13 +42,57 @@ collision_mask = 4
 position = Vector2(0, 16)
 polygon = PackedVector2Array(0, -18, 26, -5, 26, 5, 0, 18, -26, 5, -26, -5)
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1884018846]
+[node name="PlayerVisual" type="Sprite2D" parent="." unique_id=1884018846]
 texture_filter = 1
 position = Vector2(0, 3)
 texture = ExtResource("2_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1876150761]
 zoom = Vector2(4, 4)
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=224833150]
+canvas_cull_mask = 4294967282
+size = Vector2i(1920, 1080)
+script = ExtResource("4_vgqql")
+
+[node name="CameraLight" type="Camera2D" parent="SubViewport" unique_id=1004545125 node_paths=PackedStringArray("trackedObject")]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(4, 4)
+zoom = Vector2(4, 4)
+script = ExtResource("5_fkybt")
+trackedObject = NodePath("../../Camera2D")
+
+[node name="MainViewport" type="SubViewport" parent="." unique_id=262345934]
+canvas_cull_mask = 4294966273
+size = Vector2i(1920, 1080)
+script = ExtResource("4_vgqql")
+
+[node name="Camera2D" type="Camera2D" parent="MainViewport" unique_id=2055914082 node_paths=PackedStringArray("trackedObject")]
+zoom = Vector2(4, 4)
+script = ExtResource("5_fkybt")
+trackedObject = NodePath("../../Camera2D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356136265]
+layer = -1
+
+[node name="WhatTheCameraSees" type="Sprite2D" parent="CanvasLayer" unique_id=749374517]
+light_mask = 8
+visibility_layer = 8
+z_index = 2
+texture = SubResource("ViewportTexture_6t5aa")
+centered = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1326293352]
+layer = 0
+
+[node name="LightResult" type="Sprite2D" parent="CanvasLayer2" unique_id=733234122]
+light_mask = 8
+visibility_layer = 8
+z_index = 1
+material = SubResource("ShaderMaterial_3smsa")
+texture = SubResource("ViewportTexture_8erm5")
+centered = false
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

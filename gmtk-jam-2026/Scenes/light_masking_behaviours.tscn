@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bmirvug5pekcp"]
+
+[ext_resource type="Texture2D" uid="uid://ufnnps04v3qd" path="res://Art/ScruffleVFX_Star.png" id="1_rtao7"]
+
+[node name="Node2D" type="Node2D" unique_id=490444005]
+top_level = true
+light_mask = 2
+visibility_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=832323889]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.32421875, 0.32421875)
+texture = ExtResource("1_rtao7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1663759404]
+top_level = true
+light_mask = 2
+visibility_layer = 2
+z_index = -5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 7080.0
+offset_bottom = 7920.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

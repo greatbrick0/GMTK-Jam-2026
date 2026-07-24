@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjmslpgsiv1dm"
-path="res://.godot/imported/leftDoorSlice-right.png-5c2177b45bd012e629bbd00a639eba14.ctex"
+path="res://.godot/imported/leftDoorSlice-right.png-0adf5119397292b72eba5d9d9869e6d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/BasicTiles/Doors/leftDoorSlice-right.png"
-dest_files=["res://.godot/imported/leftDoorSlice-right.png-5c2177b45bd012e629bbd00a639eba14.ctex"]
+source_file="res://Art/BasicTiles/Doors/leftDoorSlice-right.png"
+dest_files=["res://.godot/imported/leftDoorSlice-right.png-0adf5119397292b72eba5d9d9869e6d9.ctex"]
 
 [params]
 

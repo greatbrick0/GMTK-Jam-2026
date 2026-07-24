@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hi2637c30oea"
-path="res://.godot/imported/StaticCharacterAllAngles.png-33c602e6da3edecf7eb0e91e16e36fb6.ctex"
+path="res://.godot/imported/StaticCharacterAllAngles.png-8c294ed2a04fce30c68eb8b46eba68fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Units/StaticCharacterAllAngles.png"
-dest_files=["res://.godot/imported/StaticCharacterAllAngles.png-33c602e6da3edecf7eb0e91e16e36fb6.ctex"]
+source_file="res://Art/Units/StaticCharacterAllAngles.png"
+dest_files=["res://.godot/imported/StaticCharacterAllAngles.png-8c294ed2a04fce30c68eb8b46eba68fe.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpe64xsbf4ho2"
-path="res://.godot/imported/crackedCube2.png-607e4d870a0335632ba9b0598a2d2a38.ctex"
+uid="uid://du16vq8gobn4w"
+path="res://.godot/imported/MaterialTest1_Spiral.png-aa803f9a96ee8baedf19a99784424d6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BasicTiles/Interactables/crackedCube2.png"
-dest_files=["res://.godot/imported/crackedCube2.png-607e4d870a0335632ba9b0598a2d2a38.ctex"]
+source_file="res://Art/MaterialTest1_Spiral.png"
+dest_files=["res://.godot/imported/MaterialTest1_Spiral.png-aa803f9a96ee8baedf19a99784424d6c.ctex"]
 
 [params]
 

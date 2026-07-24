@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bharihypl8jm"]
 
-[ext_resource type="Script" uid="uid://c5lsmjhgqk00o" path="res://scripts/world.gd" id="1_r6w70"]
-[ext_resource type="PackedScene" uid="uid://co6igfg1b3xw7" path="res://scenes/hud.tscn" id="2_r6w70"]
+[ext_resource type="Script" uid="uid://c5lsmjhgqk00o" path="res://Scripts/world.gd" id="1_r6w70"]
+[ext_resource type="PackedScene" uid="uid://bmirvug5pekcp" path="res://Scenes/light_masking_behaviours.tscn" id="2_1xbnp"]
+[ext_resource type="PackedScene" uid="uid://co6igfg1b3xw7" path="res://Scenes/hud.tscn" id="2_r6w70"]
 
 [node name="Space World" type="Node2D" unique_id=700890815]
 script = ExtResource("1_r6w70")
 
 [node name="Level" type="Node2D" parent="." unique_id=1015432694]
+
+[node name="Node2D" parent="." unique_id=490444005 instance=ExtResource("2_1xbnp")]
+z_index = -1
 
 [node name="Hud" parent="." unique_id=1270990202 instance=ExtResource("2_r6w70")]
 
