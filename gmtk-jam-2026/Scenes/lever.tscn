@@ -89,8 +89,6 @@ polygon = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 texture_filter = 1
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_0hcq6")
-frame = 8
-frame_progress = 1.0
 speed_scale = 3.0
 
 [node name="Audio2D" type="AudioStreamPlayer2D" parent="." unique_id=1467677560]
