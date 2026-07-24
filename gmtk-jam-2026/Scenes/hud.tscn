@@ -32,7 +32,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color")
+tracks/2/path = NodePath("SleepRect:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -113,7 +113,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect:color")
+tracks/3/path = NodePath("SleepRect:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -176,7 +176,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color")
+tracks/2/path = NodePath("SleepRect:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -205,10 +205,64 @@ _data = {
 &"RESET": SubResource("Animation_rpd1k")
 }
 
+[sub_resource type="Animation" id="Animation_5ysmq"]
+resource_name = "FadeBlackIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6fi6k"]
+resource_name = "FadeBlackOut"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uo2fv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_047uy"]
+_data = {
+&"FadeBlackIn": SubResource("Animation_5ysmq"),
+&"FadeBlackOut": SubResource("Animation_6fi6k"),
+&"RESET": SubResource("Animation_uo2fv")
+}
+
 [node name="Hud" type="CanvasLayer" unique_id=1270990202]
 script = ExtResource("1_oo0fn")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1536164653]
+[node name="SleepRect" type="ColorRect" parent="." unique_id=1536164653]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -230,6 +284,18 @@ offset_right = 1165.0
 offset_bottom = 953.0
 theme_override_font_sizes/font_size = 32
 text = "Wake Up"
+
+[node name="TransitionRect" type="ColorRect" parent="." unique_id=1971005680]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TransitionPlayer" type="AnimationPlayer" parent="." unique_id=1664348173]
+libraries/ = SubResource("AnimationLibrary_047uy")
 
 [connection signal="outOfSteps" from="CountDown" to="." method="_on_count_down_out_of_steps"]
 [connection signal="pressed" from="WakeUpButton" to="." method="_on_wake_up_button_pressed"]
