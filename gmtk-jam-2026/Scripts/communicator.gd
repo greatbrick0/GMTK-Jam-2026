@@ -10,6 +10,7 @@ enum InputRequirement {ALL, ANY}
 @export var state: bool = false
 
 func _ready():
+	add_to_group("Resetable")
 	for ii in inputs:
 		if ii.has_signal("changed"):
 			ii.changed.connect(InputsChanged)
@@ -37,3 +38,6 @@ func GetInputState(input: Node) -> bool:
 		return input.used
 	else:
 		return false
+
+func Reset() -> void:
+	state = false

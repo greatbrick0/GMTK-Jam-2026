@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy7l38hxypd6g"]
 
 [ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="1_2nt72"]
-[ext_resource type="Script" uid="uid://cmvsxolsfmixr" path="res://scenes/count_down.gd" id="1_34mrw"]
+[ext_resource type="Script" uid="uid://cmvsxolsfmixr" path="res://scripts/count_down.gd" id="1_34mrw"]
 
 [node name="CountDown" type="Node2D" unique_id=1305994455 groups=["Countdown"]]
 script = ExtResource("1_34mrw")
