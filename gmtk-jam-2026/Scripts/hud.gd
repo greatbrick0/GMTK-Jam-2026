@@ -1,6 +1,8 @@
 extends CanvasLayer
 class_name Hud
 
+static var instance: Hud
+
 signal playerWakeUp
 signal playerFullyAsleep
 
@@ -13,9 +15,14 @@ var countdownEndAmount: float = 100.0
 			$CountDown.SetSteps(lerp(countdownStartAmount, countdownEndAmount, value))
 
 func _ready():
+	if(instance == null):
+		instance = self
+	else:
+		queue_free()
 	$CountDown.SetSteps(100.0)
 
 func EndLoop() -> void:
+	GetCountDownAmountsForFallAsleep()
 	$WakeUpPlayer.play("FallAsleep")
 
 func _on_wake_up_button_pressed():
@@ -27,7 +34,7 @@ func AllowPlayerMovement() -> void:
 func _on_count_down_out_of_steps():
 	EndLoop()
 
-func SetCountDownAmountsForFallAsleep() -> void:
+func GetCountDownAmountsForFallAsleep() -> void:
 	countdownStartAmount = $CountDown.stepsRemaining
 	countdownEndAmount = 100.0
 

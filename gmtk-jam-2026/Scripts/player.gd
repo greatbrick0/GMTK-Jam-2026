@@ -11,11 +11,20 @@ var interactList: Array[Interactable]
 
 var countDownRef: CountDown
 
+var resetting: float = 0.0
+var resetThreshold
+
 func _ready():
 	countDownRef = get_tree().get_first_node_in_group("Countdown")
 	countDownRef.outOfSteps.connect(SetCanMove.bind(false))
 
-func _process(_delta):
+func _process(delta):
+	if(Input.is_action_pressed("reset")):
+		resetting += 1.0 * delta
+		if(resetting >= 0.5):
+			Hud.instance.EndLoop()
+	elif(Input.is_action_just_released("reset")):
+		resetting = 0.0
 	if(Input.is_action_just_pressed("interact")):
 		if(len(interactList) > 0):
 			GetClosestInteractable().Interact()

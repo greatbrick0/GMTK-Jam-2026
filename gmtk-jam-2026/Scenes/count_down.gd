@@ -4,6 +4,10 @@ class_name CountDown
 var stepsRemaining: float = 100.0
 signal outOfSteps
 
+func _process(_delta):
+	if(Input.is_action_just_pressed("reset")):
+		print(stepsRemaining)
+
 func DrainSteps(amount: float) -> void:
 	stepsRemaining -= amount
 	$ProgressBar.value = stepsRemaining
