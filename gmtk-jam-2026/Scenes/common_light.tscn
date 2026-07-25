@@ -10,3 +10,13 @@ visibility_layer = 2
 scale = Vector2(0.6, 0.3)
 texture = ExtResource("1_24oxn")
 script = ExtResource("2_2e2gu")
+
+[node name="ChildSprites" type="Node2D" parent="." unique_id=1293727441]
+light_mask = 2
+visibility_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ChildSprites" unique_id=1829519212]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_24oxn")

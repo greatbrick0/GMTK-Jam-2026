@@ -26,6 +26,7 @@ func InitializeLevel(newLevel: Level, appended: bool) -> void:
 	$Level.add_child(newLevel, true)
 	levelRef = newLevel
 	levelRef.global_position = levelRef.levelOffset
+	levelRef.MoveLights()
 	SpawnPlayer(!appended)
 
 func ReturnUpLevelStack() -> void:

@@ -4,10 +4,12 @@
 [ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="2_va6pe"]
 [ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://tile sets/WallMetalTiles.tres" id="3_rfjyt"]
 [ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/portal.tscn" id="4_jroow"]
+[ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="5_ttbhg"]
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
 script = ExtResource("1_3mi56")
+levelId = "EmptyBasement"
 levelOffset = Vector2(0, 640)
 floorLayer = NodePath("TileMapLayer")
 playerLayer = NodePath("TileMapLayer2")
@@ -39,3 +41,9 @@ tile_set = ExtResource("3_rfjyt")
 position = Vector2(-16, 18)
 returnUp = true
 exitPosition = Vector2(272, -14)
+
+[node name="Light3" parent="." unique_id=269814053 instance=ExtResource("5_ttbhg")]
+position = Vector2(34, 36)
+
+[node name="Light4" parent="." unique_id=775139803 instance=ExtResource("5_ttbhg")]
+position = Vector2(12, 3)

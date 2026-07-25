@@ -37,6 +37,9 @@ func _physics_process(delta):
 		countDownRef.DrainSteps(speedMult * drainSpeed * delta)
 	else:
 		velocity = Vector2.ZERO
+	if(Input.is_action_just_pressed("noclip") and OS.has_feature("editor")):
+		print("noclipping")
+		$CollisionPolygon2D.disabled = true
 	move_and_slide()
 
 func SetCanMove(newCanMove: bool) -> void:

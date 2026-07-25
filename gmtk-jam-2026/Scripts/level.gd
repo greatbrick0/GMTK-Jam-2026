@@ -7,6 +7,14 @@ class_name Level
 @export var playerLayer: TileMapLayer
 
 func _ready() -> void:
+	CreateVoidWalls()
+
+func MoveLights() -> void:
+	for ii in get_children():
+		if(ii is CommonLight):
+			ii.global_position += global_position
+
+func CreateVoidWalls() -> void:
 	for ii in floorLayer.get_used_cells():
 		if(floorLayer.get_cell_source_id(ii) != -1):
 			for jj in floorLayer.get_surrounding_cells(ii):

@@ -21,8 +21,7 @@ resource_local_to_scene = true
 shader = ExtResource("5_x3wgy")
 shader_parameter/lightMask = SubResource("ViewportTexture_x3wgy")
 shader_parameter/unlitVisuals = SubResource("ViewportTexture_3smsa")
-shader_parameter/threshold = 0.0
-shader_parameter/darknessColour = Color(0, 0, 0, 1)
+shader_parameter/darknessColour = Color(0.13333334, 0.1254902, 0.20392157, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8erm5"]
 viewport_path = NodePath("SubViewport")
@@ -49,6 +48,10 @@ texture_filter = 1
 position = Vector2(0, 3)
 texture = ExtResource("2_cvnsp")
 
+[node name="Light" parent="." unique_id=269814053 node_paths=PackedStringArray("followTarget") instance=ExtResource("6_tuyoq")]
+visible = false
+followTarget = NodePath("..")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1876150761]
 zoom = Vector2(4, 4)
 
@@ -64,6 +67,18 @@ scale = Vector2(4, 4)
 zoom = Vector2(4, 4)
 script = ExtResource("5_fkybt")
 trackedObject = NodePath("../../Camera2D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=946636180]
+layer = -5
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer" unique_id=154958165]
+visibility_layer = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="MainViewport" type="SubViewport" parent="." unique_id=262345934]
 canvas_cull_mask = 4294966273
@@ -95,10 +110,6 @@ z_index = 1
 material = SubResource("ShaderMaterial_3smsa")
 texture = SubResource("ViewportTexture_8erm5")
 centered = false
-
-[node name="Light" parent="." unique_id=269814053 node_paths=PackedStringArray("followTarget") instance=ExtResource("6_tuyoq")]
-visible = false
-followTarget = NodePath("..")
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

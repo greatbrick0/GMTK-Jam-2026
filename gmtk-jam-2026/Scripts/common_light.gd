@@ -1,4 +1,5 @@
 extends Sprite2D
+class_name CommonLight
 
 @export var visibleOnReady: bool = true
 @export var followTarget: Node2D
@@ -10,6 +11,7 @@ func _ready():
 		visible = true
 	doesFollowTarget = followTarget != null
 
-func _process(_delta):
+func _process(delta):
 	if(doesFollowTarget):
 		global_position = followTarget.global_position + followOffset
+	$ChildSprites.rotate(0.3 * delta)
