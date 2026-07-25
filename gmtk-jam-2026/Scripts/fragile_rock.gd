@@ -14,8 +14,6 @@ func _ready() -> void:
 	spriteRef = $Sprites/ShakeOffset.get_child(spriteIndex)
 
 func _process(delta) -> void:
-	if(Input.is_action_just_pressed("ability_0")):
-		Drill(1.0)
 	if(not broken):
 		if(drillRate > 0.0):
 			stability -= drillRate * delta

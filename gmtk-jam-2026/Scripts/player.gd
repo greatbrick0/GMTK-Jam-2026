@@ -14,6 +14,8 @@ var countDownRef: CountDown
 var resetting: float = 0.0
 var resetThreshold
 
+var isDrilling: bool = false
+
 func _ready():
 	countDownRef = get_tree().get_first_node_in_group("Countdown")
 	countDownRef.outOfSteps.connect(SetCanMove.bind(false))
@@ -25,9 +27,12 @@ func _process(delta):
 			Hud.instance.EndLoop()
 	else:
 		resetting = 0.0
-	if(Input.is_action_just_pressed("interact") and canMove):
-		if(len(interactList) > 0):
-			GetClosestInteractable().Interact()
+	if(canMove):
+		if(Input.is_action_just_pressed("interact") and canMove):
+			if(len(interactList) > 0):
+				GetClosestInteractable().Interact()
+		if(Input.is_action_just_pressed("ability_0")):
+			countDownRef.GetItemAvailable(0)
 
 func _physics_process(delta):
 	speedMult = 2.5 if(Input.is_action_pressed("sprint")) else 1.0

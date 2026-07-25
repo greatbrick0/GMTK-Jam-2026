@@ -21,3 +21,9 @@ func DrainSteps(amount: float) -> void:
 func SetSteps(newSteps: float) -> void:
 	stepsRemaining = newSteps
 	$ProgressBar.value = stepsRemaining
+
+func GetItemAvailable(index: int) -> String:
+	var output = "None"
+	if(index == 0):
+		output = "Drill-1"
+	return output
