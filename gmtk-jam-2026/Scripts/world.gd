@@ -7,7 +7,7 @@ var playerRef: Player
 var levelRef: Level
 
 func _ready() -> void:
-	SpawnLevelFromPath("res://scenes/open_level.tscn", false)
+	SpawnLevelFromPath("res://scenes/Levels/open_level.tscn", false)
 
 func SpawnLevelFromPacked(newLevel: PackedScene, appended: bool) -> void:
 	InitializeLevel(newLevel.instantiate(), appended)
