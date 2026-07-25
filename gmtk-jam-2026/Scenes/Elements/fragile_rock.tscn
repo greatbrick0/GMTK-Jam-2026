@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://btm0cyew5o0xm" path="res://scripts/fragile_rock.gd" id="1_4u1nf"]
 [ext_resource type="Texture2D" uid="uid://dyccc4no2vr12" path="res://art/BasicTiles/Interactables/crackedCube1.png" id="2_o2kwa"]
+[ext_resource type="Texture2D" uid="uid://bpe64xsbf4ho2" path="res://art/BasicTiles/Interactables/crackedCube2.png" id="3_o2kwa"]
+[ext_resource type="AudioStream" uid="uid://dd6s8v5c1w6i7" path="res://sounds/CashewExplode.wav" id="4_8gpwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scls8"]
 atlas = ExtResource("2_o2kwa")
@@ -74,6 +76,83 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gpwv"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfix2"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ify"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41n54"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4rs4"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y7ur"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnjfi"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s508a"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md3n2"]
+atlas = ExtResource("3_o2kwa")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbrho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gpwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfix2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ify")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41n54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4rs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y7ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnjfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s508a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md3n2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hfix2"]
+playback_mode = 1
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("4_8gpwv")
+
 [node name="FragileRock" type="Node2D" unique_id=1843752984 groups=["Resetable"]]
 script = ExtResource("1_4u1nf")
 
@@ -86,9 +165,23 @@ polygon = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
 [node name="Sprites" type="Node2D" parent="." unique_id=1279628894]
 position = Vector2(0, 7)
 
-[node name="AnimSprite1" type="AnimatedSprite2D" parent="Sprites" unique_id=917007181]
+[node name="ShakeOffset" type="Node2D" parent="Sprites" unique_id=1099982738]
+
+[node name="AnimSprite0" type="AnimatedSprite2D" parent="Sprites/ShakeOffset" unique_id=917007181]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2sm6a")
 frame = 8
 frame_progress = 1.0
 speed_scale = 1.5
+
+[node name="AnimSprite1" type="AnimatedSprite2D" parent="Sprites/ShakeOffset" unique_id=884515135]
+visible = false
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pbrho")
+speed_scale = 1.5
+
+[node name="Crumble2D" type="AudioStreamPlayer2D" parent="." unique_id=817216196]
+stream = SubResource("AudioStreamRandomizer_hfix2")
+volume_db = -6.0
+pitch_scale = 0.78
+bus = &"ReverbBus"
