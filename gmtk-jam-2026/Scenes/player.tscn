@@ -37,7 +37,9 @@ texture = ExtResource("2_cvnsp")
 
 [node name="Light" parent="." unique_id=269814053 node_paths=PackedStringArray("followTarget") instance=ExtResource("6_tuyoq")]
 visible = false
+scale = Vector2(0.7, 0.35)
 followTarget = NodePath("..")
+followOffset = Vector2(0, 13)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1876150761]
 zoom = Vector2(4, 4)

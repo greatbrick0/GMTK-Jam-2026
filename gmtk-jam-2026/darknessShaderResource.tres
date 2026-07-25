@@ -14,3 +14,5 @@ shader = ExtResource("1_l155i")
 shader_parameter/lightMask = SubResource("ViewportTexture_x3wgy")
 shader_parameter/unlitVisuals = SubResource("ViewportTexture_3smsa")
 shader_parameter/darknessColour = Color(0.13333334, 0.1254902, 0.20392157, 1)
+shader_parameter/lightBandCount = 3.0
+shader_parameter/quantizeStrength = 0.25

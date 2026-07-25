@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://d1koq8w2q0ixn" path="res://scenes/empty_basement.tscn" id="8_22lnt"]
 [ext_resource type="PackedScene" uid="uid://bcdsswi4qb3gy" path="res://scenes/level1_basement1.tscn" id="9_8lqcf"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="9_fldsl"]
-[ext_resource type="Texture2D" uid="uid://bpnlbsputnuq6" path="res://art/BasicTiles/StairsDown.png" id="11_i1cbs"]
 
 [node name="OpenLevel" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
@@ -100,6 +99,3 @@ position = Vector2(7, 42)
 [node name="Light2" parent="." unique_id=1823768506 instance=ExtResource("9_fldsl")]
 visible = false
 position = Vector2(-12, 128)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=567212082]
-texture = ExtResource("11_i1cbs")
