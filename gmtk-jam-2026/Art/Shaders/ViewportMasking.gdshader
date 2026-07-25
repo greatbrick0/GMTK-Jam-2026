@@ -3,21 +3,17 @@ shader_type canvas_item;
 uniform sampler2D lightMask;
 uniform sampler2D unlitVisuals;
 uniform float threshold: hint_range(0.0,1.0);
+uniform vec4 darknessColour : source_color = vec4(0, 0, 0, 1);
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	
 }
 
 void fragment() {
 	COLOR = texture(unlitVisuals, UV);
 	float litStrength = clamp(texture(lightMask, UV).r, 0.0, 1.0);
 	vec4 litImpact = vec4(1,1,1,1);
-	vec4 darknessImpact = vec4(0.3,0.3,0.3,1);
-	litImpact = mix(darknessImpact, litImpact, litStrength);
-	COLOR *= litImpact;
+	COLOR = mix(darknessColour, COLOR, litStrength);
+	//litImpact = mix(darknessImpact, litImpact, litStrength);
+	//COLOR *= litImpact;
 }
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}

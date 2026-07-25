@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lg56ersdb662"
-path="res://.godot/imported/MountainBackground.png-56b7d1d5204d501bbb4062f416693d8a.ctex"
+uid="uid://ck8qcl8nrqwm"
+path="res://.godot/imported/MessyLight1.png-1052df56f80cc78af3614dd9a6ea2378.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MountainBackground.png"
-dest_files=["res://.godot/imported/MountainBackground.png-56b7d1d5204d501bbb4062f416693d8a.ctex"]
+source_file="res://art/MessyLight1.png"
+dest_files=["res://.godot/imported/MessyLight1.png-1052df56f80cc78af3614dd9a6ea2378.ctex"]
 
 [params]
 

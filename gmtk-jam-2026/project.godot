@@ -31,6 +31,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://art/": "purple",
+"res://art/Shaders/": "teal",
 "res://scenes/": "blue",
 "res://scripts/": "green",
 "res://sounds/": "pink"

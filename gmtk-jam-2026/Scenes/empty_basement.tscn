@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://d1koq8w2q0ixn"]
 
 [ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://scripts/level.gd" id="1_3mi56"]
-[ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://FloorMetalTiles.tres" id="2_va6pe"]
-[ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://WallMetalTiles.tres" id="3_rfjyt"]
+[ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="2_va6pe"]
+[ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://tile sets/WallMetalTiles.tres" id="3_rfjyt"]
 [ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/portal.tscn" id="4_jroow"]
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]

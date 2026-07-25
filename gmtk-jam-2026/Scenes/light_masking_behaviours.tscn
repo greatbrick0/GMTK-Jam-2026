@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bmirvug5pekcp"]
 
-[ext_resource type="Texture2D" uid="uid://ufnnps04v3qd" path="res://Art/ScruffleVFX_Star.png" id="1_rtao7"]
+[ext_resource type="Texture2D" uid="uid://dkv2xpap8ydlo" path="res://art/ScruffleVFX_MagicMess1.png" id="1_0nrly"]
 
-[node name="Node2D" type="Node2D" unique_id=490444005]
+[node name="Light" type="Node2D" unique_id=490444005]
 top_level = true
 light_mask = 2
 visibility_layer = 2
@@ -11,9 +11,10 @@ visibility_layer = 2
 light_mask = 2
 visibility_layer = 2
 scale = Vector2(0.32421875, 0.32421875)
-texture = ExtResource("1_rtao7")
+texture = ExtResource("1_0nrly")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1663759404]
+visible = false
 top_level = true
 light_mask = 2
 visibility_layer = 2

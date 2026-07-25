@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bfwl5fi230vcx"]
 
-[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://Art/Units/StaticCharacter.png" id="2_cvnsp"]
-[ext_resource type="Script" uid="uid://sgruy0h7ltl3" path="res://Scripts/light_viewport.gd" id="4_vgqql"]
-[ext_resource type="Script" uid="uid://ds5fpuv7uuwom" path="res://Scripts/track_position.gd" id="5_fkybt"]
-[ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://Art/Shaders/ViewportMasking.gdshader" id="5_x3wgy"]
+[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://art/Units/StaticCharacter.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://sgruy0h7ltl3" path="res://scripts/light_viewport.gd" id="4_vgqql"]
+[ext_resource type="Script" uid="uid://ds5fpuv7uuwom" path="res://scripts/track_position.gd" id="5_fkybt"]
+[ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://art/Shaders/ViewportMasking.gdshader" id="5_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_tuyoq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
 viewport_path = NodePath("MainViewport")
@@ -21,6 +22,7 @@ shader = ExtResource("5_x3wgy")
 shader_parameter/lightMask = SubResource("ViewportTexture_x3wgy")
 shader_parameter/unlitVisuals = SubResource("ViewportTexture_3smsa")
 shader_parameter/threshold = 0.0
+shader_parameter/darknessColour = Color(0, 0, 0, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8erm5"]
 viewport_path = NodePath("SubViewport")
@@ -93,6 +95,10 @@ z_index = 1
 material = SubResource("ShaderMaterial_3smsa")
 texture = SubResource("ViewportTexture_8erm5")
 centered = false
+
+[node name="Light" parent="." unique_id=269814053 node_paths=PackedStringArray("followTarget") instance=ExtResource("6_tuyoq")]
+visible = false
+followTarget = NodePath("..")
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]
