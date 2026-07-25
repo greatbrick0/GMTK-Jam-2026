@@ -82,9 +82,10 @@ metadata/_custom_type_script = "uid://nuwk10yagma3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=744382552]
 position = Vector2(0, 22)
-polygon = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
+polygon = PackedVector2Array(0, -12, 24, 0, 0, 12, -24, 0)
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=1067169919]
+visible = false
 texture_filter = 1
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_0hcq6")
