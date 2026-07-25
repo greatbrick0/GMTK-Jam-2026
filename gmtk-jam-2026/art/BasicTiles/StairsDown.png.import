@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lg56ersdb662"
-path="res://.godot/imported/MountainBackground.png-56b7d1d5204d501bbb4062f416693d8a.ctex"
+uid="uid://bpnlbsputnuq6"
+path="res://.godot/imported/StairsDown.png-3a272d76778fe5e2d5fe7964af6de85d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MountainBackground.png"
-dest_files=["res://.godot/imported/MountainBackground.png-56b7d1d5204d501bbb4062f416693d8a.ctex"]
+source_file="res://art/BasicTiles/StairsDown.png"
+dest_files=["res://.godot/imported/StairsDown.png-3a272d76778fe5e2d5fe7964af6de85d.ctex"]
 
 [params]
 

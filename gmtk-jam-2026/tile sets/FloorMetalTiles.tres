@@ -1,9 +1,10 @@
 [gd_resource type="TileSet" format=3 uid="uid://bs0w7ya46nrp5"]
 
-[ext_resource type="Texture2D" uid="uid://xf0ujb2vhavc" path="res://Art/BasicTiles/BasicCubeVariety.png" id="1_1xw58"]
+[ext_resource type="Texture2D" uid="uid://xf0ujb2vhavc" path="res://art/BasicTiles/BasicCubeVariety.png" id="1_bw2hk"]
+[ext_resource type="Texture2D" uid="uid://bpnlbsputnuq6" path="res://art/BasicTiles/StairsDown.png" id="2_0u6oe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hrmgh"]
-texture = ExtResource("1_1xw58")
+texture = ExtResource("1_bw2hk")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
@@ -32,8 +33,17 @@ texture_region_size = Vector2i(32, 32)
 6:1/0 = 0
 6:1/0/texture_origin = Vector2i(0, -8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0u6oe"]
+texture = ExtResource("2_0u6oe")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -8)
+
 [resource]
 tile_shape = 1
 tile_size = Vector2i(32, 16)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hrmgh")
+sources/1 = SubResource("TileSetAtlasSource_0u6oe")

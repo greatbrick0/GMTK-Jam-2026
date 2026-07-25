@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btxstqqus3vl"]
 
-[ext_resource type="Shader" uid="uid://x6yxyt82c7wu" path="res://Art/Shaders/Galaxy.gdshader" id="1_p76iq"]
-[ext_resource type="Texture2D" uid="uid://lg56ersdb662" path="res://Art/MountainBackground.png" id="2_vg761"]
+[ext_resource type="Shader" uid="uid://x6yxyt82c7wu" path="res://art/Shaders/Galaxy.gdshader" id="1_p76iq"]
+[ext_resource type="Texture2D" uid="uid://lg56ersdb662" path="res://art/MountainBackground.png" id="2_vg761"]
 
 [sub_resource type="Gradient" id="Gradient_vg761"]
 offsets = PackedFloat32Array(0, 0.23134328, 0.5, 0.79850745, 0.9925373)

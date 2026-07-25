@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://bcdsswi4qb3gy"]
 
-[ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://Scripts/level.gd" id="1_af08h"]
+[ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://scripts/level.gd" id="1_af08h"]
 [ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="2_e15ey"]
 [ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://tile sets/WallMetalTiles.tres" id="3_0eag8"]
-[ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://Scenes/portal.tscn" id="4_lw1am"]
-[ext_resource type="PackedScene" uid="uid://dgpblaqo20k27" path="res://Scenes/gate.tscn" id="5_lw1am"]
-[ext_resource type="PackedScene" uid="uid://cbn71gsebkvvj" path="res://Scenes/lever.tscn" id="6_pwot8"]
-[ext_resource type="Script" uid="uid://dtfua7hyp65t3" path="res://Scripts/communicator.gd" id="7_n3kmf"]
+[ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/portal.tscn" id="4_lw1am"]
+[ext_resource type="PackedScene" uid="uid://dgpblaqo20k27" path="res://scenes/gate.tscn" id="5_lw1am"]
+[ext_resource type="PackedScene" uid="uid://cbn71gsebkvvj" path="res://scenes/lever.tscn" id="6_pwot8"]
+[ext_resource type="Script" uid="uid://dtfua7hyp65t3" path="res://scripts/communicator.gd" id="7_n3kmf"]
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
