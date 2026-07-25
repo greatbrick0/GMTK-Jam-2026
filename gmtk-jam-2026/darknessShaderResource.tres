@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://j16unnqlvty"]
+
+[ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://art/Shaders/ViewportMasking.gdshader" id="1_l155i"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x3wgy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3smsa"]
+viewport_path = NodePath("MainViewport")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_l155i")
+shader_parameter/lightMask = SubResource("ViewportTexture_x3wgy")
+shader_parameter/unlitVisuals = SubResource("ViewportTexture_3smsa")
+shader_parameter/darknessColour = Color(0.13333334, 0.1254902, 0.20392157, 1)
