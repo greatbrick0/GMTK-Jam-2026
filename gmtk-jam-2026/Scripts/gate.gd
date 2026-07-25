@@ -13,7 +13,7 @@ func _ready():
 	Reset()
 
 func Activate(newValue: bool) -> void:
-	if(not inverted and newValue):
+	if((not inverted) == newValue):
 		spriteRef.play("default")
 	else:
 		spriteRef.play_backwards("default")
