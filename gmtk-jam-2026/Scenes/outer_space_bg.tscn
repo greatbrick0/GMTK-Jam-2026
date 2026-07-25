@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://btxstqqus3vl"]
+
+[ext_resource type="Shader" uid="uid://x6yxyt82c7wu" path="res://Art/Shaders/Galaxy.gdshader" id="1_p76iq"]
+[ext_resource type="Texture2D" uid="uid://lg56ersdb662" path="res://Art/MountainBackground.png" id="2_vg761"]
+
+[sub_resource type="Gradient" id="Gradient_vg761"]
+offsets = PackedFloat32Array(0, 0.23134328, 0.5, 0.79850745, 0.9925373)
+colors = PackedColorArray(0.106246375, 0.15453601, 0.21790585, 1, 0.21071655, 0.20716196, 0.27424443, 1, 0.22549021, 0.2503096, 0.33085656, 1, 0.30588236, 0.28627452, 0.3647059, 1, 0.5592633, 0.4590515, 0.4445074, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1pron"]
+gradient = SubResource("Gradient_vg761")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vg761"]
+shader = ExtResource("1_p76iq")
+shader_parameter/perlinScale = 16.0
+shader_parameter/scrollMod = Vector2(-0.2, -0.4)
+shader_parameter/pixelScale = 64
+shader_parameter/gradientSteps = 7
+shader_parameter/gradientStrength = 0.5210000247475
+shader_parameter/spaceLargeGradient = SubResource("GradientTexture1D_1pron")
+
+[node name="OuterSpaceBg" type="Node2D" unique_id=1358639487]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1362639461]
+material = SubResource("ShaderMaterial_vg761")
+position = Vector2(-3, 14)
+scale = Vector2(2.6953125, 2.6953127)
+texture = ExtResource("2_vg761")
