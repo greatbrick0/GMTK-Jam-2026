@@ -6,8 +6,10 @@ class_name World
 var playerRef: Player
 var levelRef: Level
 
+@export var startLevel: String = "res://scenes/Levels/open_level.tscn"
+
 func _ready() -> void:
-	SpawnLevelFromPath("res://scenes/Levels/open_level.tscn", false)
+	SpawnLevelFromPath(startLevel, false)
 
 func SpawnLevelFromPacked(newLevel: PackedScene, appended: bool) -> void:
 	InitializeLevel(newLevel.instantiate(), appended)
@@ -43,7 +45,7 @@ func SpawnPlayer(resetPos: bool) -> void:
 		playerRef.global_position = Vector2.ZERO
 
 func ResetWorld() -> void:
-	SpawnLevelFromPath("res://scenes/open_level.tscn", false)
+	SpawnLevelFromPath(startLevel, false)
 	for ii in get_tree().get_nodes_in_group("Resetable"):
 		ii.Reset()
 
