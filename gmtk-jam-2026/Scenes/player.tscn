@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_tuyoq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
-viewport_path = NodePath("MainViewport")
+viewport_path = NodePath("CameraResults/MainViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8erm5"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("CameraResults/SubViewport")
 
 [node name="Player" type="CharacterBody2D" unique_id=706144404 groups=["Player"]]
 motion_mode = 1
@@ -30,6 +30,14 @@ collision_mask = 4
 position = Vector2(0, 16)
 polygon = PackedVector2Array(0, -18, 26, -5, 26, 5, 0, 18, -26, 5, -26, -5)
 
+[node name="DrillArea" type="Area2D" parent="." unique_id=1102761864]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DrillArea" unique_id=971245845]
+position = Vector2(0, 16)
+polygon = PackedVector2Array(0, -18, 26, -5, 26, 5, 0, 18, -26, 5, -26, -5)
+
 [node name="PlayerVisual" type="Sprite2D" parent="." unique_id=1884018846]
 texture_filter = 1
 position = Vector2(0, 3)
@@ -44,23 +52,35 @@ followOffset = Vector2(0, 13)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1876150761]
 zoom = Vector2(4, 4)
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=224833150]
+[node name="CameraResults" type="Node" parent="." unique_id=729252598]
+
+[node name="MainViewport" type="SubViewport" parent="CameraResults" unique_id=262345934]
+canvas_cull_mask = 4294966273
+size = Vector2i(1920, 1080)
+script = ExtResource("4_vgqql")
+
+[node name="Camera2D" type="Camera2D" parent="CameraResults/MainViewport" unique_id=2055914082 node_paths=PackedStringArray("trackedObject")]
+zoom = Vector2(4, 4)
+script = ExtResource("5_fkybt")
+trackedObject = NodePath("../../../Camera2D")
+
+[node name="SubViewport" type="SubViewport" parent="CameraResults" unique_id=224833150]
 canvas_cull_mask = 4294967282
 size = Vector2i(1920, 1080)
 script = ExtResource("4_vgqql")
 
-[node name="CameraLight" type="Camera2D" parent="SubViewport" unique_id=1004545125 node_paths=PackedStringArray("trackedObject")]
+[node name="CameraLight" type="Camera2D" parent="CameraResults/SubViewport" unique_id=1004545125 node_paths=PackedStringArray("trackedObject")]
 light_mask = 2
 visibility_layer = 2
 scale = Vector2(4, 4)
 zoom = Vector2(4, 4)
 script = ExtResource("5_fkybt")
-trackedObject = NodePath("../../Camera2D")
+trackedObject = NodePath("../../../Camera2D")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=946636180]
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraResults/SubViewport" unique_id=946636180]
 layer = -5
 
-[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer" unique_id=154958165]
+[node name="ColorRect" type="ColorRect" parent="CameraResults/SubViewport/CanvasLayer" unique_id=154958165]
 visibility_layer = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,30 +89,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MainViewport" type="SubViewport" parent="." unique_id=262345934]
-canvas_cull_mask = 4294966273
-size = Vector2i(1920, 1080)
-script = ExtResource("4_vgqql")
-
-[node name="Camera2D" type="Camera2D" parent="MainViewport" unique_id=2055914082 node_paths=PackedStringArray("trackedObject")]
-zoom = Vector2(4, 4)
-script = ExtResource("5_fkybt")
-trackedObject = NodePath("../../Camera2D")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356136265]
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraResults" unique_id=356136265]
 layer = -1
 
-[node name="WhatTheCameraSees" type="Sprite2D" parent="CanvasLayer" unique_id=749374517]
+[node name="WhatTheCameraSees" type="Sprite2D" parent="CameraResults/CanvasLayer" unique_id=749374517]
 light_mask = 8
 visibility_layer = 8
 z_index = 2
 texture = SubResource("ViewportTexture_6t5aa")
 centered = false
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1326293352]
+[node name="CanvasLayer2" type="CanvasLayer" parent="CameraResults" unique_id=1326293352]
 layer = 0
 
-[node name="LightResult" type="Sprite2D" parent="CanvasLayer2" unique_id=733234122]
+[node name="LightResult" type="Sprite2D" parent="CameraResults/CanvasLayer2" unique_id=733234122]
 light_mask = 8
 visibility_layer = 8
 z_index = 1

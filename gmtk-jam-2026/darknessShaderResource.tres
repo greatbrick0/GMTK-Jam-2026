@@ -3,10 +3,10 @@
 [ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://art/Shaders/ViewportMasking.gdshader" id="1_l155i"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_x3wgy"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("CameraResults/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3smsa"]
-viewport_path = NodePath("MainViewport")
+viewport_path = NodePath("CameraResults/MainViewport")
 
 [resource]
 resource_local_to_scene = true
