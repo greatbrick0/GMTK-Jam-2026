@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://j16unnqlvty"]
 
-[ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://art/Shaders/ViewportMasking.gdshader" id="1_l155i"]
+[ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://Art/Shaders/ViewportMasking.gdshader" id="1_l155i"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_x3wgy"]
 viewport_path = NodePath("SubViewport")

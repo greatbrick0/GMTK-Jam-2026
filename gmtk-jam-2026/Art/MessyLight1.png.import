@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck8qcl8nrqwm"
-path="res://.godot/imported/MessyLight1.png-1052df56f80cc78af3614dd9a6ea2378.ctex"
+path="res://.godot/imported/MessyLight1.png-9559607238629b5657dd4cf7e7afd922.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MessyLight1.png"
-dest_files=["res://.godot/imported/MessyLight1.png-1052df56f80cc78af3614dd9a6ea2378.ctex"]
+source_file="res://Art/MessyLight1.png"
+dest_files=["res://.godot/imported/MessyLight1.png-9559607238629b5657dd4cf7e7afd922.ctex"]
 
 [params]
 

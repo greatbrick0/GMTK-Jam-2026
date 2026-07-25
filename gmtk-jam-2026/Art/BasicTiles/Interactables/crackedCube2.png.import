@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpe64xsbf4ho2"
-path="res://.godot/imported/crackedCube2.png-04536d7e4fbc7aa72f51a5fe1deb1b9c.ctex"
+path="res://.godot/imported/crackedCube2.png-607e4d870a0335632ba9b0598a2d2a38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/BasicTiles/Interactables/crackedCube2.png"
-dest_files=["res://.godot/imported/crackedCube2.png-04536d7e4fbc7aa72f51a5fe1deb1b9c.ctex"]
+source_file="res://Art/BasicTiles/Interactables/crackedCube2.png"
+dest_files=["res://.godot/imported/crackedCube2.png-607e4d870a0335632ba9b0598a2d2a38.ctex"]
 
 [params]
 

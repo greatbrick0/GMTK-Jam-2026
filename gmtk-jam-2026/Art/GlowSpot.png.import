@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p142ho2k6my4"
-path="res://.godot/imported/GlowSpot.png-ef3763eab7e9e653601827f82b0abbda.ctex"
+path="res://.godot/imported/GlowSpot.png-25a3afe77564906728ceae1bbf03cf72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/GlowSpot.png"
-dest_files=["res://.godot/imported/GlowSpot.png-ef3763eab7e9e653601827f82b0abbda.ctex"]
+source_file="res://Art/GlowSpot.png"
+dest_files=["res://.godot/imported/GlowSpot.png-25a3afe77564906728ceae1bbf03cf72.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bfwl5fi230vcx"]
 
-[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://art/Units/StaticCharacter.png" id="2_cvnsp"]
-[ext_resource type="Script" uid="uid://sgruy0h7ltl3" path="res://scripts/light_viewport.gd" id="4_vgqql"]
-[ext_resource type="Script" uid="uid://ds5fpuv7uuwom" path="res://scripts/track_position.gd" id="5_fkybt"]
+[ext_resource type="Script" uid="uid://cffum3rwndea1" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://Art/Units/StaticCharacter.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://sgruy0h7ltl3" path="res://Scripts/light_viewport.gd" id="4_vgqql"]
+[ext_resource type="Script" uid="uid://ds5fpuv7uuwom" path="res://Scripts/track_position.gd" id="5_fkybt"]
 [ext_resource type="Material" uid="uid://j16unnqlvty" path="res://darknessShaderResource.tres" id="6_fjrip"]
-[ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://Scenes/common_light.tscn" id="6_tuyoq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
 viewport_path = NodePath("MainViewport")
