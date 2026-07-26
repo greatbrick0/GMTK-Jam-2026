@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7o2s8g4eac84" path="res://art/icon.svg" id="7_u7jep"]
 [ext_resource type="Script" uid="uid://dtfua7hyp65t3" path="res://scripts/communicator.gd" id="8_1wbr2"]
 [ext_resource type="PackedScene" uid="uid://cbn71gsebkvvj" path="res://scenes/Elements/lever.tscn" id="9_82bfl"]
+[ext_resource type="PackedScene" uid="uid://cem7hiw3xruml" path="res://scenes/Elements/recharge_station.tscn" id="11_82bfl"]
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
@@ -33,13 +34,13 @@ tile_set = ExtResource("2_ctj05")
 
 [node name="TileMapLayer(floor)" type="TileMapLayer" parent="." unique_id=2063257103]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9//n/AAADAAAAAAD/////AAADAAEAAAD//wAAAAADAAEAAAD///7/AAADAAEAAAD///3/AAADAAAAAAAAAP7/AAADAAEAAAAAAAAAAAADAAEAAAD//wEAAAAAAAAAAAAAAP//AAACAAAAAAD+////AAAAAAAAAAD+//7/AAABAAAAAAD+//3/AAAAAAAAAAD///z/AAACAAAAAAD+//v/AAACAAAAAAD+//z/AAABAAAAAAD9//3/AAACAAAAAAD9//z/AAADAAEAAAD9//v/AAADAAAAAAD+//r/AAAAAAAAAAD9//r/AAAAAAAAAAD8//v/AAADAAAAAAD8//r/AAABAAAAAAD8//n/AAAAAAAAAAD9//j/AAADAAEAAAD8//f/AAAAAAAAAAD8//j/AAAAAAAAAAD7//n/AAABAAAAAAD7//j/AAABAAAAAAD7//f/AAACAAAAAAD8//b/AAACAAAAAAD+/wAAAAADAAAAAAD+/wEAAAABAAAAAAD//wIAAAABAAAAAAD+/wMAAAADAAAAAAD+/wQAAAADAAEAAAD9/wMAAAADAAEAAAD9/wIAAAADAAAAAAD9/wQAAAADAAAAAAD9/wUAAAADAAAAAAD+/wIAAAAAAAAAAAD+/wYAAAACAAAAAAD+/wUAAAADAAEAAAD//wQAAAADAAAAAAD//wUAAAADAAEAAAD//wYAAAACAAAAAAD+/wcAAAADAAEAAAD//wgAAAABAAAAAAD//wcAAAADAAAAAAAAAAYAAAADAAEAAAAAAAgAAAADAAEAAAD//wkAAAAAAAAAAAAAAAkAAAADAAAAAAABAAgAAAADAAEAAAAAAAcAAAADAAEAAAAAAAoAAAADAAAAAAAAAAsAAAABAAAAAAABAAoAAAADAAAAAAABAAkAAAADAAEAAAABAAYAAAABAAAAAAABAAUAAAADAAAAAAACAAYAAAADAAAAAAACAAcAAAAAAAAAAAABAAcAAAADAAEAAAACAAUAAAABAAAAAAACAAgAAAADAAAAAAADAAYAAAACAAAAAAACAAQAAAACAAAAAAACAAkAAAADAAAAAAADAAgAAAADAAAAAAADAAcAAAADAAEAAAAEAAgAAAABAAAAAAAEAAkAAAABAAAAAAAEAAoAAAACAAAAAAAEAAsAAAADAAEAAAAEAAwAAAADAAAAAAADAAsAAAADAAAAAAADAAoAAAACAAAAAAADAAkAAAABAAAAAAAFAAoAAAACAAAAAAACAA8AAAADAAEAAAACABAAAAADAAEAAAACAA4AAAADAAEAAAACAA0AAAAAAAAAAAADAAwAAAAAAAAAAAADAA0AAAADAAEAAAADAA4AAAACAAAAAAABAA8AAAACAAAAAAABABAAAAADAAAAAAABABEAAAADAAAAAAAAABMAAAABAAAAAAAAABIAAAACAAAAAAAAABEAAAADAAEAAAABABIAAAABAAAAAAAAABQAAAABAAAAAAD//xMAAAADAAEAAAAAAP3/AAADAAEAAAAAAPz/AAABAAAAAAAAAPv/AAABAAAAAAABAPz/AAADAAAAAAABAP3/AAADAAAAAAABAP7/AAABAAAAAAABAPv/AAABAAAAAAABAPr/AAABAAAAAAACAPz/AAADAAEAAAD6//f/AAAAAAAAAAD7//b/AAAAAAAAAAD7//X/AAAAAAAAAAD7//T/AAAAAAAAAAD6//X/AAAAAAAAAAD6//T/AAAAAAAAAAD6//P/AAAAAAAAAAD5//X/AAAAAAAAAAD5//T/AAAAAAAAAAD5//P/AAAAAAAAAAD6//b/AAAAAAAAAAD5//L/AAAAAAAAAAD4//P/AAAAAAAAAAD4//L/AAAAAAAAAAD3//H/AAAAAAAAAAD4//D/AAAAAAAAAAD4//H/AAAAAAAAAAD3/+//AAAAAAAAAAD3//D/AAAAAAAAAAD2/+//AAAAAAAAAAD3/+7/AAAAAAAAAAD5/+z/AAABAAAAAAD6//7/AAADAAAAAAD5/w8AAAAAAAAAAAAEAAAAAAAAAAAAAAD///X/AAABAAAAAAADAPP/AAAAAAAAAAAFABcAAAAAAAAAAAAHAAoAAAAAAAAAAAAFAPv/AAACAAAAAAAEAAcAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAHAAIAAAAAAAAAAAAGAAEAAAADAAAAAAAEAAUAAAADAAAAAAACABIAAAAAAAAAAAABABMAAAAAAAAAAAABABQAAAAAAAAAAAAAABUAAAAAAAAAAAAAABYAAAAAAAAAAAABABYAAAAAAAAAAAABABcAAAAAAAAAAAACABYAAAAAAAAAAAACABUAAAAAAAAAAAADABQAAAAAAAAAAAACABMAAAAAAAAAAAACABQAAAAAAAAAAAABABUAAAAAAAAAAAD3//b/AAABAAAAAAD3//X/AAACAAAAAAD3//T/AAADAAEAAAD3//P/AAACAAAAAAD4//T/AAADAAEAAAD2//X/AAADAAEAAAD2//f/AAADAAEAAAD1//n/AAADAAEAAAD2//j/AAAAAAAAAAD1//f/AAADAAEAAAD2//b/AAADAAAAAAD1//j/AAABAAAAAAD2//T/AAACAAAAAAD1//P/AAACAAAAAAD1//T/AAAAAAAAAAD0//P/AAACAAAAAAD1//L/AAABAAAAAAD0//H/AAADAAEAAAD0//L/AAACAAAAAADz//H/AAACAAAAAAD0//D/AAADAAEAAADz//D/AAABAAAAAADz/+//AAADAAEAAADz/+7/AAACAAAAAADy/+//AAADAAAAAAD1//X/AAADAAEAAAD0//n/AAAAAAAAAAD1//r/AAAAAAAAAAD0//v/AAAAAAAAAAD0//r/AAAAAAAAAADz//n/AAAAAAAAAAD0//j/AAAAAAAAAADz//f/AAAAAAAAAADz//j/AAAAAAAAAADy//f/AAAAAAAAAADz//b/AAAAAAAAAADz//v/AAAAAAAAAAD0//z/AAAAAAAAAADz//3/AAAAAAAAAADz//7/AAAAAAAAAADy//3/AAAAAAAAAADz//z/AAAAAAAAAADy////AAAAAAAAAADy//7/AAAAAAAAAADy//z/AAAAAAAAAADx//v/AAAAAAAAAADx//r/AAAAAAAAAADw//v/AAAAAAAAAADx//z/AAAAAAAAAADx//3/AAAAAAAAAAD0//7/AAAAAAAAAAD0//3/AAAAAAAAAAD1//7/AAAAAAAAAAD0////AAAAAAAAAAD1/wAAAAAAAAAAAAD1////AAAAAAAAAAD2/wAAAAAAAAAAAAD2////AAAAAAAAAAD2//7/AAAAAAAAAAD1/wEAAAAAAAAAAAD2//3/AAAAAAAAAAD3//7/AAAAAAAAAAD3//3/AAAAAAAAAAD3//z/AAAAAAAAAAD4//z/AAAAAAAAAAD3//v/AAAAAAAAAAD4//r/AAAAAAAAAAD4//v/AAAAAAAAAAD4//n/AAAAAAAAAAD4//j/AAAAAAAAAAD3//f/AAAAAAAAAAD3//j/AAAAAAAAAAD3//n/AAAAAAAAAAD5//r/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//n/AAADAAAAAAD/////AAADAAEAAAD//wAAAAADAAEAAAD///7/AAADAAEAAAD///3/AAADAAAAAAAAAP7/AAADAAEAAAAAAAAAAAADAAEAAAD//wEAAAAAAAAAAAAAAP//AAACAAAAAAD+////AAAAAAAAAAD+//7/AAABAAAAAAD+//3/AAAAAAAAAAD///z/AAACAAAAAAD+//v/AAACAAAAAAD+//z/AAABAAAAAAD9//3/AAACAAAAAAD9//z/AAADAAEAAAD9//v/AAADAAAAAAD+//r/AAAAAAAAAAD9//r/AAAAAAAAAAD8//v/AAADAAAAAAD8//r/AAABAAAAAAD8//n/AAAAAAAAAAD9//j/AAADAAEAAAD8//f/AAAAAAAAAAD8//j/AAAAAAAAAAD7//n/AAABAAAAAAD7//j/AAABAAAAAAD7//f/AAACAAAAAAD8//b/AAACAAAAAAD+/wAAAAADAAAAAAD+/wEAAAABAAAAAAD//wIAAAABAAAAAAD+/wMAAAADAAAAAAD+/wQAAAADAAEAAAD9/wMAAAADAAEAAAD9/wIAAAADAAAAAAD9/wQAAAADAAAAAAD9/wUAAAADAAAAAAD+/wIAAAAAAAAAAAD+/wYAAAACAAAAAAD+/wUAAAADAAEAAAD//wQAAAADAAAAAAD//wUAAAADAAEAAAD//wYAAAACAAAAAAD+/wcAAAADAAEAAAD//wgAAAABAAAAAAD//wcAAAADAAAAAAAAAAYAAAADAAEAAAAAAAgAAAADAAEAAAD//wkAAAAAAAAAAAAAAAkAAAADAAAAAAABAAgAAAADAAEAAAAAAAcAAAADAAEAAAAAAAoAAAADAAAAAAAAAAsAAAABAAAAAAABAAoAAAADAAAAAAABAAkAAAADAAEAAAABAAYAAAABAAAAAAABAAUAAAADAAAAAAACAAYAAAADAAAAAAACAAcAAAAAAAAAAAABAAcAAAADAAEAAAACAAUAAAABAAAAAAACAAgAAAADAAAAAAADAAYAAAACAAAAAAACAAQAAAACAAAAAAACAAkAAAADAAAAAAADAAgAAAADAAAAAAADAAcAAAADAAEAAAAEAAgAAAABAAAAAAAEAAkAAAABAAAAAAAEAAoAAAACAAAAAAAEAAsAAAADAAEAAAAEAAwAAAADAAAAAAADAAsAAAADAAAAAAADAAoAAAACAAAAAAADAAkAAAABAAAAAAAFAAoAAAACAAAAAAACAA8AAAADAAEAAAACABAAAAADAAEAAAACAA4AAAADAAEAAAACAA0AAAAAAAAAAAADAAwAAAAAAAAAAAADAA0AAAADAAEAAAADAA4AAAACAAAAAAABAA8AAAACAAAAAAABABAAAAADAAAAAAABABEAAAADAAAAAAAAABMAAAABAAAAAAAAABIAAAACAAAAAAAAABEAAAADAAEAAAABABIAAAABAAAAAAAAABQAAAABAAAAAAD//xMAAAADAAEAAAAAAP3/AAADAAEAAAAAAPz/AAABAAAAAAAAAPv/AAABAAAAAAABAPz/AAADAAAAAAABAP3/AAADAAAAAAABAP7/AAABAAAAAAABAPv/AAABAAAAAAABAPr/AAABAAAAAAACAPz/AAADAAEAAAD6//f/AAAAAAAAAAD7//b/AAAAAAAAAAD7//X/AAAAAAAAAAD7//T/AAAAAAAAAAD6//X/AAAAAAAAAAD6//T/AAAAAAAAAAD6//P/AAAAAAAAAAD5//X/AAAAAAAAAAD5//T/AAAAAAAAAAD5//P/AAAAAAAAAAD6//b/AAAAAAAAAAD5//L/AAAAAAAAAAD4//P/AAAAAAAAAAD4//L/AAAAAAAAAAD3//H/AAAAAAAAAAD4//D/AAAAAAAAAAD4//H/AAAAAAAAAAD3/+//AAAAAAAAAAD3//D/AAAAAAAAAAD2/+//AAAAAAAAAAD3/+7/AAAAAAAAAAD5/+z/AAABAAAAAAD6//7/AAADAAAAAAD5/w8AAAAAAAAAAAAEAAAAAAAAAAAAAAD///X/AAABAAAAAAADAPP/AAAAAAAAAAAFABcAAAAAAAAAAAAHAAoAAAAAAAAAAAAFAPv/AAACAAAAAAAEAAcAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAABAAAAAAAGAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAIAAAADAAAAAAAGAAMAAAADAAAAAAAHAAIAAAAAAAAAAAAGAAEAAAADAAAAAAAEAAUAAAADAAAAAAACABIAAAAAAAAAAAABABMAAAAAAAAAAAABABQAAAAAAAAAAAAAABUAAAAAAAAAAAAAABYAAAAAAAAAAAABABYAAAAAAAAAAAABABcAAAAAAAAAAAACABYAAAAAAAAAAAACABUAAAAAAAAAAAADABQAAAAAAAAAAAACABMAAAAAAAAAAAACABQAAAAAAAAAAAABABUAAAAAAAAAAAD3//b/AAABAAAAAAD3//X/AAACAAAAAAD3//T/AAADAAEAAAD3//P/AAACAAAAAAD4//T/AAADAAEAAAD2//X/AAADAAEAAAD2//f/AAADAAEAAAD1//n/AAADAAEAAAD2//j/AAAAAAAAAAD1//f/AAADAAEAAAD2//b/AAADAAAAAAD1//j/AAABAAAAAAD2//T/AAACAAAAAAD1//P/AAACAAAAAAD1//T/AAAAAAAAAAD0//P/AAACAAAAAAD1//L/AAABAAAAAAD0//H/AAADAAEAAAD0//L/AAACAAAAAADz//H/AAACAAAAAAD0//D/AAADAAEAAADz//D/AAABAAAAAADz/+//AAADAAEAAADz/+7/AAACAAAAAADy/+//AAADAAAAAAD1//X/AAADAAEAAAD0//n/AAAAAAAAAAD1//r/AAAAAAAAAAD0//v/AAAAAAAAAAD0//r/AAAAAAAAAADz//n/AAAAAAAAAAD0//j/AAAAAAAAAADz//f/AAAAAAAAAADz//j/AAAAAAAAAADy//f/AAAAAAAAAADz//b/AAAAAAAAAADz//v/AAAAAAAAAAD0//z/AAAAAAAAAADz//3/AAAAAAAAAADz//7/AAAAAAAAAADy//3/AAAAAAAAAADz//z/AAAAAAAAAADy////AAAAAAAAAADy//7/AAAAAAAAAADy//z/AAAAAAAAAADx//v/AAAAAAAAAADx//r/AAAAAAAAAADw//v/AAAAAAAAAADx//z/AAAAAAAAAADx//3/AAAAAAAAAAD0//7/AAAAAAAAAAD0//3/AAAAAAAAAAD1//7/AAAAAAAAAAD0////AAAAAAAAAAD1/wAAAAAAAAAAAAD1////AAAAAAAAAAD2/wAAAAAAAAAAAAD2////AAAAAAAAAAD2//7/AAAAAAAAAAD1/wEAAAAAAAAAAAD2//3/AAAAAAAAAAD3//7/AAAAAAAAAAD3//3/AAAAAAAAAAD3//z/AAAAAAAAAAD4//z/AAAAAAAAAAD3//v/AAAAAAAAAAD4//r/AAAAAAAAAAD4//v/AAAAAAAAAAD4//n/AAAAAAAAAAD4//j/AAAAAAAAAAD3//f/AAAAAAAAAAD3//j/AAAAAAAAAAD3//n/AAAAAAAAAAD5//r/AAAAAAAAAADw//X/AAACAAAAAAD1/wUAAAAGAAAAAAD3/wAAAAAAAAAAAAD3////AAAAAAAAAAD4//7/AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAAAAAD3/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAA=")
 tile_set = ExtResource("2_ctj05")
 
 [node name="TileMapLayer2(walls)" type="TileMapLayer" parent="." unique_id=365772771]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAABAPn/AQAFAAAAAAD2/+//AgACAAAAAAD9/wIAAgAEAAAAAAD5/+z/AgAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAPn/AQAFAAAAAAD2/+//AgACAAAAAAD9/wIAAgAEAAAAAAD5/+z/AgAEAAAAAADw//X/AgAEAAAAAAD1/wUAAgAEAAAAAAA=")
 tile_set = ExtResource("3_jecag")
 
 [node name="portal_entrance" parent="TileMapLayer2(walls)" unique_id=1997146595 instance=ExtResource("4_1wbr2")]
@@ -48,7 +49,7 @@ returnUp = true
 exitPosition = Vector2(-279, 137)
 
 [node name="FragileRock" parent="TileMapLayer2(walls)" unique_id=1843752984 instance=ExtResource("5_82bfl")]
-position = Vector2(-80, -71)
+position = Vector2(-144, -104)
 
 [node name="FragileRock5" parent="TileMapLayer2(walls)" unique_id=454120021 instance=ExtResource("5_82bfl")]
 position = Vector2(128, -112)
@@ -68,226 +69,265 @@ position = Vector2(-176, -24)
 position = Vector2(-192, 112)
 
 [node name="FragileRock2" parent="TileMapLayer2(walls)" unique_id=1688677405 instance=ExtResource("5_82bfl")]
-position = Vector2(-96, -62)
-
-[node name="FragileRock3" parent="TileMapLayer2(walls)" unique_id=1909386755 instance=ExtResource("5_82bfl")]
-position = Vector2(-112, -54)
+position = Vector2(-160, -95)
 
 [node name="FragileRock4" parent="TileMapLayer2(walls)" unique_id=509892140 instance=ExtResource("5_82bfl")]
-position = Vector2(-112, -54)
+position = Vector2(-176, -87)
 spriteIndex = 1
 
-[node name="Light3" parent="." unique_id=269814053 instance=ExtResource("6_3nnp6")]
+[node name="FragileRock3" parent="TileMapLayer2(walls)" unique_id=860869423 instance=ExtResource("5_82bfl")]
+position = Vector2(-128, -96)
+
+[node name="FragileRock10" parent="TileMapLayer2(walls)" unique_id=216032434 instance=ExtResource("5_82bfl")]
+position = Vector2(-144, -87)
+
+[node name="FragileRock11" parent="TileMapLayer2(walls)" unique_id=1793814392 instance=ExtResource("5_82bfl")]
+position = Vector2(-160, -79)
+spriteIndex = 1
+
+[node name="FragileRock12" parent="TileMapLayer2(walls)" unique_id=1349348356 instance=ExtResource("5_82bfl")]
+position = Vector2(-112, -88)
+
+[node name="FragileRock13" parent="TileMapLayer2(walls)" unique_id=278243627 instance=ExtResource("5_82bfl")]
+position = Vector2(-128, -79)
+
+[node name="FragileRock14" parent="TileMapLayer2(walls)" unique_id=414695029 instance=ExtResource("5_82bfl")]
+position = Vector2(-144, -71)
+spriteIndex = 1
+
+[node name="FragileRock15" parent="TileMapLayer2(walls)" unique_id=953835241 instance=ExtResource("5_82bfl")]
+position = Vector2(-96, -80)
+
+[node name="FragileRock16" parent="TileMapLayer2(walls)" unique_id=1280221762 instance=ExtResource("5_82bfl")]
+position = Vector2(-112, -71)
+
+[node name="FragileRock17" parent="TileMapLayer2(walls)" unique_id=599386661 instance=ExtResource("5_82bfl")]
+position = Vector2(-128, -63)
+spriteIndex = 1
+
+[node name="FragileRock18" parent="TileMapLayer2(walls)" unique_id=1846444046 instance=ExtResource("5_82bfl")]
+position = Vector2(-80, -72)
+
+[node name="FragileRock19" parent="TileMapLayer2(walls)" unique_id=769990827 instance=ExtResource("5_82bfl")]
+position = Vector2(-96, -63)
+
+[node name="FragileRock20" parent="TileMapLayer2(walls)" unique_id=143019322 instance=ExtResource("5_82bfl")]
+position = Vector2(-112, -55)
+spriteIndex = 1
+
+[node name="FragileRock21" parent="TileMapLayer2(walls)" unique_id=1365994697 instance=ExtResource("5_82bfl")]
+position = Vector2(-64, -64)
+
+[node name="FragileRock22" parent="TileMapLayer2(walls)" unique_id=1923746876 instance=ExtResource("5_82bfl")]
+position = Vector2(-80, -55)
+
+[node name="FragileRock23" parent="TileMapLayer2(walls)" unique_id=477979383 instance=ExtResource("5_82bfl")]
+position = Vector2(-96, -47)
+spriteIndex = 1
+
+[node name="FragileRock24" parent="TileMapLayer2(walls)" unique_id=788284740 instance=ExtResource("5_82bfl")]
+position = Vector2(-48, -56)
+
+[node name="FragileRock25" parent="TileMapLayer2(walls)" unique_id=1095446722 instance=ExtResource("5_82bfl")]
+position = Vector2(-64, -47)
+
+[node name="FragileRock26" parent="TileMapLayer2(walls)" unique_id=437376931 instance=ExtResource("5_82bfl")]
+position = Vector2(-80, -39)
+spriteIndex = 1
+
+[node name="RechargeStation" parent="TileMapLayer2(walls)" unique_id=317752275 instance=ExtResource("11_82bfl")]
+position = Vector2(-239, 8)
+
+[node name="Light3" parent="TileMapLayer2(walls)" unique_id=269814053 instance=ExtResource("6_3nnp6")]
 visible = false
 position = Vector2(-79, 15)
 scale = Vector2(0.26, 0.13)
 
-[node name="Light4" parent="." unique_id=775139803 instance=ExtResource("6_3nnp6")]
+[node name="Light5" parent="TileMapLayer2(walls)" unique_id=1458714125 instance=ExtResource("6_3nnp6")]
+visible = false
+position = Vector2(-480, -86)
+scale = Vector2(0.26, 0.13)
+
+[node name="Light4" parent="TileMapLayer2(walls)" unique_id=775139803 instance=ExtResource("6_3nnp6")]
 visible = false
 position = Vector2(-208.00002, -159)
 
-[node name="Gate" parent="." unique_id=1159172279 instance=ExtResource("7_jecag")]
+[node name="Light6" parent="TileMapLayer2(walls)" unique_id=702293030 instance=ExtResource("6_3nnp6")]
+visible = false
+position = Vector2(-321, 39)
+
+[node name="Gate" parent="TileMapLayer2(walls)" unique_id=1159172279 instance=ExtResource("7_jecag")]
 position = Vector2(160, 27)
 
-[node name="Gate2" parent="." unique_id=1929919323 instance=ExtResource("7_jecag")]
+[node name="Gate2" parent="TileMapLayer2(walls)" unique_id=1929919323 instance=ExtResource("7_jecag")]
 position = Vector2(176, 35)
 spriteIndex = 1
 
-[node name="Gate3" parent="." unique_id=612356192 instance=ExtResource("7_jecag")]
+[node name="Gate3" parent="TileMapLayer2(walls)" unique_id=612356192 instance=ExtResource("7_jecag")]
 position = Vector2(145, 35)
 
-[node name="Gate4" parent="." unique_id=1610264618 instance=ExtResource("7_jecag")]
+[node name="Gate4" parent="TileMapLayer2(walls)" unique_id=1610264618 instance=ExtResource("7_jecag")]
 position = Vector2(161, 43)
 spriteIndex = 1
 
-[node name="Gate5" parent="." unique_id=572395088 instance=ExtResource("7_jecag")]
+[node name="Gate5" parent="TileMapLayer2(walls)" unique_id=572395088 instance=ExtResource("7_jecag")]
 position = Vector2(66, 106)
 inverted = true
 
-[node name="Gate6" parent="." unique_id=1877284832 instance=ExtResource("7_jecag")]
+[node name="Gate6" parent="TileMapLayer2(walls)" unique_id=1877284832 instance=ExtResource("7_jecag")]
 position = Vector2(82, 114)
 spriteIndex = 1
 inverted = true
 
-[node name="Lever" parent="." unique_id=1851138234 instance=ExtResource("9_82bfl")]
+[node name="Lever" parent="TileMapLayer2(walls)" unique_id=1851138234 instance=ExtResource("9_82bfl")]
 position = Vector2(83, 26)
 
-[node name="Lever2" parent="." unique_id=844906195 instance=ExtResource("9_82bfl")]
+[node name="Lever2" parent="TileMapLayer2(walls)" unique_id=844906195 instance=ExtResource("9_82bfl")]
 position = Vector2(65, 154)
 
-[node name="Level3_Communicator1" type="Node" parent="." unique_id=1849580535 node_paths=PackedStringArray("inputs", "outputs")]
+[node name="Level3_Communicator1" type="Node" parent="TileMapLayer2(walls)" unique_id=1849580535 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Lever")]
 outputs = [NodePath("../Gate3"), NodePath("../Gate4"), NodePath("../Gate5"), NodePath("../Gate6")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Communicator(ABand)" type="Node" parent="." unique_id=1410900953 node_paths=PackedStringArray("inputs")]
+[node name="Level3_Communicator(ABand)" type="Node" parent="TileMapLayer2(walls)" unique_id=1410900953 node_paths=PackedStringArray("inputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Lever"), NodePath("../Lever2")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Communicator(NotAnds)" type="Node" parent="." unique_id=2052210233 node_paths=PackedStringArray("inputs")]
+[node name="Level3_Communicator(NotAnds)" type="Node" parent="TileMapLayer2(walls)" unique_id=2052210233 node_paths=PackedStringArray("inputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Lever"), NodePath("../Lever2")]
 inputRequirement = 2
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Communicator(OR)" type="Node" parent="." unique_id=916667767 node_paths=PackedStringArray("inputs", "outputs")]
+[node name="Level3_Communicator(OR)" type="Node" parent="TileMapLayer2(walls)" unique_id=916667767 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Level3_Communicator(ABand)"), NodePath("../Level3_Communicator(NotAnds)")]
 inputRequirement = 1
 outputs = [NodePath("../Gate"), NodePath("../Gate2")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="GateChallenge1" parent="." unique_id=320271663 instance=ExtResource("7_jecag")]
-position = Vector2(-369, -126)
-spriteIndex = 2
+[node name="GateObs1" parent="TileMapLayer2(walls)" unique_id=911818609 instance=ExtResource("7_jecag")]
+position = Vector2(-334, -78)
 inverted = true
 
-[node name="GateChallenge2" parent="." unique_id=1543981319 instance=ExtResource("7_jecag")]
-position = Vector2(-353, -134)
-spriteIndex = 3
-inverted = true
-
-[node name="GateChallenge3" parent="." unique_id=1049551386 instance=ExtResource("7_jecag")]
-position = Vector2(-352, -117)
-spriteIndex = 2
-inverted = true
-
-[node name="GateChallenge4" parent="." unique_id=812467752 instance=ExtResource("7_jecag")]
-position = Vector2(-336, -125)
-spriteIndex = 3
-inverted = true
-
-[node name="GateChallenge5" parent="." unique_id=1427494399 instance=ExtResource("7_jecag")]
-position = Vector2(-335, -109)
-spriteIndex = 2
-inverted = true
-
-[node name="GateChallenge6" parent="." unique_id=1289636080 instance=ExtResource("7_jecag")]
-position = Vector2(-319, -117)
-spriteIndex = 3
-inverted = true
-
-[node name="GateObs1" parent="." unique_id=911818609 instance=ExtResource("7_jecag")]
-position = Vector2(-334, -77)
-
-[node name="GateObs2" parent="." unique_id=1440893871 instance=ExtResource("7_jecag")]
-position = Vector2(-318, -69)
+[node name="GateObs2" parent="TileMapLayer2(walls)" unique_id=1440893871 instance=ExtResource("7_jecag")]
+position = Vector2(-318, -70)
 spriteIndex = 1
+inverted = true
 
-[node name="GateObs3" parent="." unique_id=88212528 instance=ExtResource("7_jecag")]
+[node name="GateObs3" parent="TileMapLayer2(walls)" unique_id=88212528 instance=ExtResource("7_jecag")]
 position = Vector2(-448, -38)
 spriteIndex = 2
 inverted = true
 
-[node name="GateObs4" parent="." unique_id=349982455 instance=ExtResource("7_jecag")]
+[node name="GateObs4" parent="TileMapLayer2(walls)" unique_id=349982455 instance=ExtResource("7_jecag")]
 position = Vector2(-432, -46)
 spriteIndex = 3
 inverted = true
 
-[node name="GateObs5" parent="." unique_id=57936168 instance=ExtResource("7_jecag")]
+[node name="GateObs5" parent="TileMapLayer2(walls)" unique_id=57936168 instance=ExtResource("7_jecag")]
 position = Vector2(-257, -70)
 spriteIndex = 2
 
-[node name="GateObs6" parent="." unique_id=1204760925 instance=ExtResource("7_jecag")]
+[node name="GateObs6" parent="TileMapLayer2(walls)" unique_id=1204760925 instance=ExtResource("7_jecag")]
 position = Vector2(-241, -78)
 spriteIndex = 3
 
-[node name="Lever3" parent="." unique_id=990814662 instance=ExtResource("9_82bfl")]
+[node name="GateChallenge1" parent="TileMapLayer2(walls)" unique_id=125161674 instance=ExtResource("7_jecag")]
+position = Vector2(-366, -125)
+spriteIndex = 2
+inverted = true
+
+[node name="GateChallenge2" parent="TileMapLayer2(walls)" unique_id=609701448 instance=ExtResource("7_jecag")]
+position = Vector2(-350, -133)
+spriteIndex = 3
+inverted = true
+
+[node name="GateChallenge3" parent="TileMapLayer2(walls)" unique_id=709268886 instance=ExtResource("7_jecag")]
+position = Vector2(-351, -117)
+spriteIndex = 2
+
+[node name="GateChallenge4" parent="TileMapLayer2(walls)" unique_id=536234086 instance=ExtResource("7_jecag")]
+position = Vector2(-335, -125)
+spriteIndex = 3
+
+[node name="GateChallenge5" parent="TileMapLayer2(walls)" unique_id=1518830956 instance=ExtResource("7_jecag")]
+position = Vector2(-335, -109)
+spriteIndex = 2
+
+[node name="GateChallenge6" parent="TileMapLayer2(walls)" unique_id=2079551099 instance=ExtResource("7_jecag")]
+position = Vector2(-319, -117)
+spriteIndex = 3
+
+[node name="GateObs7" parent="TileMapLayer2(walls)" unique_id=1542321167 instance=ExtResource("7_jecag")]
+position = Vector2(-353, -21)
+spriteIndex = 2
+
+[node name="GateObs8" parent="TileMapLayer2(walls)" unique_id=616763248 instance=ExtResource("7_jecag")]
+position = Vector2(-337, -29)
+spriteIndex = 3
+
+[node name="Lever3" parent="TileMapLayer2(walls)" unique_id=990814662 instance=ExtResource("9_82bfl")]
 position = Vector2(-256, -142)
 
-[node name="Lever4" parent="." unique_id=1035879518 instance=ExtResource("9_82bfl")]
-position = Vector2(-399, -87)
+[node name="Lever4" parent="TileMapLayer2(walls)" unique_id=466831469 instance=ExtResource("9_82bfl")]
+position = Vector2(-400, -86)
 
-[node name="Lever5" parent="." unique_id=1381183170 instance=ExtResource("9_82bfl")]
+[node name="Lever5" parent="TileMapLayer2(walls)" unique_id=1381183170 instance=ExtResource("9_82bfl")]
 position = Vector2(-464, -53)
 
-[node name="Level3_Communicator2" type="Node" parent="." unique_id=834581633 node_paths=PackedStringArray("inputs", "outputs")]
+[node name="Level3_Communicator2" type="Node" parent="TileMapLayer2(walls)" unique_id=834581633 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever4")]
+inputs = [NodePath("../Lever3")]
 outputs = [NodePath("../GateObs1"), NodePath("../GateObs2")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Communicator3" type="Node" parent="." unique_id=907931410 node_paths=PackedStringArray("inputs", "outputs")]
+[node name="Level3_Communicator3" type="Node" parent="TileMapLayer2(walls)" unique_id=907931410 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Lever5")]
-outputs = [NodePath("../GateObs5"), NodePath("../GateObs6")]
+outputs = [NodePath("../GateObs5"), NodePath("../GateObs6"), NodePath("../GateObs7"), NodePath("../GateObs8")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Comm_None" type="Node" parent="." unique_id=7025976 node_paths=PackedStringArray("inputs")]
+[node name="Level3_LockLever3Any" type="Node" parent="TileMapLayer2(walls)" unique_id=555113869 node_paths=PackedStringArray("inputs", "outputs")]
+script = ExtResource("8_1wbr2")
+inputs = [NodePath("../Level3_LockLever3None"), NodePath("../Level3_LockLever3All")]
+inputRequirement = 1
+outputs = [NodePath("../GateObs3"), NodePath("../GateObs4")]
+metadata/_custom_type_script = "uid://dtfua7hyp65t3"
+
+[node name="Level3_LockLever3None" type="Node" parent="TileMapLayer2(walls)" unique_id=493610252 node_paths=PackedStringArray("inputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Lever3"), NodePath("../Lever4")]
 inputRequirement = 2
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Comm_All" type="Node" parent="." unique_id=742808097 node_paths=PackedStringArray("inputs")]
+[node name="Level3_LockLever3All" type="Node" parent="TileMapLayer2(walls)" unique_id=1104682569 node_paths=PackedStringArray("inputs")]
 script = ExtResource("8_1wbr2")
 inputs = [NodePath("../Lever3"), NodePath("../Lever4")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Comm_Any" type="Node" parent="." unique_id=1810040201 node_paths=PackedStringArray("inputs", "outputs")]
+[node name="Level3_LockChallenge1" type="Node" parent="TileMapLayer2(walls)" unique_id=1764573757 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Level3_Comm_None"), NodePath("../Level3_Comm_All")]
-inputRequirement = 1
-outputs = [NodePath("../GateObs3"), NodePath("../GateObs4"), NodePath("../GateObs1"), NodePath("../GateObs2")]
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Level3_Challenge1" type="Node" parent="." unique_id=1526725005 node_paths=PackedStringArray("inputs", "outputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Level3_Challenge1_Not"), NodePath("../Level3_Challenge1_And")]
-inputRequirement = 1
+inputs = [NodePath("../Lever5")]
 outputs = [NodePath("../GateChallenge1"), NodePath("../GateChallenge2")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Challenge1_Not" type="Node" parent="." unique_id=1847324956 node_paths=PackedStringArray("inputs")]
+[node name="Level3_LockChallenge2" type="Node" parent="TileMapLayer2(walls)" unique_id=1979690438 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever3"), NodePath("../Lever4")]
-inputRequirement = 2
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Level3_Challenge1_And" type="Node" parent="." unique_id=209134619 node_paths=PackedStringArray("inputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever3"), NodePath("../Lever4")]
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Level3_Challenge2" type="Node" parent="." unique_id=1143765649 node_paths=PackedStringArray("inputs", "outputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Level3_Challenge2_Not"), NodePath("../Level3_Challenge2_And")]
-inputRequirement = 1
+inputs = [NodePath("../Lever4")]
 outputs = [NodePath("../GateChallenge3"), NodePath("../GateChallenge4")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Challenge2_Not" type="Node" parent="." unique_id=917259829 node_paths=PackedStringArray("inputs")]
+[node name="Level3_LockChallenge3" type="Node" parent="TileMapLayer2(walls)" unique_id=1922472508 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever5"), NodePath("../Lever4"), NodePath("../Lever3")]
-inputRequirement = 2
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Level3_Challenge2_And" type="Node" parent="." unique_id=1312396930 node_paths=PackedStringArray("inputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever4"), NodePath("../Lever5"), NodePath("../Lever3")]
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Level3_Challenge3" type="Node" parent="." unique_id=1421302939 node_paths=PackedStringArray("inputs", "outputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Level3_Challenge3_Not"), NodePath("../Level3_Challenge3_And")]
-inputRequirement = 1
+inputs = [NodePath("../Lever3")]
 outputs = [NodePath("../GateChallenge5"), NodePath("../GateChallenge6")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
-[node name="Level3_Challenge3_Not" type="Node" parent="." unique_id=1476145600 node_paths=PackedStringArray("inputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever3"), NodePath("../Lever5")]
-inputRequirement = 2
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Level3_Challenge3_And" type="Node" parent="." unique_id=1729346439 node_paths=PackedStringArray("inputs")]
-script = ExtResource("8_1wbr2")
-inputs = [NodePath("../Lever3"), NodePath("../Lever5")]
-metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1580699117]
+[node name="Icon" type="Sprite2D" parent="TileMapLayer2(walls)" unique_id=1580699117]
 position = Vector2(223, 21)
 scale = Vector2(0.2109375, 0.1796875)
 texture = ExtResource("7_u7jep")
