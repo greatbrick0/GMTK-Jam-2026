@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cls1r1pkubkev"]
+
+[ext_resource type="Script" uid="uid://cshp1f7rsjp1r" path="res://scripts/power_up_placeable.gd" id="1_2akca"]
+[ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="2_d8ycd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul7bh"]
+radius = 70.0
+
+[node name="PowerUpPlaceable" type="Node2D" unique_id=885627187]
+script = ExtResource("1_2akca")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=165232579]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("2_d8ycd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2075252368]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=740951605]
+shape = SubResource("CircleShape2D_ul7bh")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1930181889]
+show_behind_parent = true
+points = PackedVector2Array(0, 0, 0, 0)
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=983461807]
+show_behind_parent = true
+points = PackedVector2Array(0, 0, 0, 0)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

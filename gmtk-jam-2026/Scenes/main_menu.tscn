@@ -7,13 +7,31 @@
 script = ExtResource("1_l6cm7")
 levelPath = "res://Scenes/space_world.tscn"
 
-[node name="StartButton" type="Button" parent="." unique_id=1878233138]
-offset_left = 730.0
-offset_top = 416.0
-offset_right = 1106.0
-offset_bottom = 541.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=725298252]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1526918753]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control" unique_id=1878233138]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -62.5
+offset_right = 188.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/StartButton" to="." method="_on_start_button_pressed"]

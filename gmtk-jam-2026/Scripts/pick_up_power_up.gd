@@ -10,6 +10,7 @@ var used = false
 var time: float = 0.0
 
 func _ready():
+	$VisualOffset/Sprite2D.texture = heldPowerUp.icon
 	if(PowerUpInventory.powerUps.has(pickUpId)):
 		visible = false
 		used = true

@@ -17,9 +17,10 @@ var countdownEndAmount: float = 100.0
 func _ready():
 	if(instance == null):
 		instance = self
+		$CountDown.SetSteps(100.0)
+		PowerUpInventory.inventoryChanged.connect(UpdateUpgradeSelectMenu)
 	else:
 		queue_free()
-	$CountDown.SetSteps(100.0)
 
 func EndLoop() -> void:
 	GetCountDownAmountsForRefill()
@@ -49,3 +50,6 @@ func Transition() -> void:
 func PlayRefillAnim() -> void:
 	$RefillPlayer.play("Refill")
 	await $RefillPlayer.animation_finished
+
+func UpdateUpgradeSelectMenu() -> void:
+	pass

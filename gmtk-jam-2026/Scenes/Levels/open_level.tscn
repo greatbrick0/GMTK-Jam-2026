@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://ddn7vxn7cjo8g" path="res://scripts/power_up.gd" id="12_r3wsj"]
 [ext_resource type="PackedScene" uid="uid://dowy516lwx7bx" path="res://scenes/Levels/level3_basement1.tscn" id="13_m8i4y"]
 [ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="13_xe8vl"]
+[ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="14_l2x0b"]
 
 [sub_resource type="Resource" id="Resource_m8i4y"]
 script = ExtResource("12_r3wsj")

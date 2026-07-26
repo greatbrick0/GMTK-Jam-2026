@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cy7l38hxypd6g" path="res://scenes/count_down.tscn" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://b5aljwylqkhis" path="res://scripts/hud.gd" id="1_oo0fn"]
 [ext_resource type="Theme" uid="uid://wp1gsfdusx3c" path="res://StandardTheme.tres" id="3_5ysmq"]
+[ext_resource type="PackedScene" uid="uid://cls1r1pkubkev" path="res://scenes/power_up_placeable.tscn" id="4_6fi6k"]
 
 [sub_resource type="Animation" id="Animation_r6w70"]
 resource_name = "Awaken"
@@ -59,7 +60,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("WakeUpButton:visible")
+tracks/4/path = NodePath("Menu:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -123,31 +124,31 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("WakeUpButton:visible")
+tracks/4/path = NodePath("RefillPlayer")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("RefillPlayer")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"Refill", -1, 1.0, false],
 "method": &"play"
 }]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Menu:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_rpd1k"]
@@ -191,7 +192,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("WakeUpButton:visible")
+tracks/3/path = NodePath("Menu:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -310,14 +311,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CountDown" parent="." unique_id=1305994455 instance=ExtResource("1_ahhtf")]
-position = Vector2(980, 540)
-scale = Vector2(2, 2)
+[node name="Menu" type="Node2D" parent="." unique_id=1400390911]
 
-[node name="WakeUpPlayer" type="AnimationPlayer" parent="." unique_id=231209635]
-libraries/ = SubResource("AnimationLibrary_7mxv6")
-
-[node name="WakeUpButton" type="Button" parent="." unique_id=275987906]
+[node name="WakeUpButton" type="Button" parent="Menu" unique_id=275987906]
 offset_left = 781.0
 offset_top = 837.0
 offset_right = 1165.0
@@ -325,6 +321,24 @@ offset_bottom = 953.0
 theme = ExtResource("3_5ysmq")
 theme_override_font_sizes/font_size = 32
 text = "Wake Up"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=898703146]
+offset_left = 272.0
+offset_top = 182.0
+offset_right = 312.0
+offset_bottom = 882.0
+
+[node name="PowerUpPlaceable" parent="Menu/VBoxContainer" unique_id=885627187 instance=ExtResource("4_6fi6k")]
+
+[node name="PowerUpPlaceable2" parent="Menu/VBoxContainer" unique_id=1945047708 instance=ExtResource("4_6fi6k")]
+position = Vector2(0, 182)
+
+[node name="CountDown" parent="." unique_id=1305994455 instance=ExtResource("1_ahhtf")]
+position = Vector2(980, 540)
+scale = Vector2(2, 2)
+
+[node name="WakeUpPlayer" type="AnimationPlayer" parent="." unique_id=231209635]
+libraries/ = SubResource("AnimationLibrary_7mxv6")
 
 [node name="TransitionRect" type="ColorRect" parent="." unique_id=1971005680]
 anchors_preset = 15
@@ -341,5 +355,5 @@ libraries/ = SubResource("AnimationLibrary_047uy")
 [node name="RefillPlayer" type="AnimationPlayer" parent="." unique_id=1018904077]
 libraries/ = SubResource("AnimationLibrary_hd3ao")
 
+[connection signal="pressed" from="Menu/WakeUpButton" to="." method="_on_wake_up_button_pressed"]
 [connection signal="outOfSteps" from="CountDown" to="." method="_on_count_down_out_of_steps"]
-[connection signal="pressed" from="WakeUpButton" to="." method="_on_wake_up_button_pressed"]
