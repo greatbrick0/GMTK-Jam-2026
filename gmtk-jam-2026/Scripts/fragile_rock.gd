@@ -1,8 +1,9 @@
 extends Node2D
+class_name FragileRock
 
 @export var spriteIndex: int = 0
 var spriteRef: AnimatedSprite2D
-@export var maxStability: float = 3.0
+@export var maxStability: float = 1.0
 var stability: float = 1.0
 var drillRate: float = 0.0
 var broken: bool = false
@@ -17,8 +18,8 @@ func _process(delta) -> void:
 	if(not broken):
 		if(drillRate > 0.0):
 			stability -= drillRate * delta
-			$Sprites/ShakeOffset.position.x = sin(stability * 5) * 0.2
-			$Sprites/ShakeOffset.position.y = cos(stability * 25 + global_position.x) * 0.3
+			$Sprites/ShakeOffset.position.x = sin(stability * 15) * 0.2
+			$Sprites/ShakeOffset.position.y = cos(stability * 35 + global_position.x) * 0.3
 			if(stability <= 0.0):
 				Break()
 		else:

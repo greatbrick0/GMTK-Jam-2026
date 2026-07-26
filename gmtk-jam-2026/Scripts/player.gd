@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+@export_category("Movement Values")
 @export var speed: float = 45
 var speedMult: float = 1.0
 @export var drainSpeed: float = 1.0
@@ -14,7 +15,10 @@ var countDownRef: CountDown
 var resetting: float = 0.0
 var resetThreshold
 
-var isDrilling: bool = false
+@export_category("Drill Values")
+@export var drillDrainSpeed: float = 5.0
+@export_range(0, 10, 0.05, "or_greater") var basicDrillSpeed: float = 1.0
+@export_range(0, 10, 0.05, "or_greater") var advancedDrillSpeed: float = 3.0
 
 func _ready():
 	countDownRef = get_tree().get_first_node_in_group("Countdown")
@@ -28,11 +32,10 @@ func _process(delta):
 	else:
 		resetting = 0.0
 	if(canMove):
+		ProcessItems(delta)
 		if(Input.is_action_just_pressed("interact") and canMove):
 			if(len(interactList) > 0):
 				GetClosestInteractable().Interact()
-		if(Input.is_action_just_pressed("ability_0")):
-			countDownRef.GetItemAvailable(0)
 
 func _physics_process(delta):
 	speedMult = 2.5 if(Input.is_action_pressed("sprint")) else 1.0
@@ -46,6 +49,24 @@ func _physics_process(delta):
 		print("noclipping")
 		$CollisionPolygon2D.disabled = !$CollisionPolygon2D.disabled
 	move_and_slide()
+
+func ProcessItems(delta) -> void:
+	for ii in range(0, 2):
+		var input: String = "ability_" + str(ii)
+		if(Input.is_action_just_pressed(input)):
+			print("item " + str(ii) + ": " + countDownRef.GetItemAvailable(ii))
+		if(Input.is_action_pressed(input)):
+			if(countDownRef.GetItemAvailable(ii) == "Drill-1"):
+				countDownRef.DrainSteps(drillDrainSpeed * delta)
+				SetDrillArea($DrillArea.get_overlapping_areas(), 1.0)
+			elif(countDownRef.GetItemAvailable(ii) == "Drill-2"):
+				countDownRef.DrainSteps(drillDrainSpeed * delta)
+				SetDrillArea($DrillArea.get_overlapping_areas(), 3.0)
+			else:
+				SetDrillArea($DrillArea.get_overlapping_areas(), 0.0)
+		if(Input.is_action_just_released(input)):
+			if(countDownRef.GetItemAvailable(ii) == "Drill-1"):
+				SetDrillArea($DrillArea.get_overlapping_areas(), 0.0)
 
 func SetCanMove(newCanMove: bool) -> void:
 	canMove = newCanMove
@@ -69,3 +90,12 @@ func GetClosestInteractable() -> Interactable:
 
 func GetIsoDistanceMetric(vec1: Vector2, vec2: Vector2) -> float:
 	return (pow(vec1.x - vec2.x, 2) * distortion.x) + (pow(vec1.y - vec2.y, 2) * distortion.y)
+
+func SetDrillArea(areas: Array[Area2D], newValue: float) -> void:
+	for ii in areas:
+		if(ii.get_parent() is FragileRock):
+			ii.get_parent().Drill(newValue)
+
+func _on_drill_area_area_exited(area):
+	if(area.get_parent() is FragileRock):
+		area.get_parent().Drill(0.0)

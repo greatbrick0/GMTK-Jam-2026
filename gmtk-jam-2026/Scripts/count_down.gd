@@ -26,4 +26,6 @@ func GetItemAvailable(index: int) -> String:
 	var output = "None"
 	if(index == 0):
 		output = "Drill-1"
+	if(index == 1):
+		output = "Drill-2"
 	return output
