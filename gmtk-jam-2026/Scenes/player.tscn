@@ -65,6 +65,7 @@ script = ExtResource("5_fkybt")
 trackedObject = NodePath("../../../Camera2D")
 
 [node name="SubViewport" type="SubViewport" parent="CameraResults" unique_id=224833150]
+transparent_bg = true
 canvas_cull_mask = 4294967282
 size = Vector2i(1920, 1080)
 script = ExtResource("4_vgqql")
@@ -76,18 +77,6 @@ scale = Vector2(4, 4)
 zoom = Vector2(4, 4)
 script = ExtResource("5_fkybt")
 trackedObject = NodePath("../../../Camera2D")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="CameraResults/SubViewport" unique_id=946636180]
-layer = -5
-
-[node name="ColorRect" type="ColorRect" parent="CameraResults/SubViewport/CanvasLayer" unique_id=154958165]
-visibility_layer = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraResults" unique_id=356136265]
 layer = -1
