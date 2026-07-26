@@ -60,4 +60,4 @@ func UpdateUpgradeSelectMenu() -> void:
 		var placeableRef: PowerUpPlaceable = placeableObj.instantiate()
 		$Menu/Placeables.add_child(placeableRef)
 		placeableRef.position.y = ii * 160
-		placeableRef.Initialize(PowerUpInventory.powerUps.values()[ii].duplicate())
+		placeableRef.Initialize(PowerUpInventory.powerUps.values()[ii])
