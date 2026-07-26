@@ -15,6 +15,8 @@ var countDownRef: CountDown
 var resetting: float = 0.0
 var resetThreshold
 
+var isLeft: bool = false
+
 @export_category("Drill Values")
 @export var drillDrainSpeed: float = 5.0
 @export_range(0, 10, 0.05, "or_greater") var basicDrillSpeed: float = 1.0
@@ -124,30 +126,43 @@ func _on_drill_area_area_exited(area):
 
 func CharacterAnimation(direction) -> void:
 	if (canMove > 0 or direction.length() <= 0.0):
-		$AnimatedPlayerVisual.play("Idle")
+		if (isLeft):
+			$AnimatedPlayerVisual.play("IdleLeft")
+		else:
+			$AnimatedPlayerVisual.play("Idle")
+		
 		return
+	
 	
 	# I am so sorry. I cant find a switch statement and am so not locked in.
 	
 	if (direction.x == 1.0):
 		$AnimatedPlayerVisual.play("WalkRight")
+		isLeft = false;
 	elif (direction.x > 0.0 and direction.x < 1.0):
 		if (direction.y < 0.0):
 			$AnimatedPlayerVisual.play("WalkUpRight")
+			isLeft = false;
 		else:
 			$AnimatedPlayerVisual.play("WalkDownRight")
+			isLeft = false;
 	elif (direction.x == 0.0):
 		if (direction.y < 0.0):
 			$AnimatedPlayerVisual.play("WalkUp")
+			isLeft = false;
 		else:
 			$AnimatedPlayerVisual.play("WalkDown")
+			isLeft = false;
 	elif (direction.x < 0.0 and direction.x > -1.0):
 		if (direction.y < 0.0):
 			$AnimatedPlayerVisual.play("WalkUpLeft")
+			isLeft = true;
 		else:
 			$AnimatedPlayerVisual.play("WalkDownLeft")	
+			isLeft = true;
 	if (direction.x == -1.0):
 		$AnimatedPlayerVisual.play("WalkLeft")
+		isLeft = true;
 	
 	
 	
