@@ -23,6 +23,7 @@ var resetThreshold
 func _ready():
 	countDownRef = get_tree().get_first_node_in_group("Countdown")
 	countDownRef.outOfSteps.connect(SetCanMove.bind(false))
+	$CameraResults/CanvasLayer2/LightResult.visible = true
 
 func _process(delta):
 	if(Input.is_action_pressed("reset") and canMove):

@@ -92,6 +92,7 @@ centered = false
 layer = 0
 
 [node name="LightResult" type="Sprite2D" parent="CameraResults/CanvasLayer2" unique_id=733234122]
+visible = false
 light_mask = 8
 visibility_layer = 8
 z_index = 1

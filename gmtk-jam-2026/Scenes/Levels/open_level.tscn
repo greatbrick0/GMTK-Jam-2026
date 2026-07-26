@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d1koq8w2q0ixn" path="res://scenes/Levels/empty_basement.tscn" id="8_l2x0b"]
 [ext_resource type="PackedScene" uid="uid://bcdsswi4qb3gy" path="res://scenes/Levels/level1_basement1.tscn" id="9_7o2si"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="10_d6bfp"]
+[ext_resource type="PackedScene" uid="uid://cem7hiw3xruml" path="res://scenes/Elements/recharge_station.tscn" id="10_sf1gm"]
 
 [node name="OpenLevel" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
@@ -91,6 +92,9 @@ spriteIndex = 2
 [node name="LevelG_Gate1_4" parent="TileMapLayer2" unique_id=1177840184 instance=ExtResource("5_r3wsj")]
 position = Vector2(-80, 100)
 spriteIndex = 3
+
+[node name="RechargeStation" parent="TileMapLayer2" unique_id=317752275 instance=ExtResource("10_sf1gm")]
+position = Vector2(304, 184)
 
 [node name="Light" parent="." unique_id=269814053 instance=ExtResource("10_d6bfp")]
 visible = false

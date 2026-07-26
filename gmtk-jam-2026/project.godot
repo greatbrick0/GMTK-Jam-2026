@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="gmtk-jam-2026"
+config/name="Searching For Electric Sheep"
 run/main_scene="uid://bmvmlr4sf4gnx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://drf1kjhwksrhs"
