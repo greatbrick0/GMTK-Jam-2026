@@ -3,22 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://pxx845xrb1oj" path="res://art/BasicTiles/Interactables/RechargeGearAnim.png" id="1_e4gaq"]
 [ext_resource type="Script" uid="uid://khmgvi40bkp7" path="res://scripts/recharge_station.gd" id="1_nj8bw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fegun"]
-atlas = ExtResource("1_e4gaq")
-region = Rect2(0, 0, 27, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_15eja"]
-atlas = ExtResource("1_e4gaq")
-region = Rect2(27, 0, 27, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jlpsh"]
-atlas = ExtResource("1_e4gaq")
-region = Rect2(54, 0, 27, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_68eug"]
-atlas = ExtResource("1_e4gaq")
-region = Rect2(81, 0, 27, 15)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u10ri"]
 atlas = ExtResource("1_e4gaq")
 region = Rect2(108, 0, 27, 15)
@@ -99,16 +83,28 @@ region = Rect2(162, 30, 27, 15)
 animations = [{
 "frames": [{
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_fegun")
+"texture": SubResource("AtlasTexture_u10ri")
 }, {
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_15eja")
+"texture": SubResource("AtlasTexture_jocyl")
 }, {
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_jlpsh")
+"texture": SubResource("AtlasTexture_ludpl")
 }, {
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_68eug")
+"texture": SubResource("AtlasTexture_h87mu")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_midkc")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_fwmnl")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_lv3i0")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_t0u3p")
 }, {
 "duration": 0.3,
 "texture": SubResource("AtlasTexture_u10ri")
@@ -172,14 +168,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RechargeStation" type="Node2D" unique_id=317752275]
+[node name="RechargeStation" type="Node2D" unique_id=317752275 groups=["Resetable"]]
 script = ExtResource("1_nj8bw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2109022192]
+[node name="AnimSprite" type="AnimatedSprite2D" parent="." unique_id=2109022192]
 z_index = -1
 texture_filter = 1
 position = Vector2(-0.5, -0.5)
 sprite_frames = SubResource("SpriteFrames_nj8bw")
-frame = 22
-frame_progress = 1.0
-speed_scale = 1.5
+speed_scale = 0.8
+
+[node name="PressurePlateArea" type="Area2D" parent="." unique_id=58665308]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PressurePlateArea" unique_id=1831397613]
+polygon = PackedVector2Array(0, -16, 32, 0, 0, 16, -32, 0)
+
+[connection signal="body_entered" from="PressurePlateArea" to="." method="_on_pressure_plate_area_body_entered"]

@@ -14,6 +14,7 @@ viewport_path = NodePath("CameraResults/MainViewport")
 viewport_path = NodePath("CameraResults/SubViewport")
 
 [node name="Player" type="CharacterBody2D" unique_id=706144404 groups=["Player"]]
+collision_layer = 33
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 drainSpeed = 2.0

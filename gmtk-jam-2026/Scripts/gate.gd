@@ -24,7 +24,7 @@ func FrameChanged() -> void:
 		$StaticBody2D/CollisionPolygon2D.set_deferred("disabled", result)
 		$Sprites.z_index = int(result) * -1
 
-func Reset():
+func Reset() -> void:
 	if(not inverted):
 		spriteRef.frame = 0
 	else:
