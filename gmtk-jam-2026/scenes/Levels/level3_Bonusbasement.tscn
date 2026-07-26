@@ -1,0 +1,95 @@
+[gd_scene format=4 uid="uid://c1y78i58sevyx"]
+
+[ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://scripts/level.gd" id="1_lv113"]
+[ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="2_6ympd"]
+[ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://tile sets/WallMetalTiles.tres" id="3_w2y3e"]
+[ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/Elements/portal.tscn" id="4_y7u0s"]
+[ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="5_ax8g8"]
+[ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_u5tx0"]
+[ext_resource type="Texture2D" uid="uid://c7o2s8g4eac84" path="res://art/icon.svg" id="7_g14wo"]
+
+[node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
+texture_filter = 1
+script = ExtResource("1_lv113")
+levelId = "EmptyBasement"
+levelOffset = Vector2(0, 2000)
+floorLayer = NodePath("TileMapLayer(floor)")
+playerLayer = NodePath("TileMapLayer2(walls)")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=1937314391]
+z_index = -2
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD5//7/AAADAAAAAAA=")
+tile_set = ExtResource("2_6ympd")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=149941557]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD5//z/AAABAAAAAAA=")
+tile_set = ExtResource("2_6ympd")
+
+[node name="TileMapLayer(floor)" type="TileMapLayer" parent="." unique_id=2063257103]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAPv/AAADAAEAAAABAAAAAAADAAEAAAAAAAEAAAADAAEAAAAAAAIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wEAAAACAAAAAAD/////AAADAAEAAAAAAP7/AAAAAAAAAAD//wAAAAAAAAAAAAD+////AAACAAAAAAD+//7/AAADAAEAAAD+//3/AAADAAAAAAD+//z/AAAAAAAAAAD+//v/AAADAAAAAAD///z/AAADAAEAAAD///3/AAADAAEAAAD///7/AAAAAAAAAAD9//3/AAAAAAAAAAD9//z/AAADAAEAAAD8//v/AAACAAAAAAD8//r/AAADAAAAAAD8//n/AAADAAEAAAD8//j/AAADAAAAAAD7//f/AAAAAAAAAAD8//b/AAAAAAAAAAD8//f/AAABAAAAAAD9//j/AAADAAAAAAD9//n/AAACAAAAAAD+//r/AAABAAAAAAD9//v/AAADAAAAAAD9//r/AAADAAEAAAD7//n/AAACAAAAAAD7//j/AAABAAAAAAD6//f/AAADAAAAAAD7//b/AAACAAAAAAD7//X/AAADAAEAAAD6//b/AAADAAEAAAD6//X/AAABAAAAAAD7//T/AAADAAAAAAD5//r/AAAAAAAAAAA=")
+tile_set = ExtResource("2_6ympd")
+
+[node name="TileMapLayer2(walls)" type="TileMapLayer" parent="." unique_id=365772771]
+z_index = 1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAP//AQAFAAEAAAD//wMAAgACAAAAAAAAAPv/AgAEAAAAAAD5//r/AgAEAAAAAAD7//T/AgADAAAAAAA=")
+tile_set = ExtResource("3_w2y3e")
+
+[node name="portal_entrance" parent="TileMapLayer2(walls)" unique_id=1997146595 instance=ExtResource("4_y7u0s")]
+position = Vector2(24, -12)
+returnUp = true
+exitPosition = Vector2(-232, 108)
+
+[node name="FragileRock" parent="TileMapLayer2(walls)" unique_id=1843752984 instance=ExtResource("5_ax8g8")]
+position = Vector2(-96, -79)
+
+[node name="FragileRock2" parent="TileMapLayer2(walls)" unique_id=1464514936 instance=ExtResource("5_ax8g8")]
+position = Vector2(-112, -71)
+
+[node name="FragileRock3" parent="TileMapLayer2(walls)" unique_id=961220319 instance=ExtResource("5_ax8g8")]
+position = Vector2(-128, -63)
+
+[node name="FragileRock4" parent="TileMapLayer2(walls)" unique_id=764069241 instance=ExtResource("5_ax8g8")]
+position = Vector2(-80, -71)
+
+[node name="FragileRock5" parent="TileMapLayer2(walls)" unique_id=1989430332 instance=ExtResource("5_ax8g8")]
+position = Vector2(-96, -63)
+
+[node name="FragileRock6" parent="TileMapLayer2(walls)" unique_id=1352841809 instance=ExtResource("5_ax8g8")]
+position = Vector2(-112, -55)
+
+[node name="FragileRock7" parent="TileMapLayer2(walls)" unique_id=2053465476 instance=ExtResource("5_ax8g8")]
+position = Vector2(-65, -63)
+
+[node name="FragileRock8" parent="TileMapLayer2(walls)" unique_id=1308881079 instance=ExtResource("5_ax8g8")]
+position = Vector2(-81, -55)
+
+[node name="FragileRock9" parent="TileMapLayer2(walls)" unique_id=614808764 instance=ExtResource("5_ax8g8")]
+position = Vector2(-97, -47)
+
+[node name="FragileRock10" parent="TileMapLayer2(walls)" unique_id=166435964 instance=ExtResource("5_ax8g8")]
+position = Vector2(-49, -55)
+
+[node name="FragileRock11" parent="TileMapLayer2(walls)" unique_id=1141848143 instance=ExtResource("5_ax8g8")]
+position = Vector2(-65, -47)
+
+[node name="FragileRock12" parent="TileMapLayer2(walls)" unique_id=2001961130 instance=ExtResource("5_ax8g8")]
+position = Vector2(-81, -39)
+
+[node name="Light3" parent="." unique_id=269814053 instance=ExtResource("6_u5tx0")]
+visible = false
+position = Vector2(32.999996, -38)
+scale = Vector2(0.26, 0.13)
+
+[node name="Light4" parent="." unique_id=775139803 instance=ExtResource("6_u5tx0")]
+visible = false
+position = Vector2(-208, -47)
+
+[node name="Drill" type="Sprite2D" parent="." unique_id=1130984923]
+position = Vector2(-142, -77)
+scale = Vector2(0.1484375, 0.1484375)
+texture = ExtResource("7_g14wo")
