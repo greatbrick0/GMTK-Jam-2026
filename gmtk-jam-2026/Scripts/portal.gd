@@ -12,7 +12,7 @@ func Interact() -> bool:
 func UsePortal() -> void:
 	var world: World = get_tree().current_scene
 	var player: Player = get_tree().get_first_node_in_group("Player")
-	player.canMove = false
+	player.BumpCanMove(false)
 	MusicManager.PlayGeneral(1)
 	await Hud.instance.Transition()
 	if(returnUp):
@@ -21,4 +21,4 @@ func UsePortal() -> void:
 		if(packedLevel != null): world.SpawnLevelFromPacked(packedLevel, true)
 		else: world.SpawnLevelFromPath(filePathLevel, true)
 	player.global_position = exitPosition
-	player.canMove = true
+	player.BumpCanMove(true)

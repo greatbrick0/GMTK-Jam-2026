@@ -45,6 +45,7 @@ func SpawnPlayer(resetPos: bool) -> void:
 		playerRef.global_position = Vector2.ZERO
 
 func ResetWorld() -> void:
+	playerRef.global_position = Vector2.ZERO
 	SpawnLevelFromPath(startLevel, false)
 	for ii in get_tree().get_nodes_in_group("Resetable"):
 		ii.Reset()
@@ -54,7 +55,7 @@ func ClearLevelStack() -> void:
 		levelStack.pop_back().queue_free()
 
 func _on_hud_player_wake_up():
-	playerRef.SetCanMove(true)
+	playerRef.BumpCanMove(true)
 
 func _on_hud_player_fully_asleep():
 	ResetWorld()

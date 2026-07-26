@@ -22,7 +22,7 @@ func _ready():
 	$CountDown.SetSteps(100.0)
 
 func EndLoop() -> void:
-	GetCountDownAmountsForFallAsleep()
+	GetCountDownAmountsForRefill()
 	$WakeUpPlayer.play("FallAsleep")
 
 func _on_wake_up_button_pressed():
@@ -34,7 +34,7 @@ func AllowPlayerMovement() -> void:
 func _on_count_down_out_of_steps():
 	EndLoop()
 
-func GetCountDownAmountsForFallAsleep() -> void:
+func GetCountDownAmountsForRefill() -> void:
 	countdownStartAmount = $CountDown.stepsRemaining
 	countdownEndAmount = 100.0
 
@@ -45,3 +45,7 @@ func Transition() -> void:
 	$TransitionPlayer.play("FadeBlackIn")
 	await $TransitionPlayer.animation_finished
 	$TransitionPlayer.play("FadeBlackOut")
+
+func PlayRefillAnim() -> void:
+	$RefillPlayer.play("Refill")
+	await $RefillPlayer.animation_finished

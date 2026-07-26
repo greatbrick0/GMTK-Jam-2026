@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://pxx845xrb1oj" path="res://art/BasicTiles/Interactables/RechargeGearAnim.png" id="1_e4gaq"]
 [ext_resource type="Script" uid="uid://khmgvi40bkp7" path="res://scripts/recharge_station.gd" id="1_nj8bw"]
+[ext_resource type="AudioStream" uid="uid://da1epmspf65un" path="res://sounds/HalfCoil.wav" id="3_tolnw"]
+[ext_resource type="AudioStream" uid="uid://bd5mjkht6rb7j" path="res://sounds/Safe.wav" id="4_mo8mb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u10ri"]
 atlas = ExtResource("1_e4gaq")
@@ -184,5 +186,22 @@ collision_mask = 32
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PressurePlateArea" unique_id=1831397613]
 polygon = PackedVector2Array(0, -16, 32, 0, 0, 16, -32, 0)
+disabled = true
+
+[node name="Audio2D" type="AudioStreamPlayer2D" parent="." unique_id=949102561]
+stream = ExtResource("3_tolnw")
+volume_db = 6.0
+pitch_scale = 0.4
+bus = &"ReverbBus"
+
+[node name="Audio2D2" type="AudioStreamPlayer2D" parent="." unique_id=40748579]
+stream = ExtResource("4_mo8mb")
+pitch_scale = 0.6
+bus = &"ReverbBus"
+
+[node name="Timer" type="Timer" parent="." unique_id=1233514566]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="PressurePlateArea" to="." method="_on_pressure_plate_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

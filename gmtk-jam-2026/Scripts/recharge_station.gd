@@ -7,7 +7,19 @@ func _ready() -> void:
 
 func Reset() -> void:
 	used = false
+	$AnimSprite.frame = 0
+	$Timer.start()
 
 func _on_pressure_plate_area_body_entered(body):
-	$AnimSprite.play("default")
-	print("player detected")
+	if(not used):
+		used = true
+		body.BumpCanMove(false)
+		$AnimSprite.play("default")
+		$Audio2D.play()
+		$Audio2D2.play()
+		Hud.instance.GetCountDownAmountsForRefill()
+		await Hud.instance.PlayRefillAnim()
+		body.BumpCanMove(true)
+
+func _on_timer_timeout():
+	$PressurePlateArea/CollisionPolygon2D.set_deferred("disabled", false)

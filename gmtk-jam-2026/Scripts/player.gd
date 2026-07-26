@@ -5,7 +5,7 @@ class_name Player
 @export var speed: float = 45
 var speedMult: float = 1.0
 @export var drainSpeed: float = 1.0
-@export var canMove: bool = false
+@export var canMove: int = 1
 var distortion: Vector2 = Vector2(2, 1)
 
 var interactList: Array[Interactable]
@@ -22,26 +22,26 @@ var resetThreshold
 
 func _ready():
 	countDownRef = get_tree().get_first_node_in_group("Countdown")
-	countDownRef.outOfSteps.connect(SetCanMove.bind(false))
+	countDownRef.outOfSteps.connect(BumpCanMove.bind(false))
 	$CameraResults/CanvasLayer2/LightResult.visible = true
 
 func _process(delta):
-	if(Input.is_action_pressed("reset") and canMove):
+	if(Input.is_action_pressed("reset") and canMove == 0):
 		resetting += 1.0 * delta
 		if(resetting >= 0.5):
 			Hud.instance.EndLoop()
 	else:
 		resetting = 0.0
-	if(canMove):
+	if(canMove == 0):
 		ProcessItems(delta)
-		if(Input.is_action_just_pressed("interact") and canMove):
+		if(Input.is_action_just_pressed("interact") and canMove == 0):
 			if(len(interactList) > 0):
 				GetClosestInteractable().Interact()
 
 func _physics_process(delta):
 	speedMult = 2.5 if(Input.is_action_pressed("sprint")) else 1.0
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if(direction and canMove):
+	if(direction and canMove == 0):
 		velocity = direction.normalized() * distortion * speed * speedMult
 		countDownRef.DrainSteps(speedMult * drainSpeed * delta)
 	else:
@@ -69,8 +69,9 @@ func ProcessItems(delta) -> void:
 			if(countDownRef.GetItemAvailable(ii) == "Drill-1"):
 				SetDrillArea($DrillArea.get_overlapping_areas(), 0.0)
 
-func SetCanMove(newCanMove: bool) -> void:
-	canMove = newCanMove
+func BumpCanMove(newCanMove: bool) -> void:
+	canMove += -1 if(newCanMove) else 1
+	canMove = max(canMove, 0)
 
 func _on_interact_area_area_entered(area):
 	if(area is Interactable):
