@@ -426,7 +426,7 @@ collision_layer = 33
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 drainSpeed = 2.0
-drillDrainSpeed = 2.0
+drillDrainSpeed = 2.1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1231828637]
 position = Vector2(0, 16)

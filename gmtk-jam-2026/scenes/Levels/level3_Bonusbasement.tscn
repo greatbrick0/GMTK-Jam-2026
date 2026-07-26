@@ -70,24 +70,6 @@ position = Vector2(-96, -63)
 [node name="FragileRock6" parent="TileMapLayer2(walls)" unique_id=1352841809 instance=ExtResource("5_ax8g8")]
 position = Vector2(-112, -55)
 
-[node name="FragileRock7" parent="TileMapLayer2(walls)" unique_id=2053465476 instance=ExtResource("5_ax8g8")]
-position = Vector2(-65, -63)
-
-[node name="FragileRock8" parent="TileMapLayer2(walls)" unique_id=1308881079 instance=ExtResource("5_ax8g8")]
-position = Vector2(-81, -55)
-
-[node name="FragileRock9" parent="TileMapLayer2(walls)" unique_id=614808764 instance=ExtResource("5_ax8g8")]
-position = Vector2(-97, -47)
-
-[node name="FragileRock10" parent="TileMapLayer2(walls)" unique_id=166435964 instance=ExtResource("5_ax8g8")]
-position = Vector2(-49, -55)
-
-[node name="FragileRock11" parent="TileMapLayer2(walls)" unique_id=1141848143 instance=ExtResource("5_ax8g8")]
-position = Vector2(-65, -47)
-
-[node name="FragileRock12" parent="TileMapLayer2(walls)" unique_id=2001961130 instance=ExtResource("5_ax8g8")]
-position = Vector2(-81, -39)
-
 [node name="Light3" parent="." unique_id=269814053 instance=ExtResource("6_u5tx0")]
 visible = false
 position = Vector2(32.999996, -38)

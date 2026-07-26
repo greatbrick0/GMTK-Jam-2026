@@ -179,7 +179,7 @@ exitPosition = Vector2(5000, 3000)
 [node name="Level3_Portal1" parent="TileMapLayer2" unique_id=434081853 instance=ExtResource("7_7ni8u")]
 position = Vector2(-295, 145)
 packedLevel = ExtResource("13_m8i4y")
-exitPosition = Vector2(41, 2965)
+exitPosition = Vector2(108, 2923)
 
 [node name="Level3_Portal2" parent="TileMapLayer2" unique_id=2050257635 instance=ExtResource("7_7ni8u")]
 position = Vector2(-405, 147)
