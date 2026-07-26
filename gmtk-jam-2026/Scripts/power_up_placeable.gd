@@ -37,6 +37,8 @@ func AttemptPlacePowerUp() -> void:
 	var point = countDownRef.GetMouseAngle()
 	if(countDownRef.CanAddPowerUp(point - (heldPowerUp.width / 2.0), point + (heldPowerUp.width / 2.0))):
 		countDownRef.AddPowerUp(point - (heldPowerUp.width / 2.0), heldPowerUp)
+	else:
+		MusicManager.PlayGeneral(0)
 
 func _on_area_2d_mouse_entered():
 	$Sprite2D.scale = Vector2.ONE * 7.0

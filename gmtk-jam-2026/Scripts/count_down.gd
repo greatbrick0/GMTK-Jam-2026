@@ -37,8 +37,8 @@ func GetItemAvailable(index: int) -> String:
 	var output = "None"
 	if(index == 0):
 		for ii in range(len(powerUps)):
-			print("checking " + powerUps[ii].powerUpId)
-			if(stepsRemaining >= powerUpStartTimes[ii] and stepsRemaining <= powerUpStartTimes[ii] + powerUps[ii].width):
+			print("checking " + str(stepsRemaining))
+			if(100 - stepsRemaining >= powerUpStartTimes[ii] and 100 - stepsRemaining <= powerUpStartTimes[ii] + powerUps[ii].width):
 				return powerUps[ii].powerUpId
 	if(index == 1 and OS.has_feature("editor")):
 		output = "Drill-2"
@@ -60,8 +60,10 @@ func CanAddPowerUp(start: float, width: float) -> bool:
 func AddPowerUp(start: float, newPowerUp: PowerUp) -> void:
 	powerUps.append(newPowerUp)
 	powerUpStartTimes.append(start)
+	print("added power up to " + str(start))
 
 func RemovePowerUp(removedPowerUp: PowerUp) -> void:
 	var indexToRemove: int = powerUps.find(removedPowerUp)
 	powerUps.remove_at(indexToRemove)
 	powerUpStartTimes.remove_at(indexToRemove)
+	print("removed power up")
