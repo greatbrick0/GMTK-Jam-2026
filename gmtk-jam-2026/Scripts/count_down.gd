@@ -11,7 +11,9 @@ var powerUpStartTimes: Array[float] = []
 
 func _process(_delta):
 	if(editable or Input.is_action_just_pressed("ui_accept")):
-		print(str(global_position.angle_to_point(get_viewport().get_mouse_position()) / PI) + " angle")
+		var value = ((global_position.angle_to_point(get_viewport().get_mouse_position()) / PI) * -1)
+		value = fmod(value + 2.5, 2.0) / 2.0 * 100.0
+		print(str(value) + " angle")
 	if(Input.is_action_just_pressed("reset")):
 		print(str(round(stepsRemaining)) + " countdown remaining")
 
@@ -44,6 +46,11 @@ func GetItemAvailable(index: int) -> String:
 		output = "Drill-2"
 	return output
 
+func GetMouseAngle() -> float:
+	var value = ((global_position.angle_to_point(get_viewport().get_mouse_position()) / PI) * -1)
+	value = fmod(value + 2.5, 2.0) / 2.0 * 100.0
+	return value
+
 func CanAddPowerUp(start: float, width: float) -> bool:
 	if(start < 0 or start + width > 100):
 		return false
@@ -55,3 +62,8 @@ func CanAddPowerUp(start: float, width: float) -> bool:
 func AddPowerUp(start: float, newPowerUp: PowerUp) -> void:
 	powerUps.append(newPowerUp)
 	powerUpStartTimes.append(start)
+
+func RemovePowerUp(removedPowerUp: PowerUp) -> void:
+	var indexToRemove: int = powerUps.find(removedPowerUp)
+	powerUps.remove_at(indexToRemove)
+	powerUpStartTimes.remove_at(indexToRemove)

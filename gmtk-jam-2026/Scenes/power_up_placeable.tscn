@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cls1r1pkubkev"]
 
 [ext_resource type="Script" uid="uid://cshp1f7rsjp1r" path="res://scripts/power_up_placeable.gd" id="1_2akca"]
-[ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="2_d8ycd"]
+[ext_resource type="Texture2D" uid="uid://m2aycintpc3h" path="res://art/Rock2.png" id="2_2akca"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ul7bh"]
-radius = 70.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2akca"]
+size = Vector2(140, 140)
 
 [node name="PowerUpPlaceable" type="Node2D" unique_id=885627187]
 script = ExtResource("1_2akca")
@@ -12,12 +12,12 @@ script = ExtResource("1_2akca")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=165232579]
 texture_filter = 1
 scale = Vector2(6, 6)
-texture = ExtResource("2_d8ycd")
+texture = ExtResource("2_2akca")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2075252368]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=740951605]
-shape = SubResource("CircleShape2D_ul7bh")
+shape = SubResource("RectangleShape2D_2akca")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1930181889]
 show_behind_parent = true
