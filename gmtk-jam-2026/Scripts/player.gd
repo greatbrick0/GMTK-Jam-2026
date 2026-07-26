@@ -50,6 +50,14 @@ func _physics_process(delta):
 		print("noclipping")
 		$CollisionPolygon2D.disabled = !$CollisionPolygon2D.disabled
 	move_and_slide()
+	
+	
+	
+	CharacterAnimation(direction)
+	
+	
+	
+	
 
 func ProcessItems(delta) -> void:
 	for ii in range(0, 2):
@@ -113,3 +121,34 @@ func SetDrillArea(areas: Array[Area2D], newValue: float) -> void:
 func _on_drill_area_area_exited(area):
 	if(area.get_parent() is FragileRock):
 		area.get_parent().Drill(0.0)
+
+func CharacterAnimation(direction) -> void:
+	if (canMove > 0 or direction.length() <= 0.0):
+		$AnimatedPlayerVisual.play("Idle")
+		return
+	
+	# I am so sorry. I cant find a switch statement and am so not locked in.
+	
+	if (direction.x == 1.0):
+		$AnimatedPlayerVisual.play("WalkRight")
+	elif (direction.x > 0.0 and direction.x < 1.0):
+		if (direction.y < 0.0):
+			$AnimatedPlayerVisual.play("WalkUpRight")
+		else:
+			$AnimatedPlayerVisual.play("WalkDownRight")
+	elif (direction.x == 0.0):
+		if (direction.y < 0.0):
+			$AnimatedPlayerVisual.play("WalkUp")
+		else:
+			$AnimatedPlayerVisual.play("WalkDown")
+	elif (direction.x < 0.0 and direction.x > -1.0):
+		if (direction.y < 0.0):
+			$AnimatedPlayerVisual.play("WalkUpLeft")
+		else:
+			$AnimatedPlayerVisual.play("WalkDownLeft")	
+	if (direction.x == -1.0):
+		$AnimatedPlayerVisual.play("WalkLeft")
+	
+	
+	
+	
