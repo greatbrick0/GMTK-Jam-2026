@@ -14,6 +14,8 @@ var countdownEndAmount: float = 100.0
 		if($CountDown != null):
 			$CountDown.SetSteps(lerp(countdownStartAmount, countdownEndAmount, value))
 
+@export var placeableObj: PackedScene = preload("uid://cls1r1pkubkev")
+
 func _ready():
 	if(instance == null):
 		instance = self
@@ -52,4 +54,10 @@ func PlayRefillAnim() -> void:
 	await $RefillPlayer.animation_finished
 
 func UpdateUpgradeSelectMenu() -> void:
-	pass
+	for ii in $Menu/Placeables.get_children():
+		ii.queue_free()
+	for ii in range(len(PowerUpInventory.powerUps)):
+		var placeableRef: PowerUpPlaceable = placeableObj.instantiate()
+		$Menu/Placeables.add_child(placeableRef)
+		placeableRef.position.y = ii * 160
+		placeableRef.Initialize(PowerUpInventory.powerUps.values()[ii].duplicate())
