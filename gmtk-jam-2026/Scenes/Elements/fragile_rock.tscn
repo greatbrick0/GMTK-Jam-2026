@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyccc4no2vr12" path="res://art/BasicTiles/Interactables/crackedCube1.png" id="2_o2kwa"]
 [ext_resource type="Texture2D" uid="uid://bpe64xsbf4ho2" path="res://art/BasicTiles/Interactables/crackedCube2.png" id="3_o2kwa"]
 [ext_resource type="AudioStream" uid="uid://dd6s8v5c1w6i7" path="res://sounds/CashewExplode.wav" id="4_8gpwv"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="5_hfix2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scls8"]
 atlas = ExtResource("2_o2kwa")
@@ -153,6 +154,10 @@ random_pitch = 1.0594631
 streams_count = 1
 stream_0/stream = ExtResource("4_8gpwv")
 
+[sub_resource type="Curve" id="Curve_x7ify"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7936508, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="FragileRock" type="Node2D" unique_id=1843752984 groups=["Resetable"]]
 script = ExtResource("1_4u1nf")
 
@@ -193,3 +198,24 @@ stream = SubResource("AudioStreamRandomizer_hfix2")
 volume_db = -6.0
 pitch_scale = 0.78
 bus = &"ReverbBus"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1609942400]
+position = Vector2(0, 16)
+scale = Vector2(2, 1)
+emitting = false
+amount = 16
+texture = ExtResource("5_hfix2")
+lifetime = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(10, 5)
+direction = Vector2(2, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 70.0
+damping_min = 1000.0
+damping_max = 1000.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_x7ify")
+color = Color(0.30588236, 0.28627452, 0.3647059, 1)

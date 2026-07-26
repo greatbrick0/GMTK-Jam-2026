@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://bshpadr2quyny" path="res://scripts/pick_up_power_up.gd" id="1_okdil"]
 [ext_resource type="AudioStream" uid="uid://c1ut2tfs80p1a" path="res://sounds/PowerUp.wav" id="2_okdil"]
 [ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="3_okdil"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="4_ia6sq"]
+
+[sub_resource type="Curve" id="Curve_ia6sq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7936508, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="PickUpPowerUp" type="Area2D" unique_id=1997146595]
 collision_layer = 4
@@ -24,3 +29,31 @@ bus = &"ReverbBus"
 texture_filter = 1
 position = Vector2(0, 6)
 texture = ExtResource("3_okdil")
+
+[node name="Timer" type="Timer" parent="." unique_id=1464646374]
+one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1944571212]
+position = Vector2(0, 11)
+scale = Vector2(2, 1)
+emitting = false
+amount = 16
+texture = ExtResource("4_ia6sq")
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(5, 5)
+direction = Vector2(0, -1)
+spread = 30.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 70.0
+initial_velocity_max = 70.0
+damping_min = 200.0
+damping_max = 200.0
+scale_amount_min = 0.05
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_ia6sq")
+color = Color(0.8509804, 0.9411765, 0.3137255, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

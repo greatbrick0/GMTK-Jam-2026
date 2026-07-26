@@ -12,7 +12,7 @@ var time: float = 0.0
 func _ready():
 	$VisualOffset/Sprite2D.texture = heldPowerUp.icon
 	if(PowerUpInventory.powerUps.has(pickUpId)):
-		visible = false
+		$VisualOffset.visible = false
 		used = true
 
 func _process(delta):
@@ -30,5 +30,13 @@ func Interact() -> bool:
 func Collect() -> void:
 	used = true
 	$Audio2D.play()
+	$CPUParticles2D.emitting = true
 	PowerUpInventory.AddPowerUp(heldPowerUp, pickUpId)
-	visible = false
+	$VisualOffset.visible = false
+	if(forceReset):
+		get_tree().get_first_node_in_group("Player").BumpCanMove(false)
+		$Timer.start()
+
+func _on_timer_timeout():
+	get_tree().get_first_node_in_group("Player").BumpCanMove(true)
+	Hud.instance.EndLoop()

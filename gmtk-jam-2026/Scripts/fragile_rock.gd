@@ -20,9 +20,11 @@ func _process(delta) -> void:
 			stability -= drillRate * delta
 			$Sprites/ShakeOffset.position.x = sin(stability * 15) * 0.2
 			$Sprites/ShakeOffset.position.y = cos(stability * 35 + global_position.x) * 0.3
+			$CPUParticles2D.emitting = true
 			if(stability <= 0.0):
 				Break()
 		else:
+			$CPUParticles2D.emitting = false
 			if(!spriteRef.is_playing()):
 				spriteRef.play("default")
 
@@ -42,6 +44,7 @@ func Drill(newRate: float) -> void:
 
 func Break() -> void:
 	broken = true
+	$CPUParticles2D.emitting = false
 	$Sprites.visible = false
 	$Crumble2D.play()
 	$StaticBody2D/CollisionPolygon2D.set_deferred("disabled", true)

@@ -149,7 +149,7 @@ func CharacterAnimation(direction) -> void:
 	elif (direction.x == 0.0):
 		if (direction.y < 0.0):
 			$AnimatedPlayerVisual.play("WalkUp")
-			isLeft = false;
+			isLeft = true;
 		else:
 			$AnimatedPlayerVisual.play("WalkDown")
 			isLeft = false;
