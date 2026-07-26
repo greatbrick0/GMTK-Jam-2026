@@ -29,7 +29,8 @@ func SetSteps(newSteps: float) -> void:
 func GetItemAvailable(index: int) -> String:
 	var output = "None"
 	if(index == 0):
-		output = "Drill-1"
+		if(len(PowerUpInventory.powerUps) > 0):
+			output = PowerUpInventory.powerUps.values()[0]
 	if(index == 1):
 		output = "Drill-2"
 	return output

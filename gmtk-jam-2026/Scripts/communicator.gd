@@ -18,6 +18,10 @@ func _ready():
 	for ii in inputs:
 		if ii.has_signal("changed"):
 			ii.changed.connect(InputsChanged)
+	if(inputRequirement == InputRequirement.NONE):
+		state = false
+		ActivateOutputs(state)
+		changed.emit()
 
 func InputsChanged() -> void:
 	var result: bool = inputRequirement == InputRequirement.ALL
