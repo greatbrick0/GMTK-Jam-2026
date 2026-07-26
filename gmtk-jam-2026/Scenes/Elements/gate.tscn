@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bjmslpgsiv1dm" path="res://art/BasicTiles/Doors/leftDoorSlice-right.png" id="2_wi8tm"]
 [ext_resource type="Texture2D" uid="uid://c2q3povi08t25" path="res://art/BasicTiles/Doors/rightDoorSlice-left.png" id="3_nbnmf"]
 [ext_resource type="Texture2D" uid="uid://cgncnqljlar3e" path="res://art/BasicTiles/Doors/rightDoorSlice-right.png" id="4_rqvqh"]
+[ext_resource type="AudioStream" uid="uid://cc7fwl0tjt4wk" path="res://sounds/DraggingMetal.wav" id="6_vrm2v"]
+[ext_resource type="AudioStream" uid="uid://dermpyp1g6lhq" path="res://sounds/DraggingReverse.wav" id="7_5kkyb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwxio"]
 atlas = ExtResource("1_xfvdi")
@@ -324,3 +326,15 @@ visible = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_odgah")
 speed_scale = 3.0
+
+[node name="Audio2D" type="AudioStreamPlayer2D" parent="." unique_id=841914520]
+stream = ExtResource("6_vrm2v")
+volume_db = -9.0
+pitch_scale = 1.2
+bus = &"ReverbBus"
+
+[node name="Audio2D2" type="AudioStreamPlayer2D" parent="." unique_id=313821257]
+stream = ExtResource("7_5kkyb")
+volume_db = -9.0
+pitch_scale = 1.2
+bus = &"ReverbBus"

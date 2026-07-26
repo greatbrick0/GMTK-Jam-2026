@@ -273,7 +273,7 @@ _data = {
 
 [node name="MainMenu" type="Node2D" unique_id=62942237]
 script = ExtResource("1_l6cm7")
-levelPath = "res://Scenes/space_world.tscn"
+levelPath = "res://scenes/space_world.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=725298252]
 

@@ -15,8 +15,10 @@ func _ready():
 func Activate(newValue: bool) -> void:
 	if((not inverted) == newValue):
 		spriteRef.play("default")
+		$Audio2D.play()
 	else:
 		spriteRef.play_backwards("default")
+		$Audio2D2.play()
 
 func FrameChanged() -> void:
 	var result: bool = spriteRef.frame == spriteRef.sprite_frames.get_frame_count("default") - 1
