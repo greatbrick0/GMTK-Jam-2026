@@ -3,6 +3,123 @@
 [ext_resource type="Script" uid="uid://c7c0x72yrl1i2" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Theme" uid="uid://o25h47g85kvf" path="res://TitleTheme.tres" id="2_bqqt6"]
 [ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://uwrylqg65wyd" path="res://art/Units/train-bottomLeft.png" id="3_wu84c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(0, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(41, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(82, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(123, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(164, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("3_wu84c")
+region = Rect2(205, 0, 41, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dd4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ln24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CanvasLayer/TrainBottomLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2010, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CanvasLayer/AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2025, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+resource_name = "train"
+length = 7.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CanvasLayer/TrainBottomLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.3333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2010, 30), Vector2(-92, 1070)]
+}
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "trainAnimated"
+length = 7.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CanvasLayer/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2025, 10), Vector2(-86, 1064)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa1go"]
+_data = {
+&"RESET": SubResource("Animation_8ln24"),
+&"train": SubResource("Animation_rtw2f"),
+&"trainAnimated": SubResource("Animation_wu84c")
+}
 
 [node name="MainMenu" type="Node2D" unique_id=62942237]
 script = ExtResource("1_l6cm7")
@@ -44,6 +161,22 @@ theme = ExtResource("2_bqqt6")
 text = "Searching For 
 Electric Sheep"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1336038601]
+texture_filter = 1
+position = Vector2(2025, 10)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_5dd4i")
+autoplay = "default"
+
+[node name="TrainBottomLeft" type="Sprite2D" parent="CanvasLayer" unique_id=1146706689]
+visible = false
+texture_filter = 1
+position = Vector2(2010, 30)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wu84c")
+region_enabled = true
+region_rect = Rect2(0, 0, 41, 37)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1375944108]
 y_sort_enabled = true
 position = Vector2(1249, 588)
@@ -51,4 +184,17 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAEAAAADAAEAAAAAAAIAAAADAAEAAAD//wMAAAAAAAAAAAD//wIAAAADAAEAAAD+/wEAAAAAAAAAAAD/////AAACAAAAAAD//wEAAAABAAAAAAD//wAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAP7/AAADAAAAAAAAAP//AAAAAAAAAAABAAAAAAACAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wQAAAABAAAAAAABAAEAAAAFAAAAAAABAAIAAAADAAAAAAAAAAMAAAADAAAAAAAAAAQAAAACAAAAAAD//wUAAAABAAAAAAD//wYAAAADAAEAAAD+/wUAAAADAAAAAAABAP7/AAADAAAAAAABAP//AAAAAAAAAAACAAAAAAACAAAAAAACAAIAAAADAAAAAAABAAMAAAABAAAAAAABAAQAAAABAAAAAAAAAAUAAAACAAAAAAAAAAYAAAADAAAAAAACAAMAAAADAAAAAAACAAQAAAACAAAAAAABAAUAAAADAAEAAAABAAYAAAADAAEAAAAAAAcAAAAAAAAAAAAAAP3/AAADAAEAAAACAAEAAAABAAAAAAD//wcAAAADAAEAAAAAAAgAAAACAAAAAAD+/wQAAAADAAEAAAD9/wMAAAACAAAAAAADAAIAAAADAAAAAAD9/wIAAAADAAAAAAD9/wEAAAAAAAAAAAD+/wAAAAADAAEAAAD+////AAABAAAAAAD///7/AAAAAAAAAAD///3/AAADAAAAAAAAAPz/AAABAAAAAAAAAPv/AAADAAEAAAABAPz/AAADAAAAAAABAP3/AAADAAAAAAACAP7/AAADAAEAAAACAP//AAADAAAAAAADAAAAAAADAAAAAAADAAEAAAADAAAAAAD8/wgAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAAAAAAAAAAAAAAEAPr/AAAAAAAAAAAAAPb/AAAEAAEAAAD9//r/AAAEAAEAAAD6/wEAAAAEAAEAAAD+/w8AAAAAAAAAAAACAA8AAAAAAAAAAAD5/w0AAAAAAAAAAAD5/w4AAAAAAAAAAAD4/w8AAAAAAAAAAAD4/xAAAAAAAAAAAAD3/xEAAAAAAAAAAAD3/xIAAAAAAAAAAAD3/xMAAAAAAAAAAAD4/xQAAAAAAAAAAAD4/xUAAAAAAAAAAAD5/xYAAAAAAAAAAAD5/xcAAAAAAAAAAAD6/xYAAAAAAAAAAAD6/xUAAAAAAAAAAAD7/xQAAAAAAAAAAAD7/xMAAAAAAAAAAAD7/xIAAAAAAAAAAAD7/xEAAAAAAAAAAAD7/xAAAAAAAAAAAAD6/w8AAAAAAAAAAAD6/w4AAAAAAAAAAAD5/w8AAAAAAAAAAAD5/xAAAAAAAAAAAAD4/xEAAAAAAAAAAAD4/xIAAAAAAAAAAAD4/xMAAAAAAAAAAAD5/xIAAAAAAAAAAAD6/xIAAAAAAAAAAAD5/xEAAAAAAAAAAAD6/xAAAAAAAAAAAAD5/xQAAAAAAAAAAAD5/xUAAAAAAAAAAAD6/xQAAAAAAAAAAAD6/xMAAAAAAAAAAAD6/xEAAAAAAAAAAAD5/xMAAAAAAAAAAAD8/xIAAAAAAAAAAAD7//7/AAAEAAEAAAD7//3/AAAEAAEAAAD8//z/AAAEAAEAAAD8//v/AAAEAAEAAAD9//n/AAAEAAEAAAD+//j/AAAEAAEAAAD+//f/AAAEAAEAAAD///b/AAAEAAEAAAD///X/AAAEAAEAAAD///f/AAAEAAEAAAD///j/AAAEAAEAAAD+//n/AAAEAAEAAAD+//r/AAAEAAEAAAD9//v/AAAEAAEAAAD9//z/AAAEAAEAAAD8//3/AAAEAAEAAAD8//7/AAAEAAEAAAD7////AAAEAAEAAAD7/wAAAAAEAAEAAAD6/wIAAAAEAAEAAAD5/wMAAAAEAAEAAAD5/wQAAAAEAAEAAAD4/wUAAAAEAAEAAAD4/wYAAAAEAAEAAAD3/wcAAAAEAAEAAAD3/wgAAAAEAAEAAAD2/wkAAAAEAAEAAAD2/woAAAAEAAEAAAD1/wsAAAAEAAEAAAD1/wwAAAAEAAEAAAD0/w0AAAAEAAEAAAD0/w4AAAAEAAEAAADz/w8AAAAEAAEAAADz/xAAAAAEAAEAAADy/xEAAAAEAAEAAADy/xIAAAAEAAEAAADx/xMAAAAEAAEAAADx/xQAAAAEAAEAAADw/xUAAAAEAAEAAADw/xYAAAAEAAEAAADv/xcAAAAEAAEAAADv/xgAAAAEAAEAAADu/xkAAAAEAAEAAADu/xoAAAAEAAEAAADt/xsAAAAEAAEAAADt/xwAAAAEAAEAAADs/x0AAAAEAAEAAADs/x4AAAAEAAEAAAD6////AAAEAAEAAAD6/wAAAAAEAAEAAAD5/wEAAAAEAAEAAAD5/wIAAAAEAAEAAAD4/wMAAAAEAAEAAAD4/wQAAAAEAAEAAAD3/wUAAAAEAAEAAAD3/wYAAAAEAAEAAAD2/wcAAAAEAAEAAAD2/wgAAAAEAAEAAAD1/wkAAAAEAAEAAAD1/woAAAAEAAEAAAD0/wsAAAAEAAEAAAD0/wwAAAAEAAEAAADz/w0AAAAEAAEAAADz/w4AAAAEAAEAAADy/w8AAAAEAAEAAADy/xAAAAAEAAEAAADx/xEAAAAEAAEAAADx/xIAAAAEAAEAAADw/xMAAAAEAAEAAADw/xQAAAAEAAEAAADv/xUAAAAEAAEAAADv/xYAAAAEAAEAAADu/xcAAAAEAAEAAADu/xgAAAAEAAEAAADt/xkAAAAEAAEAAADt/xoAAAAEAAEAAADs/xsAAAAEAAEAAADs/xwAAAAEAAEAAADr/x0AAAAEAAEAAADr/x8AAAAEAAEAAADr/x4AAAAEAAEAAAAAAPX/AAAEAAEAAAABAPT/AAAEAAEAAAABAPP/AAAEAAEAAAACAPL/AAAEAAEAAAACAPH/AAAEAAEAAAADAPD/AAAEAAEAAAADAO//AAAEAAEAAAAEAO7/AAAEAAEAAAAEAO3/AAAEAAEAAAAFAOz/AAAEAAEAAAAFAOv/AAAEAAEAAAAGAOr/AAAEAAEAAAAGAOn/AAAEAAEAAAAHAOj/AAAEAAEAAAAHAOf/AAAEAAEAAAAIAOb/AAAEAAEAAAAIAOX/AAAEAAEAAAAJAOT/AAAEAAEAAAAJAOP/AAAEAAEAAAAKAOL/AAAEAAEAAAAKAOH/AAAEAAEAAAALAOD/AAAEAAEAAAALAN//AAAEAAEAAAAAAPT/AAAEAAEAAAAAAPP/AAAEAAEAAAABAPL/AAAEAAEAAAABAPH/AAAEAAEAAAACAPD/AAAEAAEAAAACAO//AAAEAAEAAAADAO7/AAAEAAEAAAADAO3/AAAEAAEAAAAEAOz/AAAEAAEAAAAEAOv/AAAEAAEAAAAFAOr/AAAEAAEAAAAFAOn/AAAEAAEAAAAGAOj/AAAEAAEAAAAGAOf/AAAEAAEAAAAHAOb/AAAEAAEAAAAHAOX/AAAEAAEAAAAIAOT/AAAEAAEAAAAIAOP/AAAEAAEAAAAJAOL/AAAEAAEAAAAJAOH/AAAEAAEAAAAKAOD/AAAEAAEAAAAKAN//AAAEAAEAAAALAN7/AAAEAAEAAAA=")
 tile_set = ExtResource("3_bqqt6")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMapLayer" unique_id=229752785]
+libraries/ = SubResource("AnimationLibrary_oa1go")
+
+[node name="Timer" type="Timer" parent="." unique_id=1691335050]
+wait_time = 15.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1026162126]
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="CanvasLayer/Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="Timer" to="TileMapLayer/AnimationPlayer" method="play" binds= ["trainAnimated"]]
+[connection signal="timeout" from="Timer2" to="TileMapLayer/AnimationPlayer" method="play" binds= ["trainAnimated"]]
