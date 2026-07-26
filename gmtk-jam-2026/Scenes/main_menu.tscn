@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmvmlr4sf4gnx"]
 
 [ext_resource type="Script" uid="uid://c7c0x72yrl1i2" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://wp1gsfdusx3c" path="res://StandardTheme.tres" id="2_ekxnf"]
 
 [node name="MainMenu" type="Node2D" unique_id=62942237]
 script = ExtResource("1_l6cm7")
@@ -11,6 +12,7 @@ offset_left = 730.0
 offset_top = 416.0
 offset_right = 1106.0
 offset_bottom = 541.0
+theme = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 40
 text = "PLAY"
 

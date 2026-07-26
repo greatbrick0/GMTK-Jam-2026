@@ -1,0 +1,44 @@
+[gd_resource type="Theme" format=3 uid="uid://wp1gsfdusx3c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctl7o"]
+bg_color = Color(0.30588236, 0.28627452, 0.3647059, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8509804, 0.9411765, 0.3137255, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrkrs"]
+bg_color = Color(0.30588236, 0.28627452, 0.3647059, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30588236, 0.28627452, 0.3647059, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy5f"]
+bg_color = Color(0.30588236, 0.28627452, 0.3647059, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.15686275, 0.21960784, 0.3019608, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.8509804, 0.9411765, 0.3137255, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_ctl7o")
+Button/styles/normal = SubResource("StyleBoxFlat_hrkrs")
+Button/styles/pressed = SubResource("StyleBoxFlat_4hy5f")
