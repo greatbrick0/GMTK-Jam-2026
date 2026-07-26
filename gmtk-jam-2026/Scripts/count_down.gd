@@ -2,7 +2,7 @@ extends Node2D
 class_name CountDown
 
 var editable: bool = false
-
+var crisisAmount: float = 20.0
 var stepsRemaining: float = 100.0
 signal outOfSteps
 
@@ -15,7 +15,11 @@ func _process(_delta):
 func DrainSteps(amount: float) -> void:
 	stepsRemaining -= amount
 	$ProgressBar.value = stepsRemaining
+	if (stepsRemaining <= crisisAmount):
+		$Sprite2D2.visible = true;
+		$Sprite2D2/AnimationPlayer.play("Shake");
 	if(stepsRemaining <= 0):
+		$Sprite2D2.visible = false;
 		outOfSteps.emit()
 
 func SetSteps(newSteps: float) -> void:
