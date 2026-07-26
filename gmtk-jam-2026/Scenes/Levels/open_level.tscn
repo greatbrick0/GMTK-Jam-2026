@@ -10,10 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bcdsswi4qb3gy" path="res://scenes/Levels/level1_basement1.tscn" id="9_7o2si"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="10_d6bfp"]
 [ext_resource type="PackedScene" uid="uid://cem7hiw3xruml" path="res://scenes/Elements/recharge_station.tscn" id="10_sf1gm"]
-[ext_resource type="PackedScene" uid="uid://c6fewv6ideo6t" path="res://scenes/Levels/level2_basement1.tscn" id="10_syynf"]
-[ext_resource type="PackedScene" uid="uid://c1y78i58sevyx" path="res://scenes/Levels/level3_Bonusbasement.tscn" id="11_r3wsj"]
-[ext_resource type="Texture2D" uid="uid://c7o2s8g4eac84" path="res://art/icon.svg" id="11_syynf"]
+[ext_resource type="PackedScene" uid="uid://c6fewv6ideo6t" path="res://scenes/Levels/level2_basement1.tscn" id="11_r3wsj"]
+[ext_resource type="PackedScene" uid="uid://c1tfwxqrjkwdg" path="res://scenes/Elements/pick_up_power_up.tscn" id="11_xe8vl"]
+[ext_resource type="Script" uid="uid://ddn7vxn7cjo8g" path="res://scripts/power_up.gd" id="12_r3wsj"]
 [ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="13_xe8vl"]
+
+[sub_resource type="Resource" id="Resource_m8i4y"]
+script = ExtResource("12_r3wsj")
+metadata/_custom_type_script = "uid://ddn7vxn7cjo8g"
 
 [node name="OpenLevel" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
@@ -96,12 +100,12 @@ position = Vector2(304, 184)
 
 [node name="Level2_Portal1" parent="TileMapLayer2" unique_id=456420657 instance=ExtResource("7_7ni8u")]
 position = Vector2(328, -34)
-packedLevel = ExtResource("10_syynf")
+packedLevel = ExtResource("11_r3wsj")
 exitPosition = Vector2(0, 2000)
 
 [node name="Level2_Portal2" parent="TileMapLayer2" unique_id=79399612 instance=ExtResource("7_7ni8u")]
 position = Vector2(391, -66)
-packedLevel = ExtResource("10_syynf")
+packedLevel = ExtResource("11_r3wsj")
 exitPosition = Vector2(58, 1942)
 
 [node name="Level2_Communicator1" type="Node" parent="TileMapLayer2" unique_id=1489360586 node_paths=PackedStringArray("inputs", "outputs")]
@@ -109,11 +113,6 @@ script = ExtResource("6_m8i4y")
 inputs = [NodePath("../Level1_Lever1")]
 outputs = [NodePath("../Level1_Gate1_1"), NodePath("../Level1_Gate1_2"), NodePath("../LevelG_Gate1_1"), NodePath("../LevelG_Gate1_2")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
-
-[node name="Put Drill Here" type="Sprite2D" parent="TileMapLayer2" unique_id=255703634]
-position = Vector2(433, -32)
-scale = Vector2(0.15624988, 0.15624988)
-texture = ExtResource("11_syynf")
 
 [node name="Level3_PortalBonus" parent="TileMapLayer2" unique_id=1113804562 instance=ExtResource("7_7ni8u")]
 position = Vector2(-256, 92)
@@ -133,6 +132,11 @@ script = ExtResource("6_m8i4y")
 inputs = [NodePath("../Level3_Lever1")]
 outputs = [NodePath("../LevelG_Gate1_3"), NodePath("../LevelG_Gate1_4")]
 metadata/_custom_type_script = "uid://dtfua7hyp65t3"
+
+[node name="PickUpPowerUp" parent="TileMapLayer2" unique_id=737718493 instance=ExtResource("11_xe8vl")]
+position = Vector2(432, -42)
+pickUpId = "OpenLevelDrill1"
+heldPowerUp = SubResource("Resource_m8i4y")
 
 [node name="Light" parent="." unique_id=269814053 instance=ExtResource("10_d6bfp")]
 visible = false
