@@ -2,12 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cshp1f7rsjp1r" path="res://scripts/power_up_placeable.gd" id="1_2akca"]
 [ext_resource type="Texture2D" uid="uid://m2aycintpc3h" path="res://art/Rock2.png" id="2_2akca"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="2_d8ycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2akca"]
 size = Vector2(140, 140)
 
 [node name="PowerUpPlaceable" type="Node2D" unique_id=885627187]
 script = ExtResource("1_2akca")
+usedModulate = Color(0.13333334, 0.1254902, 0.20392157, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=478428715]
+texture_filter = 1
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_d8ycd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=165232579]
 texture_filter = 1
