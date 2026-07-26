@@ -1,7 +1,7 @@
 extends Node
 class_name Communicator
 
-enum InputRequirement {ALL, ANY}
+enum InputRequirement {ALL, ANY, NONE}
 
 @export var inputs: Array[Node]
 @export var inputRequirement: InputRequirement = InputRequirement.ALL
@@ -9,6 +9,8 @@ enum InputRequirement {ALL, ANY}
 
 @export var state: bool = false
 @export var reset: bool = true
+
+signal changed
 
 func _ready():
 	if(reset):
@@ -24,9 +26,12 @@ func InputsChanged() -> void:
 			result = result and GetInputState(ii)
 		else:
 			result = result or GetInputState(ii)
+	if(inputRequirement == InputRequirement.NONE):
+		result = !result
 	if(result != state):
 		state = result
 		ActivateOutputs(state)
+		changed.emit()
 
 func ActivateOutputs(newValue: bool) -> void:
 	for ii in outputs:
@@ -38,8 +43,10 @@ func ActivateOutputs(newValue: bool) -> void:
 func GetInputState(input: Node) -> bool:
 	if(input is Lever):
 		return input.used
+	elif(input is Communicator):
+		return input.state
 	else:
 		return false
 
 func Reset() -> void:
-	state = false
+	state = inputRequirement == InputRequirement.NONE
