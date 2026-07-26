@@ -1,0 +1,122 @@
+[gd_scene format=4 uid="uid://d1koq8w2q0ixn"]
+
+[ext_resource type="Script" uid="uid://cga4li0dcyl5w" path="res://scripts/level.gd" id="1_srj3b"]
+[ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="2_hdcwv"]
+[ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://tile sets/WallMetalTiles.tres" id="3_cj2ob"]
+[ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/Elements/portal.tscn" id="4_plcnt"]
+[ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_1pvop"]
+
+[node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
+texture_filter = 1
+script = ExtResource("1_srj3b")
+levelId = "EmptyBasement"
+levelOffset = Vector2(1000, 2000)
+floorLayer = NodePath("TileMapLayer")
+playerLayer = NodePath("TileMapLayer2")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=1937314391]
+z_index = -2
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8/+//AAADAAAAAAACAP7/AAACAAAAAAAFAAUAAAACAAAAAAAJAPz/AAABAAAAAAAIAPD/AAABAAAAAAD9//X/AAAAAAAAAAA=")
+tile_set = ExtResource("2_hdcwv")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=149941557]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8/+3/AAACAAAAAAACAPz/AAAAAAAAAAAIAO7/AAAAAAAAAAAJAPb/AAADAAAAAAABAOn/AAADAAEAAAD9//P/AAABAAAAAAD5/+H/AAABAAAAAAA=")
+tile_set = ExtResource("2_hdcwv")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2063257103]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD/////AAADAAAAAAD//wAAAAADAAEAAAD//wEAAAADAAAAAAAAAAAAAAACAAAAAAAAAP//AAADAAAAAAAAAP7/AAADAAAAAAD///3/AAAAAAAAAAD///7/AAAAAAAAAAD+////AAADAAAAAAAAAAIAAAADAAEAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAACAAAAAAABAAIAAAABAAAAAAAAAAMAAAADAAEAAAD///z/AAACAAAAAAD+//3/AAAAAAAAAAD+//7/AAACAAAAAAD9//3/AAABAAAAAAD+//z/AAADAAAAAAD+//v/AAADAAAAAAD+//r/AAACAAAAAAD9//n/AAAAAAAAAAD9//r/AAABAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD8//v/AAABAAAAAAD8//r/AAABAAAAAAD8//n/AAABAAAAAAD9//j/AAACAAAAAAD8//f/AAADAAEAAAD8//b/AAADAAEAAAD7//f/AAACAAAAAAD8//j/AAAAAAAAAAD7//n/AAACAAAAAAD7//j/AAADAAEAAAD6//n/AAACAAAAAAD6//r/AAABAAAAAAD5//v/AAAAAAAAAAD5//z/AAADAAEAAAD4//3/AAADAAEAAAD5//7/AAADAAAAAAD5////AAAAAAAAAAD6//7/AAABAAAAAAD6//3/AAABAAAAAAD7//z/AAADAAEAAAD6//v/AAAAAAAAAAD7//r/AAABAAAAAAD6//z/AAABAAAAAAD5//3/AAABAAAAAAD7//v/AAAAAAAAAAD+//j/AAAAAAAAAAD+//f/AAACAAAAAAD///b/AAABAAAAAAD///f/AAAAAAAAAAD///j/AAABAAAAAAD///n/AAACAAAAAAD///r/AAAAAAAAAAAAAPj/AAADAAAAAAD+//n/AAADAAAAAAD6//f/AAABAAAAAAD7//b/AAADAAEAAAD6//X/AAADAAEAAAD6//T/AAACAAAAAAD6//P/AAACAAAAAAD7//T/AAADAAAAAAD7//X/AAABAAAAAAD6//b/AAABAAAAAAD5//X/AAADAAAAAAD9//H/AAAGAAAAAAD+//D/AAAFAAEAAAD9/+//AAAGAAEAAAD9//D/AAAFAAAAAAD8/+v/AAAAAAAAAAD+/wgAAAABAAAAAAD8/wEAAAAAAAAAAAD3/wUAAAABAAAAAAD3//v/AAAAAAAAAAD2//P/AAACAAAAAAD5//D/AAAAAAAAAAAAAPP/AAAEAAEAAAABAPL/AAABAAAAAAABAPH/AAACAAAAAAACAPL/AAADAAEAAAABAPP/AAACAAAAAAACAPT/AAADAAEAAAACAPX/AAACAAAAAAADAPb/AAAAAAAAAAACAPf/AAADAAAAAAACAPb/AAAAAAAAAAABAPX/AAAAAAAAAAABAPT/AAAEAAEAAAACAPP/AAADAAAAAAADAPT/AAACAAAAAAADAPX/AAABAAAAAAAEAPb/AAACAAAAAAADAPf/AAAEAAEAAAADAPj/AAABAAAAAAADAPn/AAACAAAAAAAEAPr/AAADAAAAAAAEAPj/AAADAAAAAAAEAPn/AAABAAAAAAAFAPj/AAACAAAAAAAEAPf/AAAGAAAAAAAFAPr/AAAAAAAAAAAEAPv/AAABAAAAAAAFAPn/AAAAAAAAAAAFAPf/AAADAAAAAAAGAPb/AAADAAEAAAAFAPv/AAABAAAAAAAFAPz/AAACAAAAAAAGAPr/AAADAAEAAAAFAP3/AAAEAAAAAAAGAPz/AAABAAAAAAAGAPv/AAADAAAAAAAFAPb/AAAAAAAAAAAFAPX/AAAEAAAAAAAGAPX/AAADAAAAAAAGAPT/AAACAAAAAAAFAPP/AAACAAAAAAAFAPT/AAADAAEAAAAEAPX/AAADAAAAAAADAPP/AAADAAAAAAAEAPL/AAADAAAAAAAEAPH/AAAAAAAAAAAFAPD/AAAEAAAAAAAFAO//AAAEAAEAAAAFAO7/AAADAAEAAAAEAO3/AAACAAAAAAAEAO7/AAAAAAAAAAAEAO//AAAAAAAAAAAEAPD/AAACAAAAAAADAPH/AAAGAAAAAAADAPL/AAAEAAEAAAACAPH/AAACAAAAAAADAPD/AAADAAEAAAADAO//AAAGAAAAAAAAAPL/AAACAAAAAAAAAPH/AAADAAAAAAABAPD/AAADAAAAAAD8/+f/AAAAAAAAAAD9/+b/AAAAAAAAAAD9/+X/AAAAAAAAAAD+/+T/AAAAAAAAAAD+/+P/AAAAAAAAAAD+/+L/AAAAAAAAAAD9/+H/AAAAAAAAAAD9/+L/AAAAAAAAAAD8/+P/AAAAAAAAAAD8/+T/AAAAAAAAAAD7/+X/AAAAAAAAAAD8/+b/AAAAAAAAAAD8/+X/AAAAAAAAAAD9/+T/AAAAAAAAAAD9/+P/AAAAAAAAAAD+/+b/AAAAAAAAAAD+/+X/AAAAAAAAAAD//+T/AAAAAAAAAAD//+X/AAAAAAAAAAD//+b/AAAAAAAAAAD+/+f/AAAAAAAAAAD//+j/AAAAAAAAAAD//+f/AAAAAAAAAAAAAOb/AAAAAAAAAAD8/+L/AAAAAAAAAAD8/+H/AAAAAAAAAAD9/+D/AAAAAAAAAAD8/9//AAAAAAAAAAD8/+D/AAAAAAAAAAD7/9//AAAAAAAAAAD8/97/AAAAAAAAAAD7/93/AAAAAAAAAAD7/97/AAAAAAAAAAD6/9//AAAAAAAAAAD7/+D/AAAAAAAAAAD7/+H/AAAAAAAAAAD+/+D/AAAAAAAAAAD+/9//AAAAAAAAAAD//+D/AAAAAAAAAAD+/+H/AAAAAAAAAAD//+L/AAAAAAAAAAD//+H/AAAAAAAAAAAAAOD/AAAAAAAAAAD//9//AAAAAAAAAAD//97/AAAAAAAAAAD//93/AAAAAAAAAAAAANz/AAAAAAAAAAAAANv/AAAAAAAAAAABANz/AAAAAAAAAAABAN3/AAAAAAAAAAABAN7/AAAAAAAAAAAAAN//AAAAAAAAAAAAAN7/AAAAAAAAAAAAAN3/AAAAAAAAAAACAN7/AAAAAAAAAAACAN//AAAAAAAAAAACAOD/AAAAAAAAAAABAOH/AAAAAAAAAAABAOD/AAAAAAAAAAABAN//AAAAAAAAAAD//9z/AAAAAAAAAAD//9v/AAAAAAAAAAAAANr/AAAAAAAAAAD//9n/AAAAAAAAAAD//9r/AAAAAAAAAAD+/9v/AAAAAAAAAAD+/9r/AAAAAAAAAAD+/9n/AAAAAAAAAAD//9j/AAAAAAAAAAD9/93/AAACAAAAAAD6/+b/AAAAAAAAAAD3/+H/AAADAAAAAAD5/9f/AAABAAAAAAD8/9j/AAADAAAAAAD+/9L/AAADAAAAAAABANP/AAACAAAAAAACANv/AAADAAAAAAAFAN3/AAACAAAAAAAEAOT/AAADAAAAAAADAOr/AAABAAAAAAACAAsAAAABAAAAAAADAAEAAAADAAEAAAAGAOf/AAABAAAAAAAGAOj/AAADAAAAAAAFAOf/AAADAAAAAAAGAOb/AAAAAAAAAAAGAOX/AAAAAAAAAAAHAOb/AAABAAAAAAAHAOj/AAABAAAAAAA=")
+tile_set = ExtResource("2_hdcwv")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=365772771]
+z_index = 1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD6//L/AQAEAAAAAAD///X/AQAFAAAAAAD5//z/AQAEAAEAAAABAAAAAQAFAAEAAAD9/+//AgAEAAAAAAD+//D/AgABAAAAAAAFAOz/AQAFAAAAAAAGAPL/AQAFAAAAAAAGAPr/AQAFAAEAAAAAAO//AQAEAAAAAAD6//n/AgAAAAAAAAD+/wgAAgAEAAAAAAADAPD/AgABAAAAAAAEAPr/AgABAAAAAAACAPX/AgABAAAAAAAFAO//AgABAAAAAAD9/93/AgAEAAAAAAD8/+T/AQAEAAEAAAD7/9z/AQAEAAAAAAD+/9f/AQAEAAAAAAACAN7/AQAFAAEAAAD//+X/AQAFAAEAAAD+/+b/AgABAAAAAAABAN3/AgADAAAAAAAAANr/AgABAAAAAAAGAOf/AgACAAAAAAD5/+H/AgACAAAAAAD+/9L/AgABAAAAAAAFAOf/AgAEAAAAAAA=")
+tile_set = ExtResource("3_cj2ob")
+
+[node name="portalEntrance" parent="TileMapLayer2" unique_id=1997146595 instance=ExtResource("4_plcnt")]
+position = Vector2(42, 0)
+returnUp = true
+exitPosition = Vector2(-41, 1959)
+
+[node name="portalEntrance2" parent="TileMapLayer2" unique_id=356588193 instance=ExtResource("4_plcnt")]
+position = Vector2(-5, -83)
+returnUp = true
+exitPosition = Vector2(-45, 2000)
+
+[node name="portalEntrance3" parent="TileMapLayer2" unique_id=1911276818 instance=ExtResource("4_plcnt")]
+position = Vector2(-172, -108)
+returnUp = true
+exitPosition = Vector2(-77, 2008)
+
+[node name="portalEntrance4" parent="TileMapLayer2" unique_id=400686330 instance=ExtResource("4_plcnt")]
+position = Vector2(37, -132)
+returnUp = true
+exitPosition = Vector2(-86, 1894)
+
+[node name="portalEntrance5" parent="TileMapLayer2" unique_id=1014848677 instance=ExtResource("4_plcnt")]
+position = Vector2(201, -50)
+returnUp = true
+exitPosition = Vector2(-137, 1886)
+
+[node name="portalEntrance6" parent="TileMapLayer2" unique_id=1568910811 instance=ExtResource("4_plcnt")]
+position = Vector2(171, -156)
+returnUp = true
+exitPosition = Vector2(-105, 1860)
+
+[node name="portalEntrance8" parent="TileMapLayer2" unique_id=2085399084 instance=ExtResource("4_plcnt")]
+position = Vector2(-3, -217)
+returnUp = true
+exitPosition = Vector2(72, 1863)
+
+[node name="portalEntrance10" parent="TileMapLayer2" unique_id=267764211 instance=ExtResource("4_plcnt")]
+position = Vector2(-109, -225)
+returnUp = true
+exitPosition = Vector2(72, 1863)
+
+[node name="portalEntrance11" parent="TileMapLayer2" unique_id=2026828192 instance=ExtResource("4_plcnt")]
+position = Vector2(74, -273)
+returnUp = true
+exitPosition = Vector2(72, 1863)
+
+[node name="portalEntrance9" parent="TileMapLayer2" unique_id=905748346 instance=ExtResource("4_plcnt")]
+position = Vector2(-28, -325)
+returnUp = true
+exitPosition = Vector2(90, 1839)
+
+[node name="portalProceed" parent="TileMapLayer2" unique_id=74946783 instance=ExtResource("4_plcnt")]
+position = Vector2(-202, -34)
+returnUp = true
+exitPosition = Vector2(-121, 1912)
+
+[node name="portalProceed2" parent="TileMapLayer2" unique_id=173406562 instance=ExtResource("4_plcnt")]
+position = Vector2(205, -109)
+returnUp = true
+exitPosition = Vector2(40, 1870)
+
+[node name="portalProceed3" parent="TileMapLayer2" unique_id=262298247 instance=ExtResource("4_plcnt")]
+position = Vector2(-137, -283)
+returnUp = true
+exitPosition = Vector2(21, 1926)
+
+[node name="Light3" parent="." unique_id=269814053 instance=ExtResource("6_1pvop")]
+visible = false
+position = Vector2(-64, -134)
+
+[node name="Light5" parent="." unique_id=2051899404 instance=ExtResource("6_1pvop")]
+visible = false
+position = Vector2(-64, -280)
+scale = Vector2(0.25, 0.125)
+
+[node name="Light6" parent="." unique_id=791636387 instance=ExtResource("6_1pvop")]
+visible = false
+position = Vector2(192, -199)
+scale = Vector2(0.25, 0.125)
+
+[node name="Light4" parent="." unique_id=775139803 instance=ExtResource("6_1pvop")]
+visible = false
+position = Vector2(-49, 63)
+scale = Vector2(0.17, 0.085)

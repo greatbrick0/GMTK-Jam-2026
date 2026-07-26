@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dgpblaqo20k27" path="res://scenes/Elements/gate.tscn" id="5_r3wsj"]
 [ext_resource type="Script" uid="uid://dtfua7hyp65t3" path="res://scripts/communicator.gd" id="6_m8i4y"]
 [ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/Elements/portal.tscn" id="7_7ni8u"]
-[ext_resource type="PackedScene" uid="uid://d1koq8w2q0ixn" path="res://scenes/Levels/empty_basement.tscn" id="8_l2x0b"]
 [ext_resource type="PackedScene" uid="uid://bcdsswi4qb3gy" path="res://scenes/Levels/level1_basement1.tscn" id="9_7o2si"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="10_d6bfp"]
 [ext_resource type="PackedScene" uid="uid://cem7hiw3xruml" path="res://scenes/Elements/recharge_station.tscn" id="10_sf1gm"]
+[ext_resource type="PackedScene" uid="uid://c1y78i58sevyx" path="res://scenes/Levels/level2_basement1.tscn" id="10_syynf"]
 [ext_resource type="Texture2D" uid="uid://c7o2s8g4eac84" path="res://art/icon.svg" id="11_syynf"]
 
 [node name="OpenLevel" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
@@ -94,8 +94,13 @@ position = Vector2(304, 184)
 
 [node name="Level2_Portal1" parent="TileMapLayer2" unique_id=456420657 instance=ExtResource("7_7ni8u")]
 position = Vector2(328, -34)
-packedLevel = ExtResource("8_l2x0b")
+packedLevel = ExtResource("10_syynf")
 exitPosition = Vector2(0, 2000)
+
+[node name="Level2_Portal2" parent="TileMapLayer2" unique_id=79399612 instance=ExtResource("7_7ni8u")]
+position = Vector2(391, -66)
+packedLevel = ExtResource("10_syynf")
+exitPosition = Vector2(58, 1942)
 
 [node name="Level2_Communicator1" type="Node" parent="TileMapLayer2" unique_id=1489360586 node_paths=PackedStringArray("inputs", "outputs")]
 script = ExtResource("6_m8i4y")

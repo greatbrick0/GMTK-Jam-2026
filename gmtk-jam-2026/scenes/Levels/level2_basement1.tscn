@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bs0w7ya46nrp5" path="res://tile sets/FloorMetalTiles.tres" id="2_6ympd"]
 [ext_resource type="TileSet" uid="uid://cvqxdecphj0lq" path="res://tile sets/WallMetalTiles.tres" id="3_w2y3e"]
 [ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/Elements/portal.tscn" id="4_y7u0s"]
+[ext_resource type="PackedScene" uid="uid://d1koq8w2q0ixn" path="res://scenes/Levels/level2_basement2.tscn" id="5_6ympd"]
 [ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="5_ax8g8"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_u5tx0"]
 
@@ -18,28 +19,90 @@ playerLayer = NodePath("TileMapLayer2(walls)")
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=1937314391]
 z_index = -2
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+//f/AAAFAAAAAAD+//j/AAAFAAEAAAD9//n/AAAEAAAAAAD9//r/AAAEAAAAAAD8//v/AAACAAAAAAD8//z/AAAFAAAAAAD7//3/AAAGAAAAAAD7//z/AAAAAAAAAAD6//v/AAADAAEAAAD5//X/AAABAAAAAAD6//b/AAAAAAAAAAD6//f/AAAEAAAAAAAAAAQAAAAGAAEAAAAAAAMAAAAFAAEAAAABAAIAAAAGAAAAAAABAAEAAAAEAAEAAAACAAAAAAAFAAAAAAACAP//AAAEAAEAAAD//wMAAAAEAAAAAAD//wIAAAADAAAAAAD+/wEAAAAGAAEAAAD+/wAAAAABAAAAAAD9////AAACAAAAAAA=")
 tile_set = ExtResource("2_6ympd")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=149941557]
 z_index = -1
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD7//v/AAAEAAEAAAD8//r/AAAEAAAAAAD8//n/AAAEAAAAAAD9//j/AAAEAAAAAAD9//f/AAADAAAAAAD+//b/AAAAAAAAAAD+//X/AAAFAAEAAAD7//r/AAAFAAEAAAD6//n/AAAFAAEAAAD+/wYAAAADAAAAAAD+/wUAAAADAAAAAAD//wQAAAADAAAAAAD7/wEAAAABAAAAAAD8/wIAAAADAAEAAAD8/wMAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wUAAAADAAAAAAA=")
 tile_set = ExtResource("2_6ympd")
 
 [node name="TileMapLayer(floor)" type="TileMapLayer" parent="." unique_id=2063257103]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD/////AAACAAAAAAD//wAAAAADAAAAAAD//wEAAAAAAAAAAAAAAAAAAAADAAEAAAAAAP//AAADAAEAAAAAAP7/AAACAAAAAAD///3/AAADAAAAAAD///7/AAADAAEAAAD+////AAADAAEAAAAAAAEAAAABAAAAAAAAAAIAAAACAAAAAAABAAAAAAABAAAAAAD+//7/AAABAAAAAAD+//3/AAADAAEAAAD///z/AAADAAEAAAD+//v/AAAAAAAAAAD+//z/AAADAAAAAAD9//3/AAAAAAAAAAD9//z/AAADAAAAAAD9//v/AAADAAEAAAD+//r/AAACAAAAAAABAP7/AAABAAAAAAAAAP3/AAABAAAAAAABAPz/AAADAAEAAAABAP3/AAADAAAAAAACAP7/AAAAAAAAAAACAP3/AAADAAEAAAADAPz/AAAAAAAAAAACAPv/AAABAAAAAAACAPr/AAADAAEAAAABAPv/AAADAAAAAAABAPr/AAADAAAAAAABAPn/AAABAAAAAAABAPj/AAABAAAAAAAAAPn/AAABAAAAAAAAAPv/AAADAAEAAAAAAPf/AAABAAAAAAAAAPj/AAABAAAAAAD///n/AAADAAAAAAD///j/AAABAAAAAAD///f/AAADAAEAAAAAAPb/AAADAAAAAAAAAPr/AAAAAAAAAAACAPz/AAADAAEAAAD9//n/AAADAAAAAAD9//j/AAAAAAAAAAD8//f/AAAAAAAAAAD8//j/AAAAAAAAAAD8//n/AAABAAAAAAD9//r/AAADAAEAAAD8//v/AAADAAEAAAD8//r/AAAAAAAAAAD7//n/AAACAAAAAAD7//r/AAADAAEAAAD7//v/AAADAAAAAAD8//z/AAACAAAAAAD7//3/AAADAAEAAAD7//z/AAABAAAAAAD6//3/AAAAAAAAAAD6//z/AAADAAAAAAD6//v/AAADAAEAAAD7//7/AAABAAAAAAD6////AAADAAAAAAD6/wAAAAADAAEAAAD5////AAAAAAAAAAD5/wAAAAACAAAAAAD4////AAABAAAAAAD5//7/AAABAAAAAAD5//3/AAAAAAAAAAD6//7/AAABAAAAAAD5/wEAAAACAAAAAAD4//3/AAABAAAAAAD5//z/AAACAAAAAAD4//7/AAABAAAAAAD3//3/AAADAAAAAAD3//z/AAADAAEAAAD3//v/AgACAAAAAAD4//r/AAABAAAAAAD4//v/AAAAAAAAAAD4//z/AgADAAAAAAD6/wIAAAADAAAAAAD6/wMAAAADAAEAAAD7/wQAAAADAAEAAAD7/wMAAgACAAEAAAD8/wIAAAABAAAAAAD7/wEAAAADAAAAAAD7/wAAAAABAAAAAAD6/wEAAAAAAAAAAAD7/wIAAgADAAEAAAD8//b/AAADAAAAAAD7//f/AAACAAAAAAD7//b/AgADAAAAAAD7//X/AAACAAAAAAD6//f/AAACAAAAAAD7//j/AAADAAEAAAD6//b/AAAAAAAAAAD6//X/AgACAAAAAAD7//T/AAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAACAAAAAAD//wAAAAADAAAAAAD//wEAAAAAAAAAAAAAAAAAAAADAAEAAAAAAP//AAADAAEAAAAAAP7/AAACAAAAAAD///3/AAADAAAAAAD///7/AAADAAEAAAD+////AAADAAEAAAAAAAEAAAABAAAAAAAAAAIAAAACAAAAAAABAAAAAAABAAAAAAD+//7/AAACAAAAAAD+//3/AAADAAEAAAD///z/AAADAAEAAAD+//v/AAAAAAAAAAD+//z/AgADAAAAAAD9//3/AAAAAAAAAAD9//z/AAADAAAAAAD+//r/AAACAAAAAAABAP7/AAABAAAAAAAAAP3/AAABAAAAAAABAPz/AAADAAEAAAABAP3/AAADAAAAAAACAP7/AAAAAAAAAAACAP3/AAADAAEAAAADAPz/AAAAAAAAAAACAPv/AAABAAAAAAACAPr/AAADAAEAAAABAPv/AAADAAAAAAABAPr/AAADAAAAAAABAPn/AAABAAAAAAABAPj/AAABAAAAAAAAAPn/AAABAAAAAAAAAPv/AAADAAEAAAAAAPf/AAABAAAAAAAAAPj/AgADAAAAAAD///n/AAADAAAAAAD///j/AAABAAAAAAD///f/AgACAAAAAAAAAPb/AAADAAAAAAAAAPr/AAAAAAAAAAACAPz/AAADAAEAAAD9//v/AgACAAAAAAD7//n/AAABAAAAAAD8//j/AAABAAAAAAD8//f/AAADAAAAAAD9//b/AAADAAEAAAD9//X/AAAAAAAAAAD+//T/AAADAAAAAAD+//P/AAABAAAAAAD+//L/AgABAAAAAAD9//H/AAABAAAAAAD9//L/AAADAAEAAAD9//P/AgAAAAAAAAD8//H/AAABAAAAAAD8//L/AAADAAAAAAD8//P/AAAAAAAAAAD8//T/AAABAAAAAAD8//X/AAADAAAAAAD8//b/AAADAAAAAAD7//f/AgAAAAEAAAD7//j/AgABAAEAAAD6//f/AAACAAAAAAD7//b/AAADAAAAAAD7//X/AAAAAAAAAAD9//T/AAACAAAAAAD7//P/AAADAAEAAAD7//T/AAACAAAAAAD6//X/AAACAAAAAAD6//T/AAADAAEAAAD5//P/AAADAAEAAAD6//L/AgACAAAAAAD6//H/AAADAAAAAAD7//D/AAABAAAAAAD7//H/AAAEAAAAAAD8//D/AgADAAAAAAD7/+//AgACAAAAAAD7//L/AAACAAAAAAD6//P/AgADAAAAAAABAPP/AAADAAEAAAABAPL/AAADAAAAAAAAAPH/AAABAAAAAAAAAPD/AAADAAAAAAAAAO//AAACAAAAAAAAAO7/AgADAAAAAAD//+//AAADAAAAAAACAPL/AgADAAEAAAACAPP/AgACAAEAAAABAPH/AAADAAEAAAABAPD/AAADAAAAAAAAAO3/AAADAAEAAAABAO7/AAABAAAAAAABAO//AAAAAAAAAAACAPD/AAAAAAAAAAACAPH/AAADAAEAAAACAPT/AAACAAAAAAADAPL/AAACAAAAAAD//+7/AAAAAAAAAAD//+3/AgACAAAAAAAAAOz/AAABAAAAAAABAO3/AAACAAAAAAACAO7/AAABAAAAAAACAO3/AgAAAAAAAAADAOz/AgABAAAAAAACAOv/AAACAAAAAAACAOz/AAADAAEAAAADAO3/AAADAAAAAAADAO7/AAAAAAAAAAACAO//AAACAAAAAAD8//3/AAABAAAAAAD9//7/AAACAAAAAAD9////AAADAAEAAAD+/wAAAAACAAAAAAD+/wEAAAADAAEAAAD//wIAAAAAAAAAAAD+/wMAAAABAAAAAAD+/wQAAAABAAAAAAD9/wMAAgABAAEAAAD9/wIAAAACAAAAAAD8/wEAAAABAAAAAAD8/wAAAgABAAEAAAD7////AAABAAAAAAD8//7/AAADAAAAAAD8////AgAAAAEAAAD9/wAAAAADAAAAAAD9/wEAAAADAAEAAAD+/wIAAgAAAAEAAAD8/+7/AAAAAAAAAAD8/+//AAAAAAAAAAD9//D/AAAAAAAAAAD4//j/AAACAAAAAAD3//n/AAADAAAAAAD4//r/AAAAAAAAAAA=")
 tile_set = ExtResource("2_6ympd")
 
 [node name="TileMapLayer2(walls)" type="TileMapLayer" parent="." unique_id=365772771]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAACAPv/AQAFAAEAAAADAPn/AAACAAAAAAADAPj/AAABAAAAAAACAPf/AAAAAAAAAAACAPb/AAADAAAAAAABAPX/AAADAAEAAAABAPT/AAADAAAAAAAAAPP/AAABAAAAAAAAAP//AQAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAPv/AQAFAAEAAAAAAP//AQAFAAEAAAABAPn/AgACAAAAAAD+////AgABAAAAAAD9//b/AgAAAAAAAAABAO//AgAEAAAAAAD3//n/AgAEAAAAAAD4//j/AgABAAAAAAA=")
 tile_set = ExtResource("3_w2y3e")
 
 [node name="portal_entrance" parent="TileMapLayer2(walls)" unique_id=1997146595 instance=ExtResource("4_y7u0s")]
 position = Vector2(24, -12)
 returnUp = true
-exitPosition = Vector2(272, -14)
+exitPosition = Vector2(374, -18)
+
+[node name="portal_1" parent="TileMapLayer2(walls)" unique_id=1030416180 instance=ExtResource("4_y7u0s")]
+position = Vector2(-57, -49)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1016, 2008)
+
+[node name="portal_2" parent="TileMapLayer2(walls)" unique_id=892870630 instance=ExtResource("4_y7u0s")]
+position = Vector2(-107, -17)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1016, 2008)
+
+[node name="portal_3" parent="TileMapLayer2(walls)" unique_id=2093486295 instance=ExtResource("4_y7u0s")]
+position = Vector2(-61, 8)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1016, 2008)
+
+[node name="portal_4" parent="TileMapLayer2(walls)" unique_id=203523788 instance=ExtResource("4_y7u0s")]
+position = Vector2(-137, -80)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(816, 1950)
+
+[node name="portal_5" parent="TileMapLayer2(walls)" unique_id=780851509 instance=ExtResource("4_y7u0s")]
+position = Vector2(-169, -122)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1069, 1884)
+
+[node name="portal_6" parent="TileMapLayer2(walls)" unique_id=298953334 instance=ExtResource("4_y7u0s")]
+position = Vector2(-121, -148)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1069, 1884)
+
+[node name="portal_7" parent="TileMapLayer2(walls)" unique_id=584675795 instance=ExtResource("4_y7u0s")]
+position = Vector2(-54, -122)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1069, 1884)
+
+[node name="portal_8" parent="TileMapLayer2(walls)" unique_id=1218402365 instance=ExtResource("4_y7u0s")]
+position = Vector2(8, -162)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(1173, 1907)
+
+[node name="portal_9" parent="TileMapLayer2(walls)" unique_id=1617448378 instance=ExtResource("4_y7u0s")]
+position = Vector2(106, -169)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(988, 1683)
+
+[node name="portal_10" parent="TileMapLayer2(walls)" unique_id=783807483 instance=ExtResource("4_y7u0s")]
+position = Vector2(88, -121)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(981, 1775)
+
+[node name="portal_11" parent="TileMapLayer2(walls)" unique_id=905065395 instance=ExtResource("4_y7u0s")]
+position = Vector2(5, -82)
+packedLevel = ExtResource("5_6ympd")
+exitPosition = Vector2(878, 1725)
+
+[node name="portal_exit" parent="TileMapLayer2(walls)" unique_id=1545643700 instance=ExtResource("4_y7u0s")]
+position = Vector2(89, -41)
+returnUp = true
+exitPosition = Vector2(421, -50)
 
 [node name="FragileRock" parent="TileMapLayer2(walls)" unique_id=1843752984 instance=ExtResource("5_ax8g8")]
 position = Vector2(47, -24)
@@ -55,8 +118,9 @@ position = Vector2(-733, 196)
 
 [node name="Light3" parent="." unique_id=269814053 instance=ExtResource("6_u5tx0")]
 visible = false
-position = Vector2(34, 36)
+position = Vector2(63, -136)
+scale = Vector2(0.26, 0.13)
 
 [node name="Light4" parent="." unique_id=775139803 instance=ExtResource("6_u5tx0")]
 visible = false
-position = Vector2(12, 3)
+position = Vector2(-256, -56)
