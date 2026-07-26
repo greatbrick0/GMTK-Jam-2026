@@ -22,6 +22,10 @@ viewport_path = NodePath("CameraResults/MainViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_8erm5"]
 viewport_path = NodePath("CameraResults/SubViewport")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("9_oprun")
+region = Rect2(0, 0, 34, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("8_smehm")
 region = Rect2(0, 0, 34, 48)
@@ -222,6 +226,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}],
+"loop": true,
+"name": &"IdleLeft",
 "speed": 5.0
 }, {
 "frames": [{
@@ -508,7 +520,7 @@ centered = false
 texture_filter = 1
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"WalkDownLeft"
+animation = &"IdleLeft"
 speed_scale = 3.0
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
