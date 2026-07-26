@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform float perlinScale;
 uniform vec2 scrollMod;
 uniform int pixelScale;
+uniform float aspectRatio = 1.778;
 uniform int gradientSteps;
 uniform float gradientStrength: hint_range(0.0,5.0);
 
@@ -33,6 +34,7 @@ void vertex() {
 
 vec2 UVPixel(vec2 uv) {
 	vec2 newUv = uv;
+	newUv.x *= aspectRatio;
 	newUv *= float(pixelScale);
 	newUv = floor(newUv);
 	newUv /= float(pixelScale);
