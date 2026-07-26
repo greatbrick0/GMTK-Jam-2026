@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cy7l38hxypd6g" path="res://scenes/count_down.tscn" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://b5aljwylqkhis" path="res://scripts/hud.gd" id="1_oo0fn"]
 [ext_resource type="Theme" uid="uid://wp1gsfdusx3c" path="res://StandardTheme.tres" id="3_5ysmq"]
-[ext_resource type="PackedScene" uid="uid://cls1r1pkubkev" path="res://scenes/power_up_placeable.tscn" id="4_6fi6k"]
 
 [sub_resource type="Animation" id="Animation_r6w70"]
 resource_name = "Awaken"
@@ -325,11 +324,6 @@ text = "Wake Up"
 
 [node name="Placeables" type="Node2D" parent="Menu" unique_id=561201855]
 position = Vector2(283, 184)
-
-[node name="PowerUpPlaceable" parent="Menu/Placeables" unique_id=885627187 instance=ExtResource("4_6fi6k")]
-
-[node name="PowerUpPlaceable2" parent="Menu/Placeables" unique_id=1945047708 instance=ExtResource("4_6fi6k")]
-position = Vector2(0, 160)
 
 [node name="CountDown" parent="." unique_id=1305994455 instance=ExtResource("1_ahhtf")]
 position = Vector2(980, 540)
