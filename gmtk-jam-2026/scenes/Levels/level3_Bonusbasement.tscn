@@ -6,7 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dcukt4mmr5pi7" path="res://scenes/Elements/portal.tscn" id="4_y7u0s"]
 [ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="5_ax8g8"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="6_u5tx0"]
-[ext_resource type="Texture2D" uid="uid://c7o2s8g4eac84" path="res://art/icon.svg" id="7_g14wo"]
+[ext_resource type="PackedScene" uid="uid://c1tfwxqrjkwdg" path="res://scenes/Elements/pick_up_power_up.tscn" id="7_ic3ld"]
+[ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="8_gxqr2"]
+[ext_resource type="Script" uid="uid://ddn7vxn7cjo8g" path="res://scripts/power_up.gd" id="9_l55uo"]
+
+[sub_resource type="Resource" id="Resource_unjw7"]
+script = ExtResource("9_l55uo")
+width = 20.0
+displayColour1 = Color(1, 0.12156863, 0.19215687, 1)
+metadata/_custom_type_script = "uid://ddn7vxn7cjo8g"
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]
 texture_filter = 1
@@ -89,7 +97,7 @@ scale = Vector2(0.26, 0.13)
 visible = false
 position = Vector2(-208, -47)
 
-[node name="Drill" type="Sprite2D" parent="." unique_id=1130984923]
-position = Vector2(-142, -77)
-scale = Vector2(0.1484375, 0.1484375)
-texture = ExtResource("7_g14wo")
+[node name="PickUpPowerUp" parent="." unique_id=1496240117 instance=ExtResource("7_ic3ld")]
+position = Vector2(-153, -86)
+pickUpId = "BonusDrill"
+heldPowerUp = SubResource("Resource_unjw7")

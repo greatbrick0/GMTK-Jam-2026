@@ -50,29 +50,6 @@ itemArcObj = ExtResource("2_nwuex")
 [node name="Layer1" type="Node2D" parent="." unique_id=2068228544]
 scale = Vector2(1.1, 1.1)
 
-[node name="ProgressBar" type="TextureProgressBar" parent="Layer1" unique_id=226228496]
-visible = false
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 2.3631759
-pivot_offset_ratio = Vector2(0.5, 0.5)
-step = 0.1
-value = 15.4
-fill_mode = 5
-nine_patch_stretch = true
-texture_progress = ExtResource("1_2nt72")
-tint_progress = Color(0.8509804, 0.9411765, 0.3137255, 1)
-
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1001120597]
 anchors_preset = 8
 anchor_left = 0.5

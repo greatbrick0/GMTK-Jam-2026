@@ -39,7 +39,6 @@ func GetItemAvailable(index: int) -> String:
 	var output = "None"
 	if(index == 0):
 		for ii in range(len(powerUps)):
-			print("checking " + str(stepsRemaining))
 			if(100 - stepsRemaining >= powerUpStartTimes[ii] and 100 - stepsRemaining <= powerUpStartTimes[ii] + powerUps[ii].width):
 				return powerUps[ii].powerUpId
 	if(index == 1 and OS.has_feature("editor")):
@@ -75,4 +74,5 @@ func RemovePowerUp(removedPowerUp: PowerUp) -> void:
 	var indexToRemove: int = powerUps.find(removedPowerUp)
 	powerUps.remove_at(indexToRemove)
 	powerUpStartTimes.remove_at(indexToRemove)
+	$Layer1.get_child(indexToRemove).queue_free()
 	print("removed power up")
