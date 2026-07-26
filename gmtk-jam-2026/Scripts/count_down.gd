@@ -9,6 +9,8 @@ signal outOfSteps
 var powerUps: Array[PowerUp] = []
 var powerUpStartTimes: Array[float] = []
 
+@export var itemArcObj: PackedScene
+
 func _process(_delta):
 	if(Input.is_action_just_pressed("reset")):
 		print(str(round(stepsRemaining)) + " countdown remaining")
@@ -60,6 +62,13 @@ func CanAddPowerUp(start: float, width: float) -> bool:
 func AddPowerUp(start: float, newPowerUp: PowerUp) -> void:
 	powerUps.append(newPowerUp)
 	powerUpStartTimes.append(start)
+	var itemArcRef: TextureProgressBar = itemArcObj.instantiate()
+	$Layer1.add_child(itemArcRef)
+	itemArcRef.tint_progress = newPowerUp.displayColour1
+	itemArcRef.value = newPowerUp.width
+	itemArcRef.rotation_degrees = ((start + newPowerUp.width) * -3.6) + 180
+	print(itemArcRef.rotation_degrees)
+	itemArcRef.position = Vector2(-100, -100)
 	print("added power up to " + str(start))
 
 func RemovePowerUp(removedPowerUp: PowerUp) -> void:

@@ -35,7 +35,7 @@ func _process(_delta):
 
 func AttemptPlacePowerUp() -> void:
 	var point = countDownRef.GetMouseAngle()
-	if(countDownRef.CanAddPowerUp(point - (heldPowerUp.width / 2.0), point + (heldPowerUp.width / 2.0))):
+	if(countDownRef.CanAddPowerUp(point - (heldPowerUp.width / 2.0), heldPowerUp.width)):
 		countDownRef.AddPowerUp(point - (heldPowerUp.width / 2.0), heldPowerUp)
 	else:
 		MusicManager.PlayGeneral(0)

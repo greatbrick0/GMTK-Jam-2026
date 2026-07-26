@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bsb5aq1kqmblm"]
+
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="1_nqjuo"]
+
+[node name="ItemArc" type="TextureProgressBar" unique_id=794844836]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1060.0
+offset_top = -640.0
+offset_right = -860.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.1415927
+pivot_offset_ratio = Vector2(0.5, 0.5)
+step = 0.1
+value = 66.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("1_nqjuo")
