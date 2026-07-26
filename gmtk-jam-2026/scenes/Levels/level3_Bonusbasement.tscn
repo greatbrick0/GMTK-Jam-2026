@@ -12,7 +12,7 @@
 texture_filter = 1
 script = ExtResource("1_lv113")
 levelId = "EmptyBasement"
-levelOffset = Vector2(0, 2000)
+levelOffset = Vector2(5000, 3000)
 floorLayer = NodePath("TileMapLayer(floor)")
 playerLayer = NodePath("TileMapLayer2(walls)")
 

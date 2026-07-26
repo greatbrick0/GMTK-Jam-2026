@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bcdsswi4qb3gy" path="res://scenes/Levels/level1_basement1.tscn" id="9_7o2si"]
 [ext_resource type="PackedScene" uid="uid://b6p6t0vjpvfs8" path="res://scenes/common_light.tscn" id="10_d6bfp"]
 [ext_resource type="PackedScene" uid="uid://cem7hiw3xruml" path="res://scenes/Elements/recharge_station.tscn" id="10_sf1gm"]
+[ext_resource type="PackedScene" uid="uid://bspt6kyxncbdi" path="res://scenes/Levels/level3_Bonusbasement.tscn" id="11_7ni8u"]
 [ext_resource type="PackedScene" uid="uid://c6fewv6ideo6t" path="res://scenes/Levels/level2_basement1.tscn" id="11_r3wsj"]
 [ext_resource type="PackedScene" uid="uid://c1tfwxqrjkwdg" path="res://scenes/Elements/pick_up_power_up.tscn" id="11_xe8vl"]
 [ext_resource type="Script" uid="uid://ddn7vxn7cjo8g" path="res://scripts/power_up.gd" id="12_r3wsj"]
+[ext_resource type="PackedScene" uid="uid://dowy516lwx7bx" path="res://scenes/Levels/level3_basement1.tscn" id="13_m8i4y"]
 [ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="13_xe8vl"]
 
 [sub_resource type="Resource" id="Resource_m8i4y"]
@@ -116,13 +118,13 @@ metadata/_custom_type_script = "uid://dtfua7hyp65t3"
 
 [node name="Level3_PortalBonus" parent="TileMapLayer2" unique_id=1113804562 instance=ExtResource("7_7ni8u")]
 position = Vector2(-256, 92)
-packedLevel = ExtResource("11_r3wsj")
-exitPosition = Vector2(0, 2000)
+packedLevel = ExtResource("11_7ni8u")
+exitPosition = Vector2(5000, 3000)
 
 [node name="Level3_Portal1" parent="TileMapLayer2" unique_id=434081853 instance=ExtResource("7_7ni8u")]
 position = Vector2(-295, 145)
-packedLevel = ExtResource("11_r3wsj")
-exitPosition = Vector2(0, 2000)
+packedLevel = ExtResource("13_m8i4y")
+exitPosition = Vector2(41, 2965)
 
 [node name="Level3_Lever1" parent="TileMapLayer2" unique_id=840930592 instance=ExtResource("4_xe8vl")]
 position = Vector2(-160, 26)

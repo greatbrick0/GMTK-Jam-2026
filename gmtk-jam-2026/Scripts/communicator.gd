@@ -19,7 +19,7 @@ func _ready():
 		if ii.has_signal("changed"):
 			ii.changed.connect(InputsChanged)
 	if(inputRequirement == InputRequirement.NONE):
-		state = false
+		state = true
 		ActivateOutputs(state)
 		changed.emit()
 

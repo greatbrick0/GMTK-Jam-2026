@@ -24,6 +24,12 @@ func DrainSteps(amount: float) -> void:
 
 func SetSteps(newSteps: float) -> void:
 	stepsRemaining = newSteps
+	if (stepsRemaining <= crisisAmount):
+		$Sprite2D2.visible = true;
+		$Sprite2D2/AnimationPlayer.play("Shake");
+	else:
+		$Sprite2D2.visible = false;
+		
 	$ProgressBar.value = stepsRemaining
 
 func GetItemAvailable(index: int) -> String:
