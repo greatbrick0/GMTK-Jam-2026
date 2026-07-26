@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://5auin528ibxu" path="res://scenes/Elements/fragile_rock.tscn" id="13_xe8vl"]
 [ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="14_l2x0b"]
 [ext_resource type="Texture2D" uid="uid://dcj10wnr11i01" path="res://art/Units/train-bottomRight.png" id="16_7o2si"]
+[ext_resource type="Script" uid="uid://85ueqy60ha8i" path="res://scripts/basic_win.gd" id="17_d6bfp"]
 
 [sub_resource type="Resource" id="Resource_m8i4y"]
 script = ExtResource("12_r3wsj")
@@ -89,7 +90,7 @@ tile_set = ExtResource("2_sf1gm")
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=365772771]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAPv/AAADAAEAAAD///v/AAABAAAAAAAAAPr/AAAAAAAAAAD///z/AAAAAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD9////AAADAAAAAAAAAPn/AAADAAAAAAABAPr/AAACAAAAAAABAPv/AAACAAAAAAACAPz/AAADAAEAAAACAP3/AAAAAAAAAAD//xAAAgAEAAAAAAALABYAAgAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAPv/AAADAAEAAAD///v/AAABAAAAAAAAAPr/AAAAAAAAAAD///z/AAAAAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD9////AAADAAAAAAAAAPn/AAADAAAAAAABAPr/AAACAAAAAAABAPv/AAACAAAAAAACAPz/AAADAAEAAAACAP3/AAAAAAAAAAD//xAAAgAEAAAAAAALABYAAgAEAAAAAAD4/xMAAgADAAAAAAACABYAAgABAAAAAAAHAAwAAgABAAAAAAAMAAAAAgABAAAAAAD9/xUAAgACAAAAAAA=")
 tile_set = ExtResource("3_syynf")
 
 [node name="Level0_Lever1" parent="TileMapLayer2" unique_id=1997146595 instance=ExtResource("4_xe8vl")]
@@ -198,10 +199,20 @@ position = Vector2(432, -42)
 pickUpId = "OpenLevelDrill1"
 heldPowerUp = SubResource("Resource_m8i4y")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TileMapLayer2" unique_id=640208449]
+[node name="Win Train" type="AnimatedSprite2D" parent="TileMapLayer2" unique_id=640208449]
 position = Vector2(-376, 228)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_awcfp")
+autoplay = "default"
+script = ExtResource("17_d6bfp")
+
+[node name="TrainWinArea" type="Area2D" parent="TileMapLayer2/Win Train" unique_id=559078860]
+position = Vector2(1, 4)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer2/Win Train/TrainWinArea" unique_id=133058706]
+polygon = PackedVector2Array(0, -16, 32, 0, 0, 16, -32, 0)
 
 [node name="Light" parent="." unique_id=269814053 instance=ExtResource("10_d6bfp")]
 visible = false
@@ -210,6 +221,10 @@ position = Vector2(7, 42)
 [node name="Light2" parent="." unique_id=1823768506 instance=ExtResource("10_d6bfp")]
 visible = false
 position = Vector2(-12, 128)
+
+[node name="Light4" parent="." unique_id=1695292635 instance=ExtResource("10_d6bfp")]
+visible = false
+position = Vector2(-371, 249)
 
 [node name="Light3" parent="." unique_id=1293378673 instance=ExtResource("10_d6bfp")]
 visible = false
@@ -235,3 +250,5 @@ position = Vector2(-256, 112)
 
 [node name="FragileRock7" parent="." unique_id=2019860893 instance=ExtResource("13_xe8vl")]
 position = Vector2(-272, 120)
+
+[connection signal="body_entered" from="TileMapLayer2/Win Train/TrainWinArea" to="TileMapLayer2/Win Train" method="_on_train_win_area_body_entered"]

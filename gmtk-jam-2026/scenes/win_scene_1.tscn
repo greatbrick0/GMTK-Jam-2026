@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cil7faoud3t6w"]
+
+[ext_resource type="PackedScene" uid="uid://btxstqqus3vl" path="res://scenes/outer_space_bg.tscn" id="1_m5r7k"]
+[ext_resource type="Texture2D" uid="uid://ba6taw5odlloa" path="res://art/BasicTiles/BasicCube.png" id="2_uh10h"]
+[ext_resource type="Texture2D" uid="uid://8kidn823pvs3" path="res://art/Units/StaticCharacter.png" id="3_uujqd"]
+[ext_resource type="Texture2D" uid="uid://uwrylqg65wyd" path="res://art/Units/train-bottomLeft.png" id="4_6ex2w"]
+
+[node name="Node2D" type="Node2D" unique_id=937512902]
+
+[node name="OuterSpaceBg" parent="." unique_id=1358639487 instance=ExtResource("1_m5r7k")]
+position = Vector2(7, -1)
+
+[node name="LineEdit" type="LineEdit" parent="OuterSpaceBg" unique_id=428495850]
+offset_left = -231.0
+offset_top = -82.00001
+offset_right = -61.0
+offset_bottom = -51.000008
+rotation = -0.23731533
+text = "Thanks for Playing!"
+
+[node name="BasicCube" type="Sprite2D" parent="OuterSpaceBg" unique_id=442405919]
+texture_filter = 1
+position = Vector2(59, 79)
+scale = Vector2(7.21, 7.21)
+texture = ExtResource("2_uh10h")
+
+[node name="BasicCube2" type="Sprite2D" parent="OuterSpaceBg" unique_id=1357856129]
+texture_filter = 1
+position = Vector2(150, 127)
+scale = Vector2(7.21, 7.21)
+texture = ExtResource("2_uh10h")
+
+[node name="BasicCube3" type="Sprite2D" parent="OuterSpaceBg" unique_id=1187607659]
+texture_filter = 1
+position = Vector2(-43.64, 144.36)
+scale = Vector2(7.21, 7.21)
+texture = ExtResource("2_uh10h")
+
+[node name="BasicCube4" type="Sprite2D" parent="OuterSpaceBg" unique_id=235327543]
+texture_filter = 1
+position = Vector2(47.36, 192.36)
+scale = Vector2(7.21, 7.21)
+texture = ExtResource("2_uh10h")
+
+[node name="BasicCube5" type="Sprite2D" parent="OuterSpaceBg" unique_id=1114902405]
+texture_filter = 1
+position = Vector2(-153.64, 204.36)
+scale = Vector2(7.21, 7.21)
+texture = ExtResource("2_uh10h")
+
+[node name="BasicCube6" type="Sprite2D" parent="OuterSpaceBg" unique_id=274229295]
+texture_filter = 1
+position = Vector2(-62.64, 252.36)
+scale = Vector2(7.21, 7.21)
+texture = ExtResource("2_uh10h")
+
+[node name="StaticCharacter" type="Sprite2D" parent="OuterSpaceBg" unique_id=1206259305]
+texture_filter = 1
+position = Vector2(-71.999985, 21)
+scale = Vector2(5.775, 5.775)
+texture = ExtResource("3_uujqd")
+
+[node name="TrainBottomLeft" type="Sprite2D" parent="OuterSpaceBg" unique_id=896619110]
+texture_filter = 1
+position = Vector2(906, 31)
+scale = Vector2(8.05, 8.05)
+texture = ExtResource("4_6ex2w")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1476156918]
+zoom = Vector2(4, 4)
