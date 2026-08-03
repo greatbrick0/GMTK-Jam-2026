@@ -68,13 +68,9 @@ func ProcessItems(delta) -> void:
 			print("item " + str(ii) + ": " + countDownRef.GetItemAvailable(ii))
 		if(Input.is_action_pressed(input)):
 			if(countDownRef.GetItemAvailable(ii) == "Drill-1"):
-				countDownRef.DrainSteps(drillDrainSpeed * delta)
-				PlayDrillSound()
-				SetDrillArea($DrillArea.get_overlapping_areas(), 1.0)
+				GoDrill(delta, 1.0)
 			elif(countDownRef.GetItemAvailable(ii) == "Drill-2"):
-				countDownRef.DrainSteps(drillDrainSpeed * delta)
-				PlayDrillSound()
-				SetDrillArea($DrillArea.get_overlapping_areas(), 3.0)
+				GoDrill(delta, 3.0)
 			else:
 				StopDrill()
 		if(Input.is_action_just_released(input)):
@@ -84,8 +80,16 @@ func ProcessItems(delta) -> void:
 				StopDrill()
 
 func StopDrill() -> void:
+	$Effects/DrillRing.visible = false
 	SetDrillArea($DrillArea.get_overlapping_areas(), 0.0)
 	$DrillAudio.stop()
+
+func GoDrill(delta: float, power: float) -> void:
+	countDownRef.DrainSteps(drillDrainSpeed * delta)
+	PlayDrillSound()
+	$Effects/DrillRing.visible = true
+	$Effects/DrillRing.rotate(delta * power * 3.0)
+	SetDrillArea($DrillArea.get_overlapping_areas(), power)
 
 func PlayDrillSound() -> void:
 	if(not $DrillAudio.playing):

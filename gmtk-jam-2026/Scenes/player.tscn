@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cxtbuyqileein" path="res://art/Units/walkUp.png" id="13_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://chkr3bwkjx5g4" path="res://art/Units/walkUpLeft.png" id="14_60mlk"]
 [ext_resource type="Texture2D" uid="uid://o5kkte32w6wq" path="res://art/Units/walkUpRight.png" id="15_i4ail"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="16_a8ls1"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
 viewport_path = NodePath("CameraResults/MainViewport")
@@ -523,6 +524,38 @@ position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"IdleLeft"
 speed_scale = 3.0
+
+[node name="Effects" type="Node2D" parent="." unique_id=379526987]
+show_behind_parent = true
+position = Vector2(0, 16)
+scale = Vector2(1, 0.5)
+
+[node name="DrillRing" type="Node2D" parent="Effects" unique_id=1528564772]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Effects/DrillRing" unique_id=1658000084]
+modulate = Color(0.8509804, 0.9411765, 0.3137255, 1)
+position = Vector2(0, 20)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("16_a8ls1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Effects/DrillRing" unique_id=281021046]
+modulate = Color(0.8509804, 0.9411765, 0.3137255, 1)
+position = Vector2(0, -20)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("16_a8ls1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Effects/DrillRing" unique_id=635841121]
+modulate = Color(0.8509804, 0.9411765, 0.3137255, 1)
+position = Vector2(20, 0)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("16_a8ls1")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Effects/DrillRing" unique_id=498748287]
+modulate = Color(0.8509804, 0.9411765, 0.3137255, 1)
+position = Vector2(-20, 0)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("16_a8ls1")
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]
