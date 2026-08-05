@@ -20,13 +20,18 @@ func _ready():
 	if(instance == null):
 		instance = self
 		$CountDown.SetSteps(100.0)
+		$Menu/DreamMessage.text = ""
 		PowerUpInventory.inventoryChanged.connect(UpdateUpgradeSelectMenu)
 	else:
 		queue_free()
 
 func EndLoop() -> void:
 	GetCountDownAmountsForRefill()
+	UpdateDreamMessage()
 	$WakeUpPlayer.play("FallAsleep")
+
+func UpdateDreamMessage() -> void:
+	$Menu/DreamMessage.text = ""
 
 func _on_wake_up_button_pressed():
 	$WakeUpPlayer.play("Awaken")

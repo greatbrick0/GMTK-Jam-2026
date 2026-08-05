@@ -24,6 +24,7 @@ general/2d_panning_strength=2.0
 [autoload]
 
 MusicManager="*uid://bk40prxj8a3r7"
+DreamMessageManager="*uid://t2w8bun0i5hi"
 PowerUpInventory="*uid://dig68ohvd0gn1"
 
 [display]

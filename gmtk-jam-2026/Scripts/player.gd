@@ -31,6 +31,7 @@ func _process(delta):
 	if(Input.is_action_pressed("reset") and canMove == 0):
 		resetting += 1.0 * delta
 		if(resetting >= 0.5):
+			BumpCanMove(false)
 			Hud.instance.EndLoop()
 	else:
 		resetting = 0.0
