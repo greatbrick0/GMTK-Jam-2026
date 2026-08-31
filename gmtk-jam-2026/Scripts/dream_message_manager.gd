@@ -8,6 +8,8 @@ var fillerMessages: Array[String]
 func _ready():
 	fillerMessages = GetMessagesFromFile("res://FillerMessages.txt")
 	fillerMessages.reverse()
+	for ii in range(len(fillerMessages)):
+		fillerMessages[ii] = CharacterizeMessage(fillerMessages[ii])
 	defaultMessages.append_array(fillerMessages)
 
 func GetNextMessage() -> String:
@@ -23,6 +25,7 @@ func GetNextMessage() -> String:
 	return output
 
 func AddNewMessage(newMessage: String, isPrio: bool) -> void:
+	newMessage = CharacterizeMessage(newMessage)
 	if(isPrio): prioMessages.push_back(newMessage)
 	else: defaultMessages.push_back(newMessage)
 
@@ -34,3 +37,18 @@ func GetMessagesFromFile(filePath: String) -> Array[String]:
 	output.assign(content.split(";\n"))
 	output = output.filter(func(ii): return ii != "")
 	return output
+
+func CharacterizeMessage(msg: String) -> String:
+	if(msg.contains("[@chip]")):
+		msg = msg.replace("[@chip]", "")
+		msg = "[color=#d9f050]"+msg+"[/color]"
+	if(msg.contains("[@child]")):
+		msg = msg.replace("[@child]", "")
+		msg = "[color=#a59372]"+msg+"[/color]"
+	if(msg.contains("[@outside]")):
+		msg = msg.replace("[@outside]", "")
+		msg = "[color=#e5414e]"+msg+"[/color]"
+	if(msg.contains("[@real]")):
+		msg = msg.replace("[@real]", "")
+		msg = "[color=#009797]"+msg+"[/color]"
+	return msg

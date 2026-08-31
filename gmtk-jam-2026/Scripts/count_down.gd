@@ -18,6 +18,7 @@ func _process(_delta):
 func DrainSteps(amount: float) -> void:
 	stepsRemaining -= amount
 	$ProgressBar.value = stepsRemaining
+	$Arrow.rotation_degrees = 360 * (stepsRemaining / 100)
 	if (stepsRemaining <= crisisAmount):
 		$Sprite2D2.visible = true;
 		$Sprite2D2/AnimationPlayer.play("Shake");
@@ -34,6 +35,7 @@ func SetSteps(newSteps: float) -> void:
 		$Sprite2D2.visible = false;
 		
 	$ProgressBar.value = stepsRemaining
+	$Arrow.rotation_degrees = 360 * (stepsRemaining / 100)
 
 func GetItemAvailable(index: int) -> String:
 	var output = "None"

@@ -86,3 +86,12 @@ texture = ExtResource("4_v7end")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2" unique_id=99881643]
 libraries/ = SubResource("AnimationLibrary_xbocw")
+
+[node name="Arrow" type="Node2D" parent="." unique_id=1770598337]
+rotation = -1.5707964
+
+[node name="ArrowHead" type="Sprite2D" parent="Arrow" unique_id=118353860]
+modulate = Color(0.4862745, 0.3882353, 0.4392157, 1)
+position = Vector2(0, 100)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_2nt72")

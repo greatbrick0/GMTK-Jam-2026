@@ -4,6 +4,7 @@ class_name PickUpPowerUp
 @export var pickUpId: String = ""
 @export var heldPowerUp: PowerUp
 @export var forceReset: bool = false
+@export var dreamMessages: Array[String] = []
 
 var used = false
 
@@ -31,6 +32,8 @@ func Collect() -> void:
 	used = true
 	$Audio2D.play()
 	$CPUParticles2D.emitting = true
+	for ii in dreamMessages:
+		DreamMessageManager.AddNewMessage(ii, true)
 	PowerUpInventory.AddPowerUp(heldPowerUp, pickUpId)
 	$VisualOffset.visible = false
 	if(forceReset):

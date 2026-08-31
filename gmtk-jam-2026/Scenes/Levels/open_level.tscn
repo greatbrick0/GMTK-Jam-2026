@@ -200,6 +200,7 @@ position = Vector2(432, -42)
 pickUpId = "OpenLevelDrill1"
 heldPowerUp = SubResource("Resource_m8i4y")
 forceReset = true
+dreamMessages = Array[String](["[@real]Use the drill while the wheel points at its arc to break rocks.", "[@real]Drag the tool to the edge of the wheel to equip it."])
 
 [node name="Win Train" type="AnimatedSprite2D" parent="TileMapLayer2" unique_id=640208449]
 position = Vector2(-376, 228)
