@@ -28,6 +28,8 @@ func _ready():
 	$CameraResults/CanvasLayer2/LightResult.visible = true
 
 func _process(delta):
+	if(Input.is_action_just_released("think") and OS.has_feature("editor")):
+		Hud.instance.UpdateDreamMessage()
 	if(Input.is_action_pressed("reset") and canMove == 0):
 		resetting += 1.0 * delta
 		if(resetting >= 0.5):
@@ -53,14 +55,7 @@ func _physics_process(delta):
 		print("noclipping")
 		$CollisionPolygon2D.disabled = !$CollisionPolygon2D.disabled
 	move_and_slide()
-	
-	
-	
 	CharacterAnimation(direction)
-	
-	
-	
-	
 
 func ProcessItems(delta) -> void:
 	for ii in range(0, 2):
@@ -135,9 +130,7 @@ func CharacterAnimation(direction) -> void:
 			$AnimatedPlayerVisual.play("IdleLeft")
 		else:
 			$AnimatedPlayerVisual.play("Idle")
-		
 		return
-	
 	
 	# I am so sorry. I cant find a switch statement and am so not locked in.
 	
@@ -168,7 +161,3 @@ func CharacterAnimation(direction) -> void:
 	if (direction.x == -1.0):
 		$AnimatedPlayerVisual.play("WalkLeft")
 		isLeft = true;
-	
-	
-	
-	

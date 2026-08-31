@@ -1,7 +1,23 @@
-
-
-
-A merry little surge of electricity awakened Chip.;
-I might be late for the Train Of Thought.;
-I think I saw a satellite in the distance.;
-It is a good day today.;
+;
+;
+;
+[color=#009797]A merry little surge of electricity awakened Chip.[/color];
+[color=#d9f050]I might be late for the [wave amp=30 freq=5]Train Of Thought[/wave][/color].;
+[color=#d9f050]What is a wind-up toy to do?[/color];
+[color=#a59372]Chip falls asleep again.[/color];
+[color=#d9f050]I wonder what Gubbo is up to these days.[/color];
+[color=#a59372]Scattered toys: blocks, light bulb, stuffed reindeer, puzzle cube...[/color];
+[color=#d9f050]It is a good day today.[/color];
+[color=#d9f050]I think I saw a satellite in the distance.[/color];
+[color=#a59372]I find myself in captive thoughts.[/color];
+[color=#e5414e][wave amp=5 freq=50]Tomorrow on SCB: 
+Scuffling with the Abandominant![/wave][/color];
+[color=#a59372]It's raining outside. It's dark inside. The TV is still on.[/color];
+[color=#d9f050]Where should I go next?[/color];
+[color=#d9f050]It was only a dream.[/color];
+[color=#e5414e]Brought the new toy to bed.[/color];
+[color=#d9f050]Still on track.[/color];
+[color=#a59372]Not as weird as the purple world.[/color];
+[color=#e5414e]They do lots of things!.[/color];
+[color=#d9f050]I wonder where everyone else is.[/color];
+[color=#a59372]I'll be an astronaut one day.[/color];

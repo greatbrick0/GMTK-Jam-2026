@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_unjw7"]
 script = ExtResource("9_l55uo")
 width = 20.0
-displayColour1 = Color(1, 0.12156863, 0.19215687, 1)
+displayColour1 = Color(0.8980392, 0.25490198, 0.30588236, 1)
 metadata/_custom_type_script = "uid://ddn7vxn7cjo8g"
 
 [node name="EmptyBasement" type="Node2D" unique_id=1131854116 node_paths=PackedStringArray("floorLayer", "playerLayer")]

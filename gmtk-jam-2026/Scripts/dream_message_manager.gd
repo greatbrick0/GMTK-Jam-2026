@@ -32,6 +32,5 @@ func GetMessagesFromFile(filePath: String) -> Array[String]:
 	file.close()
 	var output: Array[String]
 	output.assign(content.split(";\n"))
-	output.erase("")
-	print(output)
+	output = output.filter(func(ii): return ii != "")
 	return output
