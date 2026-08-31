@@ -31,7 +31,8 @@ func EndLoop() -> void:
 	$WakeUpPlayer.play("FallAsleep")
 
 func UpdateDreamMessage() -> void:
-	$Menu/DreamMessage.text = ""
+	$Menu/DreamMessage.text = DreamMessageManager.GetNextMessage()
+	print("new message: " + $Menu/DreamMessage.text)
 
 func _on_wake_up_button_pressed():
 	$WakeUpPlayer.play("Awaken")
