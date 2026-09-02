@@ -30,12 +30,14 @@ func InitializeLevel(newLevel: Level, appended: bool) -> void:
 	levelRef.global_position = levelRef.levelOffset
 	levelRef.MoveLights()
 	SpawnPlayer(!appended)
+	WeatherManager.ChangeLevel(len(levelStack))
 
 func ReturnUpLevelStack() -> void:
 	levelRef.RemovePlayer(playerRef)
 	levelRef.queue_free()
 	levelRef = levelStack.pop_back()
 	SpawnPlayer(false)
+	WeatherManager.ChangeLevel(len(levelStack))
 
 func SpawnPlayer(resetPos: bool) -> void:
 	if(not playerRef):

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b5y8mtb6jw3jg"]
+
+[ext_resource type="Script" uid="uid://0itk4arbtxi4" path="res://sounds/weather_manager.gd" id="1_1x3ue"]
+[ext_resource type="AudioStream" uid="uid://dlik11ptdb87p" path="res://sounds/FixedRain3.wav" id="1_bn41x"]
+
+[node name="WeatherManager" type="Node" unique_id=521397108]
+script = ExtResource("1_1x3ue")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=445821501]
+stream = ExtResource("1_bn41x")
+volume_db = -3.0

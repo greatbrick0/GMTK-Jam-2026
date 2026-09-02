@@ -325,3 +325,4 @@ position = Vector2(-321, 39)
 position = Vector2(221, 9)
 pickUpId = "Level3Drill"
 heldPowerUp = SubResource("Resource_utmuj")
+dreamMessages = Array[String](["[@chip]Another drill! I should equip it onto my wheel."])

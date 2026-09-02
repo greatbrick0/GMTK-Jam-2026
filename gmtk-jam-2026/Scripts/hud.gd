@@ -28,6 +28,7 @@ func _ready():
 func EndLoop() -> void:
 	GetCountDownAmountsForRefill()
 	UpdateDreamMessage()
+	WeatherManager.SetInResetHud(true)
 	$WakeUpPlayer.play("FallAsleep")
 
 func UpdateDreamMessage() -> void:
@@ -35,6 +36,7 @@ func UpdateDreamMessage() -> void:
 	print("new message: " + $Menu/DreamMessage.text)
 
 func _on_wake_up_button_pressed():
+	WeatherManager.SetInResetHud(false)
 	$WakeUpPlayer.play("Awaken")
 
 func AllowPlayerMovement() -> void:
