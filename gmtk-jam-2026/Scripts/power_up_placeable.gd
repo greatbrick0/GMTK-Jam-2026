@@ -42,11 +42,17 @@ func _process(_delta):
 
 func AttemptPlacePowerUp() -> void:
 	var point = countDownRef.GetMouseAngle()
-	if(countDownRef.CanAddPowerUp(point - (heldPowerUp.width / 2.0), heldPowerUp.width)):
-		countDownRef.AddPowerUp(point - (heldPowerUp.width / 2.0), heldPowerUp)
+	var centre = point - (heldPowerUp.width / 2.0)
+	if(countDownRef.CanAddPowerUp(centre, heldPowerUp.width)):
+		countDownRef.AddPowerUp(centre, heldPowerUp)
 		$Sprite2D2.modulate = usedModulate
 	else:
-		MusicManager.PlayGeneral(0)
+		var adjustedCentre = countDownRef.CanAdjustPowerUp(centre, heldPowerUp.width)
+		if(adjustedCentre != 0):
+			countDownRef.AddPowerUp(adjustedCentre, heldPowerUp)
+			$Sprite2D2.modulate = usedModulate
+		else:
+			MusicManager.PlayGeneral(0)
 
 func _on_area_2d_mouse_entered():
 	$Sprite2D.scale = Vector2.ONE * 7.0

@@ -47,7 +47,7 @@ func CharacterizeMessage(msg: String) -> String:
 		msg = "[color=#a59372]"+msg+"[/color]"
 	if(msg.contains("[@outside]")):
 		msg = msg.replace("[@outside]", "")
-		msg = "[color=#e5414e]"+msg+"[/color]"
+		msg = "[color=#b86d86]"+msg+"[/color]"
 	if(msg.contains("[@real]")):
 		msg = msg.replace("[@real]", "")
 		msg = "[color=#009797]"+msg+"[/color]"

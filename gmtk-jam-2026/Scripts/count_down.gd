@@ -60,6 +60,17 @@ func CanAddPowerUp(start: float, width: float) -> bool:
 			return false
 	return true
 
+func CanAdjustPowerUp(start: float, width: float) -> float:
+	for ii in range(200):
+		var jj = ii * 0.1
+		if(ii % 2 == 0):
+			jj *= -1
+		jj = jj / 2
+		jj = snapped(jj, 0.1)
+		if(CanAddPowerUp(start + jj, width)):
+			return start + jj
+	return 0
+
 func AddPowerUp(start: float, newPowerUp: PowerUp) -> void:
 	powerUps.append(newPowerUp)
 	powerUpStartTimes.append(start)
