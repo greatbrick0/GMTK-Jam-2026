@@ -10,8 +10,7 @@
 [@chip]It is a good day today.;
 [@chip]I think I saw a satellite in the distance.;
 [@child]I find myself in captive thoughts.;
-[@outside][wave amp=5 freq=50]Tomorrow on SCB: 
-Scuffling with the Abandominant![/wave];
+[@outside]You can hear Scruffling upstairs on the tv.;
 [@child]It's raining outside. It's dark inside. The TV is still on.;
 [@chip]Where should I go next?;
 [@chip]It was only a dream.;
@@ -21,3 +20,18 @@ Scuffling with the Abandominant![/wave];
 [@outside]They do lots of things!.;
 [@chip]I wonder where everyone else is.;
 [@child]I'll be an astronaut one day.;
+[@child]Balen jumped too far in the playground yesterday.;
+[@chip]If I stand perfectly still... nothing happens.;
+[@outside]If he finds Matchsticks one more time, I'm going to lose my sanity.;
+[@child]I never did figure out how Jumpy works.;
+[@chip]Toy Drills™ sold separately.;
+[@child]Auntie always brings deer when she comes by.;
+[@chip]I hear the satellite beeping, distantly recurring.;
+[@chip]Just put one foot in front of the other, Chip.;
+[@child]Uncle Balz's house is no fun.;
+[@chip]I remember having a key for my backpack... wonder what happened to that.;
+[@outside]You hear the creaking of a well loved home's floorboards.;
+[@child]I bet space looks just like this.;
+[@chip]Is that block...dripping? Ew. If i had something to break it with...;
+[@child]Þéfàl... why did I think that?;
+[@outside]You begin to rotate a torus in your head for free.;
