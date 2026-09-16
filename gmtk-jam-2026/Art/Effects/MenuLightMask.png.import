@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4kkneomr6yaf"
-path="res://.godot/imported/MenuLightMask4.png-3b357a1dc37c234f94a398bbb2672997.ctex"
+uid="uid://cqmeuq0agc6pk"
+path="res://.godot/imported/MenuLightMask.png-c8b18903484eeea63df5c8dd6bfef472.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MenuLightMask4.png"
-dest_files=["res://.godot/imported/MenuLightMask4.png-3b357a1dc37c234f94a398bbb2672997.ctex"]
+source_file="res://art/Effects/MenuLightMask.png"
+dest_files=["res://.godot/imported/MenuLightMask.png-c8b18903484eeea63df5c8dd6bfef472.ctex"]
 
 [params]
 

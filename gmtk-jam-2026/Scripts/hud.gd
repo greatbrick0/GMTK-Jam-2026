@@ -8,6 +8,9 @@ signal playerFullyAsleep
 
 var countdownStartAmount: float = 0.0
 var countdownEndAmount: float = 100.0
+
+static var isOnMobile: bool = false
+
 @export var countDownLerpValue: float = 0.0:
 	set(value):
 		countDownLerpValue = value
@@ -22,6 +25,11 @@ func _ready():
 		$CountDown.SetSteps(100.0)
 		$Menu/DreamMessage.text = ""
 		PowerUpInventory.inventoryChanged.connect(UpdateUpgradeSelectMenu)
+		if(OS.has_feature("mobile") or OS.has_feature("web_ios") or OS.has_feature("web_android") or isOnMobile):
+			isOnMobile = true
+			print("Mobile device detected")
+		else:
+			$MobileControls.queue_free()
 	else:
 		queue_free()
 
@@ -37,6 +45,8 @@ func UpdateDreamMessage() -> void:
 
 func _on_wake_up_button_pressed():
 	WeatherManager.SetInResetHud(false)
+	if(isOnMobile):
+		$MobileControls.visible = true
 	$WakeUpPlayer.play("Awaken")
 
 func AllowPlayerMovement() -> void:
@@ -50,6 +60,8 @@ func GetCountDownAmountsForRefill() -> void:
 	countdownEndAmount = 100.0
 
 func ScreenBlackenedOut() -> void:
+	if(isOnMobile):
+		$MobileControls.visible = false
 	playerFullyAsleep.emit()
 
 func Transition() -> void:

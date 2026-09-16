@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmjxrvuuc5fxi"
-path="res://.godot/imported/MenuLightMask3.png-6a9b825d4ce0a63a78b3145e36391417.ctex"
+uid="uid://b8ddal4v0176s"
+path="res://.godot/imported/MaterialTest1_outputCircle.png-71ce8df377652e67cb4d010e4cfcf4d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MenuLightMask3.png"
-dest_files=["res://.godot/imported/MenuLightMask3.png-6a9b825d4ce0a63a78b3145e36391417.ctex"]
+source_file="res://art/Effects/MaterialTest1_outputCircle.png"
+dest_files=["res://.godot/imported/MaterialTest1_outputCircle.png-71ce8df377652e67cb4d010e4cfcf4d0.ctex"]
 
 [params]
 

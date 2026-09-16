@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmirvug5pekcp"]
 
-[ext_resource type="Texture2D" uid="uid://dkv2xpap8ydlo" path="res://art/ScruffleVFX_MagicMess1.png" id="1_0nrly"]
+[ext_resource type="Texture2D" uid="uid://dkv2xpap8ydlo" path="res://art/Effects/ScruffleVFX_MagicMess1.png" id="1_0nrly"]
 
 [node name="Light" type="Node2D" unique_id=490444005]
 top_level = true

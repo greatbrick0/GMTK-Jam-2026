@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ddal4v0176s"
-path="res://.godot/imported/MaterialTest1_outputCircle.png-6909011e1b027c6b8d7ba2d9a42e3b93.ctex"
+uid="uid://du16vq8gobn4w"
+path="res://.godot/imported/MaterialTest1_Spiral.png-bad72fd30938136ef30b051c8433c114.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MaterialTest1_outputCircle.png"
-dest_files=["res://.godot/imported/MaterialTest1_outputCircle.png-6909011e1b027c6b8d7ba2d9a42e3b93.ctex"]
+source_file="res://art/Effects/MaterialTest1_Spiral.png"
+dest_files=["res://.godot/imported/MaterialTest1_Spiral.png-bad72fd30938136ef30b051c8433c114.ctex"]
 
 [params]
 

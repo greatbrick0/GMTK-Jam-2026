@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ufnnps04v3qd"
-path="res://.godot/imported/ScruffleVFX_Star.png-3f2bf41d50c3cb212842358df119743e.ctex"
+uid="uid://bpr6virp3dmqo"
+path="res://.godot/imported/CoverPreview.svg-7c17dc7ed6007b5f94a5e30c30227a42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ScruffleVFX_Star.png"
-dest_files=["res://.godot/imported/ScruffleVFX_Star.png-3f2bf41d50c3cb212842358df119743e.ctex"]
+source_file="res://addons/virtual_joystick/previews/CoverPreview.svg"
+dest_files=["res://.godot/imported/CoverPreview.svg-7c17dc7ed6007b5f94a5e30c30227a42.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p142ho2k6my4"
-path="res://.godot/imported/GlowSpot.png-ef3763eab7e9e653601827f82b0abbda.ctex"
+uid="uid://b820qtq28kwg5"
+path="res://.godot/imported/ShowcasePreview.png-70f7a50f53e5fc814a0e306c3f1e556a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/GlowSpot.png"
-dest_files=["res://.godot/imported/GlowSpot.png-ef3763eab7e9e653601827f82b0abbda.ctex"]
+source_file="res://addons/virtual_joystick/previews/ShowcasePreview.png"
+dest_files=["res://.godot/imported/ShowcasePreview.png-70f7a50f53e5fc814a0e306c3f1e556a.ctex"]
 
 [params]
 

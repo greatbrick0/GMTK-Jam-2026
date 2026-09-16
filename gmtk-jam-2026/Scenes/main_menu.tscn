@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bcr653q3ufbqc" path="res://art/Satellite.png" id="11_5pajh"]
 [ext_resource type="Shader" uid="uid://bln0arf8q843y" path="res://art/Shaders/ViewportMasking.gdshader" id="12_1ajci"]
 [ext_resource type="Script" uid="uid://sgruy0h7ltl3" path="res://scripts/light_viewport.gd" id="12_7b55j"]
-[ext_resource type="Texture2D" uid="uid://4kkneomr6yaf" path="res://art/MenuLightMask4.png" id="14_7b55j"]
+[ext_resource type="Texture2D" uid="uid://4kkneomr6yaf" path="res://art/Effects/MenuLightMask4.png" id="14_7b55j"]
 
 [sub_resource type="Animation" id="Animation_8ln24"]
 length = 0.001
@@ -493,6 +493,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 40
+action_mode = 0
 text = "PLAY"
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=784511792]

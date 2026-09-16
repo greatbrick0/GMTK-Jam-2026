@@ -41,5 +41,5 @@ func Collect() -> void:
 		$Timer.start()
 
 func _on_timer_timeout():
-	get_tree().get_first_node_in_group("Player").BumpCanMove(true)
+	#get_tree().get_first_node_in_group("Player").BumpCanMove(true)
 	Hud.instance.EndLoop()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyccc4no2vr12" path="res://art/BasicTiles/Interactables/crackedCube1.png" id="2_o2kwa"]
 [ext_resource type="Texture2D" uid="uid://bpe64xsbf4ho2" path="res://art/BasicTiles/Interactables/crackedCube2.png" id="3_o2kwa"]
 [ext_resource type="AudioStream" uid="uid://dd6s8v5c1w6i7" path="res://sounds/CashewExplode.wav" id="4_8gpwv"]
-[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="5_hfix2"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/Effects/circleimage.png" id="5_hfix2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scls8"]
 atlas = ExtResource("2_o2kwa")

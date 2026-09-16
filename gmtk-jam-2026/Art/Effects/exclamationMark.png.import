@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hn51cmlwxty8"
-path="res://.godot/imported/MenuLightMask2.png-f62740c5cfefc6e1523c224c8282e7c4.ctex"
+uid="uid://b274y83ctbbj4"
+path="res://.godot/imported/exclamationMark.png-b90394fdd9cc09ef90f5cf13b56a0af5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/MenuLightMask2.png"
-dest_files=["res://.godot/imported/MenuLightMask2.png-f62740c5cfefc6e1523c224c8282e7c4.ctex"]
+source_file="res://art/Effects/exclamationMark.png"
+dest_files=["res://.godot/imported/exclamationMark.png-b90394fdd9cc09ef90f5cf13b56a0af5.ctex"]
 
 [params]
 

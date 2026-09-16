@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b274y83ctbbj4"
-path="res://.godot/imported/exclamationMark.png-d5044145ee96e3ccada968d373f7b8bf.ctex"
+uid="uid://ufnnps04v3qd"
+path="res://.godot/imported/ScruffleVFX_Star.png-fb9239bf1cdde6c057e7085b538ded26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/exclamationMark.png"
-dest_files=["res://.godot/imported/exclamationMark.png-d5044145ee96e3ccada968d373f7b8bf.ctex"]
+source_file="res://art/Effects/ScruffleVFX_Star.png"
+dest_files=["res://.godot/imported/ScruffleVFX_Star.png-fb9239bf1cdde6c057e7085b538ded26.ctex"]
 
 [params]
 

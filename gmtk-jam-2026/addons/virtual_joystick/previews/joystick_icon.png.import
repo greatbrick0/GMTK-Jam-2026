@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkv2xpap8ydlo"
-path="res://.godot/imported/ScruffleVFX_MagicMess1.png-01a93487466a2f545dacb38fe435df20.ctex"
+uid="uid://26w3b7qwucse"
+path="res://.godot/imported/joystick_icon.png-6e8744e631946e765d6836c0ecb27227.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ScruffleVFX_MagicMess1.png"
-dest_files=["res://.godot/imported/ScruffleVFX_MagicMess1.png-01a93487466a2f545dacb38fe435df20.ctex"]
+source_file="res://addons/virtual_joystick/previews/joystick_icon.png"
+dest_files=["res://.godot/imported/joystick_icon.png-6e8744e631946e765d6836c0ecb27227.ctex"]
 
 [params]
 

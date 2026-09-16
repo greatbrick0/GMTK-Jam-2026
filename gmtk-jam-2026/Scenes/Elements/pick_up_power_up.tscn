@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bshpadr2quyny" path="res://scripts/pick_up_power_up.gd" id="1_okdil"]
 [ext_resource type="AudioStream" uid="uid://c1ut2tfs80p1a" path="res://sounds/PowerUp.wav" id="2_okdil"]
 [ext_resource type="Texture2D" uid="uid://ccal2qebhodga" path="res://art/Drillitem.png" id="3_okdil"]
-[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="4_ia6sq"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/Effects/circleimage.png" id="4_ia6sq"]
 
 [sub_resource type="Curve" id="Curve_ia6sq"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7936508, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

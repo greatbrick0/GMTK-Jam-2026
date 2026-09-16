@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cxtbuyqileein" path="res://art/Units/walkUp.png" id="13_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://chkr3bwkjx5g4" path="res://art/Units/walkUpLeft.png" id="14_60mlk"]
 [ext_resource type="Texture2D" uid="uid://o5kkte32w6wq" path="res://art/Units/walkUpRight.png" id="15_i4ail"]
-[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/circleimage.png" id="16_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://btbvi02y38kgu" path="res://art/Effects/circleimage.png" id="16_a8ls1"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6t5aa"]
 viewport_path = NodePath("CameraResults/MainViewport")
